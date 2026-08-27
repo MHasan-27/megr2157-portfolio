@@ -58,8 +58,8 @@ Where:
 
 ## d. Patent Research & Alternative Design Decisions
 
-* **Patent Number:** [US Patent US1139170A](https://patents.google.com/patent/US1139170A/en)
-* **Inventor:** Louis E. Baltzley (Granted 1915)
+* **Patent Number:** [US Patent US1139627A](https://patents.google.com/patent/US1139627A/en)
+* **Inventor:** Louis E. Baltzley (Granted May 18, 1915)
 
 ### i. Alternative Solutions
 
