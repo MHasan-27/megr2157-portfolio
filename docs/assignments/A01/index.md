@@ -37,7 +37,7 @@ Where:
 ## c. Component Geometry & Mechanical Function
 
 ### Component 1: Spring Steel Body
-![Component 1 - Spring Steel Shell](./images/steel_shell.jpg)
+![Component 1 - Spring Steel Shell](docs/assignments/A01/Binder Clips.jpg)
 
 * **Geometry Effect on Function:**
   * **Triangular Prism Profile:** Distributes bending moment along a wide, continuous curve rather than a sharp bend, avoiding stress concentrations.
@@ -47,7 +47,7 @@ Where:
 ---
 
 ### Component 2: Wire Lever Handles (Pair)
-![Component 2 - Wire Handles](./images/wire_handles.jpg)
+![Component 2 - Wire Handles](docs/assignments/A01/Binder Clips.jpg)
 
 * **Geometry Effect on Function:**
   * **Long Moment Arm ($L_{\text{handle}}$):** Provides mechanical advantage ($\text{MA} = \frac{L_{\text{handle}}}{L_{\text{pivot}}}$), reducing the force input required by human fingers to open the body.
