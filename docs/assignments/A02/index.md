@@ -14,9 +14,7 @@ The mechanical properties of AISI 1020 provided by SolidWorks will be used for a
 
 ##  Design and Solution Section
 
-<iframe src="./A 2.pdf" width="100%" height="600px" style="border: none;">
-    This browser does not support PDFs. Please download the PDF to view it: <a href="./A 2.pdf">Download PDF</a>.
-</iframe>
+<embed src="./A 2.pdf" type="application/pdf" width="100%" height="600px" />
 
 
 
