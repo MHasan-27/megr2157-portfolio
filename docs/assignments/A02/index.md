@@ -16,6 +16,17 @@ The mechanical properties of AISI 1020 provided by SolidWorks will be used for a
 
 <embed src="./A 2.pdf" type="application/pdf" width="100%" height="600px" />
 
+## SolidWorks Modeling, Simulation, Parts Properties
+
+### CAD Files & Downloads
+* **3D Part File:** [Truss A2.SLDPRT](./Truss%20A2.SLDPRT)
+* **Simulation File:** [Truss A2-SimulationXpress Study.analysis.eprt](./Truss%20A2-SimulationXpress%20Study.analysis.eprt)
+
+### Simulation Setup
+![Simulation Properties](./Simulation%20properties.png)
+
+### Mass Properties
+![Mass Properties](./Mass%20Properties.png)
 
 
 ##  3D CAD Model and Mass Comparison
