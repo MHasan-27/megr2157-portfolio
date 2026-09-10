@@ -25,10 +25,10 @@ Substituting the parameter values: L = (0.009 in * 0.19635 sq in * 10,007,603.90
 **Global Equations Table:**
 ![Global Variable](Global%20Variable%20.png)
 
-**Step 1:** Create a circle on the Front Plane and dimension its diameter to the global variable `"d"`.
+**Step 1:** Create a circle on the Front Plane and dimension its diameter to the global variable "d".
 ![Design 1](Design%201.png)
 
-**Step 2:** Extrude the circle to the global variable `"L"` length ($35.37 \text{ in}$).
+**Step 2:** Extrude the circle to the global variable "L" length (35.37 in).
 ![Design 2](Design%202.png)
 
 **Material Selection:**
