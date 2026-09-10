@@ -88,7 +88,7 @@ $$L = \frac{0.009 \text{ in} \times 0.19635 \text{ in}^2 \times 10,007,603.90 \t
 
 ## Section 4: Lessons Learned
 * **Mistakes:** 1060 Alloy has a lower yield strength ($4 \text{ ksi}$) than standard structural alloys like 6061-T6 Aluminum ($40 \text{ ksi}$), which reduces the safety margin significantly.
-* **Time Spent:** 1.5 hours total.
+* **Time Spent:** 6 hours total.
 
 ---
 
