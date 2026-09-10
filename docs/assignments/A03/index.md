@@ -70,6 +70,20 @@ $$L = \frac{0.009 \text{ in} \times 0.19635 \text{ in}^2 \times 10,007,603.90 \t
   $$\text{FOS}_{\text{hole}} = \frac{3,999.30 \text{ psi}}{6,366.25 \text{ psi}} = 0.63$$
 * **Conclusion:** Peak stress ($6.37 \text{ ksi}$) exceeds yield strength ($4.00 \text{ ksi}$), so the safety factor falls below $1.0$ and the part would yield around the hole.
 
+### Project Images
+* **Deformation Map:**  
+  ![Deformation](Deformation.png)
+* **Displacement Map:**  
+  ![Displacement](Displacement%20.png)
+* **Stress Map:**  
+  ![Stress](Stress%20%28-vonMises%29.png)
+* **Factor of Safety Plot:**  
+  ![FOS](FOS.png)
+
+### Downloads & Files
+* [SolidWorks CAD Part File (`A3 SolidWorks bar.SLDPRT`)](A3%20SolidWorks%20bar.SLDPRT)
+* [SimulationXpress FEA PDF Report](A3%20SolidWorks%20bar-SimulationXpress%20Study-1.pdf)
+
 ---
 
 ## Section 4: Lessons Learned
@@ -82,19 +96,7 @@ $$L = \frac{0.009 \text{ in} \times 0.19635 \text{ in}^2 \times 10,007,603.90 \t
 1. [Parametric Modeling & FEA Videos](https://instructure.charlotte.edu/courses/272052/pages/parametric-modeling-and-fea-finite-element-analysis-videos?module_item_id=7950950)
 2. AI used to format Markdown, embed images, and link CAD files.
 
-### Downloads & Files
-* [SolidWorks CAD Part File (`A3 SolidWorks bar.SLDPRT`)](A3%20SolidWorks%20bar.SLDPRT)
-* [SimulationXpress FEA PDF Report](A3%20SolidWorks%20bar-SimulationXpress%20Study-1.pdf)
 
 ---
 
-### Project Images
-* **Deformation Map:**  
-  ![Deformation](Deformation.png)
-* **Displacement Map:**  
-  ![Displacement](Displacement%20.png)
-* **Stress Map:**  
-  ![Stress](Stress%20%28-vonMises%29.png)
-* **Factor of Safety Plot:**  
-  ![FOS](FOS.png)
 
