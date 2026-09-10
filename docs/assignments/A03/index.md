@@ -83,6 +83,26 @@ Substituting the parameter values: L = (0.009 in * 0.19635 sq in * 10,007,603.90
 * **Time Spent:** 6 hours total.
 
 ---
+# 2157 Topic: Modify Design Parameters
+
+## Parameter Modification & Predictions
+* **Original Inputs:** d = 0.50 in, F = 500 lbf, L = 35.37 in, FOS = 1.57
+* **Modified Inputs:** d = 0.60 in, F = 400 lbf
+* **Prediction:** Length will increase, and Safety Factor (FOS) will increase.
+
+## Calculations & Verification
+* **Cross-Sectional Area (A):** Area = (pi * d^2) / 4 = (3.1416 * (0.60)^2) / 4 = 0.28274 sq in
+* **New Designed Length (L):** L = (def * A * E) / F = (0.009 in * 0.28274 sq in * 10,007,603.90 psi) / 400 lbf = 63.67 in
+* **New Nominal Stress (sigma):** Stress = F / A = 400 lbf / 0.28274 sq in = 1,414.7 psi (~1.41 ksi)
+* **New Safety Factor (FOS):** FOS = Sy / Stress = 3,999.30 psi / 1,414.7 psi = 2.83
+
+## Conclusion
+* **Length:** Increased from 35.37 in to 63.67 in (+80%). Prediction was correct.
+* **Safety Factor:** Increased from 1.57 to 2.83 (+80%). Prediction was correct.
+* **Reasoning:** Increasing cross-sectional area and decreasing tensile load both reduce internal axial stress, raising the Factor of Safety. To maintain the target 0.009 in elongation under a smaller load and larger cross-section, the total length must increase proportionally.
+
+### Modified Parameters Global Variables Table
+![Modified Parameters](Modified%20Parameters.png)
 
 ## Resources & Links
 1. [Parametric Modeling & FEA Videos](https://instructure.charlotte.edu/courses/272052/pages/parametric-modeling-and-fea-finite-element-analysis-videos?module_item_id=7950950)
