@@ -135,5 +135,5 @@ An ASME-compliant engineering drawing was generated directly from the 3D CAD mod
 
 ## Lessons Learned & Process Notes
 
-* **Time Spent:** 5.5 hours total (1.5 hours for FBDs and hand calculations, 2.5 hours for parametric CAD modeling and gusset revisions, 1.5 hours for 2157 drawing sheet setup and portfolio setup).
+* **Time Spent:** About 8 hours total (3 hours for FBDs and hand calculations, 2.5 hours for parametric CAD modeling and gusset revisions, 2.5 hours for 2157 drawing sheet setup and portfolio setup).
 * **Mistakes & Insights:** Initial calculations showed that a flat 10 mm plate alone would deflect over 0.70 mm under the 300 N load. Adding 6 mm side gussets provided the necessary structural stiffness to satisfy the 0.30 mm deflection limit without making the entire body excessively bulky.
