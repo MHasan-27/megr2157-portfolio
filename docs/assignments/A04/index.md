@@ -127,6 +127,9 @@ An ASME-compliant engineering drawing was generated directly from the 3D CAD mod
 1. [Spur Gear Motor Mount Design Guidelines - McMaster-Carr](https://www.mcmaster.com)
 2. [Design for Additive Manufacturing & Cantilever Brackets - Hubs](https://www.hubs.com)
 3. [Beam Bending Deflection & Stress Equations - Engineering Toolbox](https://www.engineeringtoolbox.com)
+4. AI used to format Markdown, embed images, and link CAD files.
+5. https://instructure.charlotte.edu/courses/272052/assignments/2902671?module_item_id=7950956
+6. https://uncc.instructure.com/eportfolios/2995/Home/Design_a_Simple_Machine
 
 ---
 
