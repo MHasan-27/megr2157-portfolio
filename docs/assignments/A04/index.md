@@ -101,7 +101,7 @@ The 3D CAD model features a main plate thickness of 10.0 mm, a width of 50.0 mm,
 
 * Clearance Holes: 3.4 mm clearance holes for M3 mounting bolts on Feature 2, and central motor output shaft/bolt mounting pattern on Feature 1.
 
-![3D Motor Mount CAD Model](A%204%20Motor%20Mount%20Panel%20View.JPG)
+![3D Motor Mount CAD Model](docs/assignments/A04/Front%20View.JPG)
 
 *Figure 2: Parametric 3D CAD model of the motor mount with gussets and mounting clearance holes.*
 
