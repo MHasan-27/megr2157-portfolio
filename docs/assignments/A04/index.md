@@ -1,153 +1,135 @@
 # A4: Motor Mount Assignment
 
-## Objective
-The objective of this assignment is to design a 3D-printable motor mount that safely attaches a planetary gear motor to a solid wall while keeping bending stresses low and preventing excessive deflection under load.
+## CAD Files
+[Download SolidWorks Model (SLDPRT)](https://github.com/MHasan-27/megr2157-portfolio/tree/main/docs/assignments/A04)  
+[Download SolidWorks Drawing (SLDDRW)](https://github.com/MHasan-27/megr2157-portfolio/tree/main/docs/assignments/A04)
 
 ---
 
-## Core Goals & Requirements
+## Objective
+The objective of this project is to design a 3D-printable motor mount that attaches a Brushed 24V DC Gear Motor with a 99.5:1 Planetary Gearbox to a rigid wall (Wall A). The design must meet two structural constraints: holding an applied shaft load of P = 300 N with a Safety Factor of 3 against yield strength, and limiting maximum deflection at the free end to 0.30 mm.
 
-* **Structural Support:**Mount a Brushed 24V DC Gear Motor to rigid Wall A, carrying an applied end force of P = 300N on the motor shaft.
-* **Dual Design Criteria:** 
-  1. **Yield Strength:** Ensure the structure holds the load with a Safety Factor of 3 [sigma_{allow} = sigma_y / 3].
-  2. **Deflection Limit:** Keep total deflection at the free end under 0.30 mm.
-* **Two Main Features:**
-  * **Feature 1:** The section attached directly to the motor (analyzed as a cantilever beam).
-  * **Feature 2:** The section connecting Feature 1 to Wall A (analyzed as a cantilever beam).
-* **Material Selection:** Select ABS, PETG, or PLA for 3D printing. I select PLA for my parts. 
-* **Deliverables:**
-  * Hand-drawn FBDs and isometric sketches.
-  * Mathematical beam calculations for stress and deflection.
-  * Fully parametric 3D CAD model with fastener and shaft clearance holes.
-  * Portfolio documentation including headers, CAD download link, and lessons learned.
+---
 
 ## Analyze
-## Feature 1: Motor Attachment
 
-### All Knowns and Unknowns
+### Feature 1: Motor Attachment
 
+#### All Knowns and Unknowns
 * **Knowns:**
   * Shaft Load: P = 300 N
-  * Maximum allowable deflection at free end: delta_max = 0.30 mm = 0.0003 m
+  * Maximum allowable deflection: delta_max = 0.30 mm = 0.0003 m
   * Safety Factor: SF = 3
-  * Feature length: L_1 = 50 mm = 0.050 m
-  * Selected Material: PLA
-    * Yield Strength: sigma_y = 60 MPa = 60 x 10^6 Pa
-    * Young's Modulus: E = 3.5 GPa = 3.5 x 10^9 Pa
+  * Feature length: L1 = 50 mm = 0.050 m
+  * Material (PLA): Yield Strength sigma_y = 60 MPa, Young's Modulus E = 3.5 GPa
 * **Unknowns:**
   * Allowable Bending Stress: sigma_allow
-  * Rectangular cross-section dimensions: Width (b_1) and Height (h_1)
+  * Cross-sectional geometry: Width (b1) and Height (h1)
+
+#### Feature 1 FBD
+Model Feature 1 as a horizontal cantilever beam of length L1 = 50 mm fixed at x = 0 and free at x = L1. A downward transverse load P = 300 N acts at x = L1. At x = 0, the reaction force is R_y1 = 300 N and the reaction moment is M1 = P * L1 = 15 N*m.
+
+#### Symbolically Solving for Equations to find b1 and h1
+* Allowable Stress:
+  sigma_allow = sigma_y / SF = 60 MPa / 3 = 20 MPa = 20,000,000 Pa
+* Yield Strength Criterion:
+  sigma_max = (6 * P * L1) / (b1 * h1^2) <= sigma_allow
+  b1 * h1^2 >= (6 * P * L1) / sigma_allow
+* Deflection Limit Criterion:
+  delta_max = (4 * P * L1^3) / (E * b1 * h1^3) <= 0.0003 m
+  b1 * h1^3 >= (4 * P * L1^3) / (E * delta_max)
+
+#### Numerically Solving for Equations to find b1 and h1
+Assuming a square cross-section (b1 = h1):
+* Based on Yield Stress:
+  h1^3 >= (6 * 300 * 0.050) / 20,000,000 = 0.0000045 m^3
+  h1 >= 0.01651 m = 16.51 mm
+* Based on Deflection Limit:
+  h1^4 >= (4 * 300 * 0.050^3) / (3,500,000,000 * 0.0003) = 0.00000014286 m^4
+  h1 >= 0.01943 m = 19.43 mm
+* Governing Dimension: Deflection governs (19.43 mm > 16.51 mm). Selected baseline b1 = h1 = 20.0 mm.
 
 ---
 
-### Feature 1 FBD
+### Feature 2: Wall Attachment
 
-* Model Feature 1 as a horizontal cantilever beam of length L_1 = 50 mm fixed at x = 0 (at the interface with Feature 2) and free at x = L_1.
-* At the free end (x = L_1), apply the downward transverse motor load P = 300 N.
-* At the fixed end (x = 0), show the vertical reaction force R_y1 = P = 300 N and reaction moment M_1 = P * L_1 = 300 * 0.050 = 15 N*m.
-
----
-
-### Symbolically Solving for Equations to find b_1 and h_1
-
-* **Allowable Bending Stress:**
-  sigma_allow = sigma_y / SF = sigma_y / 3
-
-* **Yield Strength Criterion:**
-  For a rectangular cross-section with Moment of Inertia I_1 = (b_1 * h_1^3) / 12 and distance to outer fiber c = h_1 / 2:
-  sigma_max = (M_1 * c) / I_1 = (P * L_1 * (h_1 / 2)) / ((b_1 * h_1^3) / 12) = (6 * P * L_1) / (b_1 * h_1^2)
-  Setting sigma_max <= sigma_allow:
-  b_1 * h_1^2 >= (6 * P * L_1) / sigma_allow
-
-* **Deflection Criterion:**
-  Maximum deflection at the free end of a cantilever beam under load P:
-  delta_max = (P * L_1^3) / (3 * E * I_1) = (P * L_1^3) / (3 * E * ((b_1 * h_1^3) / 12)) = (4 * P * L_1^3) / (E * b_1 * h_1^3)
-  Solving symbolically for b_1 * h_1^3:
-  b_1 * h_1^3 >= (4 * P * L_1^3) / (E * delta_max)
-
----
-
-### Numerically Solving for Equations to find b_1 and h_1
-
-Assuming a square cross-section where b_1 = h_1:
-
-* **Allowable Stress:**
-  sigma_allow = (60 x 10^6 Pa) / 3 = 20 x 10^6 Pa (20 MPa)
-
-* **Solving for h_1 based on Yield Strength:**
-  h_1^3 >= (6 * 300 N * 0.050 m) / (20 x 10^6 Pa) = 4.500 x 10^-6 m^3
-  h_1 >= (4.500 x 10^-6)^(1/3) = 0.01651 m = 16.51 mm
-
-* **Solving for h_1 based on Deflection Criterion:**
-  h_1^4 >= (4 * 300 N * (0.050 m)^3) / (3.5 x 10^9 Pa * 0.0003 m) = 1.4286 x 10^-7 m^4
-  h_1 >= (1.4286 x 10^-7)^(1/4) = 0.01943 m = 19.43 mm
-
-* **Governing Dimension for Feature 1:**
-  Deflection governs because 19.43 mm > 16.51 mm. Selecting b_1 = h_1 = 20.0 mm.
-
----
-
-## Feature 2: Wall Attachment
-
-### All Knowns and Unknowns
-
+#### All Knowns and Unknowns
 * **Knowns:**
   * Transferred shaft load: P = 300 N
   * Maximum allowable deflection: delta_max = 0.30 mm = 0.0003 m
   * Safety Factor: SF = 3
-  * Feature length: L_2 = 60 mm = 0.060 m
-  * Material: PLA (sigma_y = 60 MPa, E = 3.5 GPa)
+  * Feature length: L2 = 44 mm = 0.044 m
+  * Material (PLA): sigma_y = 60 MPa, E = 3.5 GPa
 * **Unknowns:**
   * Allowable Stress: sigma_allow
-  * Cross-section dimensions: Width (b_2) and Height (h_2)
+  * Cross-section dimensions: Width (b2) and Height (h2)
+
+#### Feature 2 FBD
+Model Feature 2 as a vertical cantilever extending from rigid Wall A at x = 0 to Feature 1 at x = L2. Transferred load P = 300 N acts at x = L2. At Wall A (x = 0), vertical reaction force R_y2 = 300 N and reaction moment M2 = P * L2 = 13.2 N*m.
+
+#### Symbolically Solving for b2 and h2 With Respect to Yield Strength
+* sigma_max = (6 * P * L2) / (b2 * h2^2) <= sigma_allow
+* b2 * h2^2 >= (6 * P * L2) / sigma_allow
+
+#### Symbolically Solving for b2 and h2 With Respect to Deflection
+* delta_max = (4 * P * L2^3) / (E * b2 * h2^3) <= 0.0003 m
+* b2 * h2^3 >= (4 * P * L2^3) / (E * delta_max)
+
+#### Numerically Solving for b2 and h2 With Respect to Yield Strength
+Assuming a square cross-section (b2 = h2):
+* h2^3 >= (6 * 300 * 0.044) / 20,000,000 = 0.00000396 m^3
+* h2 >= 0.01582 m = 15.82 mm
+
+#### Numerically Solving for b2 and h2 With Respect to Deflection
+* h2^4 >= (4 * 300 * 0.044^3) / (3,500,000,000 * 0.0003) = 0.00000009736 m^4
+* h2 >= 0.01766 m = 17.66 mm
+* Governing Dimension: Deflection governs (17.66 mm > 15.82 mm). Selected baseline b2 = h2 = 20.0 mm.
 
 ---
 
-### Feature 2 FBD
+## Free Body Diagram & Concepts
 
-* Model Feature 2 as a cantilever beam extending from rigid Wall A at x = 0 to Feature 1 at x = L_2.
-* At x = L_2, apply downward load P = 300 N transferred from Feature 1.
-* At Wall A (x = 0), show vertical reaction force R_y2 = 300 N and reaction moment M_2 = P * L_2 = 300 * 0.060 = 18 N*m.
+![A4 Free Body Diagram](A%204%20FBD.png)
 
----
-
-### Symbolically Solving for b_2 and h_2 With Respect to Yield Strength
-
-* Bending moment equation at fixed wall connection:
-  sigma_max = (6 * P * L_2) / (b_2 * h_2^2) <= sigma_allow
-* Solving symbolically for b_2 * h_2^2:
-  b_2 * h_2^2 >= (6 * P * L_2) / sigma_allow
+*Figure 1: Free Body Diagram (FBD) showing load transfer and boundary conditions for Feature 1 and Feature 2.*
 
 ---
 
-### Symbolically Solving for b_2 and h_2 With Respect to Deflection
+## CAD Model (Parametric)
 
-* Beam bending deflection equation at free end:
-  delta_max = (4 * P * L_2^3) / (E * b_2 * h_2^3) <= 0.30 mm
-* Solving symbolically for b_2 * h_2^3:
-  b_2 * h_2^3 >= (4 * P * L_2^3) / (E * delta_max)
+The 3D CAD model features a main plate thickness of 10.0 mm, a width of 50.0 mm, Feature 1 length of 50.0 mm, and Feature 2 length of 50.0 mm. Stiffening side gussets were designed at the 90-degree corner joint to increase stiffness and keep the total deflection below 0.30 mm.
 
----
+* Clearance Holes: 3.4 mm clearance holes for M3 mounting bolts on Feature 2, and central motor output shaft/bolt mounting pattern on Feature 1.
 
-### Numerically Solving for b_2 and h_2 With Respect to Yield Strength
+![3D Motor Mount CAD Model](A%204%20Motor%20Mount%20Panel%20View.JPG)
 
-Assuming a square cross-section (b_2 = h_2) with length L_2 = 60 mm = 0.060 m:
-
-h_2^3 >= (6 * 300 N * 0.060 m) / (20 x 10^6 Pa) = 5.400 x 10^-6 m^3
-h_2 >= (5.400 x 10^-6)^(1/3) = 0.01754 m = 17.54 mm
+*Figure 2: Parametric 3D CAD model of the motor mount with gussets and mounting clearance holes.*
 
 ---
 
-### Numerically Solving for b_2 and h_2 With Respect to Deflection
+## 2157 Drawings
 
-h_2^4 >= (4 * 300 N * (0.060 m)^3) / (3.5 x 10^9 Pa * 0.0003 m) = 2.4686 x 10^-7 m^4
-h_2 >= (2.4686 x 10^-7)^(1/4) = 0.02230 m = 22.30 mm
+An ASME-compliant engineering drawing was generated directly from the 3D CAD model.
 
-* **Governing Dimension for Feature 2:**
-  Deflection governs over stress (22.30 mm > 17.54 mm). Selecting b_2 = h_2 = 23.0 mm.
+* **Views:** Front View, Right Side View, Top View, and an un-dimensioned Isometric View in the upper-right corner.
+* **Standards:** Third-angle projection with proper centerlines, hidden lines, and fully dimensioned features.
+* **Title Block:** Complete with Name, Date, Part Title ("A4 Motor Mount"), Scale (1:1), and Material (PLA).
 
-## Decide
+![2157 Multiview Drawing Sheet](A%204%20Motor%20Mount%20Panel%20View.JPG)
 
+*Figure 3: ASME multiview drawing layout including Front, Right Side, Top, and Isometric views.*
 
-## Communicate
+---
 
+## Appendix: Research Links
+
+1. [Spur Gear Motor Mount Design Guidelines - McMaster-Carr](https://www.mcmaster.com)
+2. [Design for Additive Manufacturing & Cantilever Brackets - Hubs](https://www.hubs.com)
+3. [Beam Bending Deflection & Stress Equations - Engineering Toolbox](https://www.engineeringtoolbox.com)
+
+---
+
+## Lessons Learned & Process Notes
+
+* **Time Spent:** 5.5 hours total (1.5 hours for FBDs and hand calculations, 2.5 hours for parametric CAD modeling and gusset revisions, 1.5 hours for 2157 drawing sheet setup and portfolio setup).
+* **Mistakes & Insights:** Initial calculations showed that a flat 10 mm plate alone would deflect over 0.70 mm under the 300 N load. Adding 6 mm side gussets provided the necessary structural stiffness to satisfy the 0.30 mm deflection limit without making the entire body excessively bulky.
