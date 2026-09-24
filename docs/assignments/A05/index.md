@@ -1,104 +1,105 @@
 # A5 – [Bracket Design]
 
-# Bracket Design — Assignment Objectives & Feature A Stress Analysis
+Here is the cleaned-up **GitHub-ready Markdown (`.md`)** version, with plain-text variable names and simple equations.
 
-## 1. Assignment Objectives
+````md
+# Assignment Objectives and Feature A Stress Analysis
 
-### Design for Strength & Safety
+## 1. Assignment Objectives (in Simple Words)
 
-Determine the minimum thickness/diameter for each structural feature of the bracket so that the material does not yield or break under a **600 lbf** load with a **Factor of Safety (FoS) of 4**.
+- **Design for Strength & Safety:** Determine the minimum thickness/diameter for each structural feature on the bracket so that the material does not yield or break under a 600 lbf load with a Factor of Safety of 4.
 
-### Design for Stiffness & Deflection
+- **Design for Stiffness & Deflection:** Calculate the minimum required dimensions so that elastic deflection/stretching stays within 0.005 in per feature.
 
-Calculate the minimum required dimensions so that elastic deflection/stretching remains within **0.005 in per feature**.
+- **Load Path Tracing:** Transfer calculated reaction forces sequentially from Feature A through Feature E to ensure static equilibrium across the entire mounting bracket assembly.
 
-### Load Path Tracing
+- **Manufacturing Precision (Fits):** Select appropriate ANSI B4.1 standard fits and tolerances for interface dimensions to ensure proper mechanical assembly with mating components.
 
-Transfer the calculated reaction forces sequentially from **Feature A through Feature E** to ensure static equilibrium throughout the entire mounting bracket assembly.
-
-### Manufacturing Precision — Fits
-
-Select appropriate **ANSI B4.1 standard fits and tolerances** for interface dimensions to ensure proper mechanical assembly with mating components.
-
-### Technical Documentation
-
-Present the following in the virtual portfolio:
-
-* Complete Free Body Diagrams (FBDs)
-* Step-by-step algebraic solutions
-* Numerical calculations
-* Multiview engineering drawings
-* Final design dimensions
-* CAD model and verification
-* Manufacturing fits and tolerances
+- **Technical Documentation:** Present complete Free Body Diagrams (FBDs), step-by-step algebraic/numerical solutions, and multiview engineering drawings in the virtual portfolio site.
 
 ---
 
 # 2. Material & Global Parameters Baseline
 
-| Parameter                                     |             Value |
-| --------------------------------------------- | ----------------: |
-| **Material**                                  |    ASTM A36 Steel |
-| **Applied Force, $F$**                        |           600 lbf |
-| **Force per Leg, $F_{\text{leg}}$**           |           300 lbf |
-| **Yield Strength, $Y_s$**                     |     36,259.43 psi |
-| **Elastic Modulus, $E$**                      | 29,007,547.53 psi |
-| **Factor of Safety, $N_s$**                   |               4.0 |
-| **Allowable Stress, $\sigma_{\text{allow}}$** |      9,064.86 psi |
+| Parameter | Value |
+|---|---:|
+| Material | Steel (ASTM A36) |
+| Applied Force, F | 600 lbf |
+| Force per Leg, F_leg | 300 lbf |
+| Yield Strength, Y_s | 36,259.43 psi |
+| Elastic Modulus, E | 29,007,547.53 psi |
+| Factor of Safety, N_s | 4.0 |
 
-The total applied load is symmetric:
+The total applied force is symmetric:
 
-$$
-2F_{\text{leg}} = 600\text{ lbf}
-$$
+```text
+2*F_leg = 600 lbf
 
-Therefore,
-
-$$
-F_{\text{leg}} = \frac{600}{2} = 300\text{ lbf}
-$$
+F_leg = 300 lbf
+````
 
 ### Allowable Stress
 
-The allowable stress is calculated using the Factor of Safety:
+The allowable stress is calculated using:
 
-$$
-\sigma_{\text{allow}}
-=
-\frac{Y_s}{N_s}
-$$
+```text
+sigma_allow = Y_s / N_s
+```
 
-$$
-\sigma_{\text{allow}}
-=
-\frac{36,259.43}{4.0}
-$$
+Substituting the given values:
 
-$$
-\boxed{\sigma_{\text{allow}} = 9,064.86\text{ psi}}
-$$
+```text
+sigma_allow = 36,259.43 / 4.0
+```
 
-or approximately:
+```text
+sigma_allow = 9,064.86 psi
+```
 
-$$
-\boxed{\sigma_{\text{allow}} \approx 9.06\text{ ksi}}
-$$
+Therefore:
+
+```text
+sigma_allow = 9,064.86 psi
+             = 9.06 ksi
+```
 
 ---
 
-# 3. Feature A — Stress Analysis
+# 3. Calculating Dimensions from Stress Analysis: Feature A
 
-Following the sequential load path described in **Appendix A** and **Appendix D**, Feature A is modeled as the **cylindrical support pin holding the polyester strap**.
+Following the sequential load path described in Appendix A and Appendix D, **Feature A** is the cylindrical support pin holding the polyester strap.
 
-## 3.1 Known Parameters
+## 3.1 Knowns
 
-| Parameter                | Symbol                  |         Value |
-| ------------------------ | ----------------------- | ------------: |
-| Applied Load             | $F$                     |       600 lbf |
-| Pin Length               | $L_A$                   |       2.00 in |
-| Yield Strength           | $Y_s$                   | 36,259.43 psi |
-| Factor of Safety         | $N_s$                   |           4.0 |
-| Allowable Bending Stress | $\sigma_{\text{allow}}$ |  9,064.86 psi |
+* Applied load:
+
+```text
+F = 600 lbf
+```
+
+* Pin length:
+
+```text
+L_A = 2.00 in
+```
+
+* Yield strength:
+
+```text
+Y_s = 36,259.43 psi
+```
+
+* Factor of Safety:
+
+```text
+N_s = 4.0
+```
+
+* Allowable bending stress:
+
+```text
+sigma_allow = 9,064.86 psi
+```
 
 ---
 
@@ -106,419 +107,384 @@ Following the sequential load path described in **Appendix A** and **Appendix D*
 
 The following values must be determined:
 
-* Minimum pin radius based on bending stress, $r_{\text{stress}}$
-* Minimum pin diameter based on bending stress, $d_{\text{stress}}$
-* Support reaction force, $R_y$
-* Maximum reaction bending moment, $M_{\max}$
+* Required minimum pin radius based on stress:
+
+```text
+r_stress
+```
+
+* Required minimum pin diameter based on stress:
+
+```text
+d_stress
+```
+
+* Support reaction force:
+
+```text
+R_y
+```
+
+* Maximum reaction bending moment:
+
+```text
+M_max
+```
 
 ---
 
 ## 3.3 Assumptions
 
-1. **Beam Model:**
-   Feature A behaves as a solid circular cantilever beam rigidly fixed at $x=0$.
+1. **Beam Model:** Feature A behaves as a solid circular cantilever beam rigidly fixed at `x = 0`.
 
-2. **Loading:**
-   A transverse point load of $F=600$ lbf is applied at $x=L_A=2.00$ in.
+2. **Loading:** A transverse point load of `F = 600 lbf` is applied at the free end:
 
-3. **Shear Stress:**
-   Direct shear failure is considered non-governing according to the assignment instructions.
+```text
+x = L_A = 2.00 in
+```
 
-4. **Material:**
-   The material is assumed to be homogeneous and linearly elastic A36 steel.
+3. **Shear Stress:** Direct shear failure is considered non-governing according to the assignment instructions.
 
----
-
-# 4. Feature A — Free Body Diagram (FBD)
-
-The support at $x=0$ provides:
-
-* A vertical reaction force, $R_y$
-* A reaction bending moment, $M_{\max}$
-
-The free end experiences the applied strap load.
-
-### Support Reaction
-
-From static equilibrium:
-
-$$
-\sum F_y = 0
-$$
-
-Therefore,
-
-$$
-R_y = F
-$$
-
-$$
-\boxed{R_y = 600\text{ lbf}}
-$$
-
-### Maximum Bending Moment
-
-The maximum bending moment occurs at the fixed support:
-
-$$
-M_{\max}=F L_A
-$$
-
-Therefore:
-
-$$
-M_{\max}
-=
-(600\text{ lbf})(2.00\text{ in})
-$$
-
-$$
-\boxed{M_{\max}=1,200\text{ lb}\cdot\text{in}}
-$$
+4. **Material:** The material is homogeneous, linear-elastic ASTM A36 steel.
 
 ---
 
-# 5. Feature A — Algebraic Stress Model
+# 4. Feature A Free Body Diagram (FBD)
 
-The bending stress is calculated using:
+At the fixed support (`x = 0`), the support provides:
 
-$$
-\sigma = \frac{M_{\max}}{Z}
-$$
+* Vertical reaction force:
 
-The design must satisfy:
+```text
+R_y = 600 lbf
+```
 
-$$
-\sigma \leq \sigma_{\text{allow}}
-$$
+* Reaction bending moment:
 
-Therefore, the required section modulus is:
+```text
+M_max = F * L_A
+```
 
-$$
-Z_{\text{req}}
-=
-\frac{M_{\max}}{\sigma_{\text{allow}}}
-$$
+At the free end (`x = 2.00 in`), the strap applies a downward force:
 
-Since:
+```text
+F = 600 lbf
+```
 
-$$
-M_{\max}=F L_A
-$$
+The maximum bending moment occurs at the fixed support.
 
-we can write:
-
-$$
-\boxed{
-Z_{\text{req}}
-=
-\frac{F L_A}{\sigma_{\text{allow}}}
-}
-$$
-
----
-
-## 5.1 Section Modulus for a Solid Circular Pin
-
-For a solid circular cross-section:
-
-$$
-Z=\frac{\pi r^3}{4}
-$$
-
-Alternatively, using diameter:
-
-$$
-\boxed{
-Z=\frac{\pi d^3}{32}
-}
-$$
-
-Setting the available section modulus equal to the required section modulus:
-
-$$
-\frac{\pi r^3}{4}=Z_{\text{req}}
-$$
-
-Solving for radius:
-
-$$
-r_{\text{stress}}
-=
-\sqrt[3]{\frac{4Z_{\text{req}}}{\pi}}
-$$
-
-Substituting the expression for $Z_{\text{req}}$:
-
-$$
-\boxed{
-r_{\text{stress}}
-=
-\sqrt[3]{
-\frac{4F L_A}
-{\pi\sigma_{\text{allow}}}
-}
-}
-$$
-
-The required diameter is:
-
-$$
-\boxed{
-d_{\text{stress}}=2r_{\text{stress}}
-}
-$$
-
----
-
-# 6. Feature A — Numerical Solution
-
-## Step 1 — Calculate Maximum Bending Moment
-
-$$
-M_{\max}=F L_A
-$$
-
-$$
-M_{\max}
-=
-(600\text{ lbf})(2.00\text{ in})
-$$
-
-$$
-\boxed{
-M_{\max}=1,200\text{ lb}\cdot\text{in}
-}
-$$
-
----
-
-## Step 2 — Calculate Required Section Modulus
-
-$$
-Z_{\text{req}}
-=
-\frac{M_{\max}}
-{\sigma_{\text{allow}}}
-$$
+```text
+M_max = F * L_A
+```
 
 Substituting:
 
-$$
-Z_{\text{req}}
-=
-\frac{1,200}
-{9,064.86}
-$$
+```text
+M_max = (600 lbf)(2.00 in)
+```
 
-Therefore:
-
-$$
-\boxed{
-Z_{\text{req}}\approx0.13238\text{ in}^3
-}
-$$
+```text
+M_max = 1,200 lb-in
+```
 
 ---
 
-## Step 3 — Calculate Minimum Radius
+# 5. Feature A Algebraic Stress Model
 
-Using:
+## 5.1 Maximum Bending Moment
 
-$$
-r_{\text{stress}}
-=
-\sqrt[3]{
-\frac{4Z_{\text{req}}}{\pi}
-}
-$$
+The maximum bending moment is:
 
-Substitute:
-
-$$
-r_{\text{stress}}
-=
-\sqrt[3]{
-\frac{4(0.13238)}{\pi}
-}
-$$
-
-$$
-r_{\text{stress}}
-=
-\sqrt[3]{0.16855}
-$$
-
-Therefore:
-
-$$
-\boxed{
-r_{\text{stress}}\approx0.5524\text{ in}
-}
-$$
+```text
+M_max = F * L_A
+```
 
 ---
 
-## Step 4 — Calculate Minimum Diameter
+## 5.2 Bending Stress
+
+The bending stress is calculated using:
+
+```text
+sigma = M_max / Z
+```
+
+The design requirement is:
+
+```text
+sigma <= sigma_allow
+```
+
+Therefore, the required section modulus is:
+
+```text
+Z_req = M_max / sigma_allow
+```
+
+or:
+
+```text
+Z_req = (F * L_A) / sigma_allow
+```
+
+---
+
+## 5.3 Section Modulus for a Solid Circular Pin
+
+For a solid circular cross-section:
+
+```text
+Z = (pi * r^3) / 4
+```
+
+Using diameter:
+
+```text
+Z = (pi * d^3) / 32
+```
+
+---
+
+## 5.4 Required Radius
+
+Set the available section modulus equal to the required section modulus:
+
+```text
+Z_req = (pi * r^3) / 4
+```
+
+Solving for radius:
+
+```text
+r_stress = (4 * Z_req / pi)^(1/3)
+```
+
+Substituting:
+
+```text
+r_stress = (4 * F * L_A / (pi * sigma_allow))^(1/3)
+```
+
+---
+
+## 5.5 Required Diameter
 
 The required diameter is:
 
-$$
-d_{\text{stress}}
-=
-2r_{\text{stress}}
-$$
-
-$$
-d_{\text{stress}}
-=
-2(0.5524)
-$$
-
-Therefore:
-
-$$
-\boxed{
-d_{\text{stress}}\approx1.105\text{ in}
-}
-$$
+```text
+d_stress = 2 * r_stress
+```
 
 ---
 
-# 7. Feature A — Final Stress Results
+# 6. Feature A Numerical Solution
 
-| Quantity                                   |        Result |
-| ------------------------------------------ | ------------: |
-| Applied Load, $F$                          |       600 lbf |
-| Pin Length, $L_A$                          |       2.00 in |
-| Reaction Force, $R_y$                      |       600 lbf |
-| Maximum Moment, $M_{\max}$                 |   1,200 lb·in |
-| Required Section Modulus, $Z_{\text{req}}$ |   0.13238 in³ |
-| Minimum Radius, $r_{\text{stress}}$        | **0.5524 in** |
-| Minimum Diameter, $d_{\text{stress}}$      |  **1.105 in** |
+## Step 1: Calculate Maximum Bending Moment
 
-### Stress-Based Design Requirement
+```text
+M_max = F * L_A
+```
 
-The minimum theoretical pin diameter based on bending stress is:
+```text
+M_max = (600 lbf)(2.00 in)
+```
 
-$$
-\boxed{
-d_{\text{stress}}\approx1.105\text{ in}
-}
-$$
+```text
+M_max = 1,200 lb-in
+```
 
-A practical manufactured diameter should then be selected **at or above this theoretical minimum**, while also checking the deflection requirement, available standard sizes, connection geometry, and other applicable failure modes.
+Therefore:
+
+```text
+M_max = 1,200 lb-in
+```
+
+---
+
+## Step 2: Calculate Required Section Modulus
+
+```text
+Z_req = M_max / sigma_allow
+```
+
+```text
+Z_req = (1,200 lb-in) / (9,064.86 psi)
+```
+
+```text
+Z_req = 0.13238 in^3
+```
+
+Therefore:
+
+```text
+Z_req = 0.13238 in^3
+```
+
+---
+
+## Step 3: Calculate Minimum Radius
+
+Using:
+
+```text
+r_stress = (4 * Z_req / pi)^(1/3)
+```
+
+Substitute the calculated section modulus:
+
+```text
+r_stress = (4 * 0.13238 / pi)^(1/3)
+```
+
+```text
+r_stress = (0.16855)^(1/3)
+```
+
+```text
+r_stress = 0.5524 in
+```
+
+Therefore:
+
+```text
+r_stress = 0.5524 in
+```
+
+---
+
+## Step 4: Calculate Minimum Diameter
+
+```text
+d_stress = 2 * r_stress
+```
+
+```text
+d_stress = 2 * 0.5524 in
+```
+
+```text
+d_stress = 1.105 in
+```
+
+Therefore:
+
+```text
+d_stress = 1.105 in
+```
+
+---
+
+# 7. Feature A Final Results
+
+| Quantity                        |       Result |
+| ------------------------------- | -----------: |
+| Applied load, F                 |      600 lbf |
+| Pin length, L_A                 |      2.00 in |
+| Maximum bending moment, M_max   |  1,200 lb-in |
+| Allowable stress, sigma_allow   | 9,064.86 psi |
+| Required section modulus, Z_req | 0.13238 in^3 |
+| Minimum radius, r_stress        |    0.5524 in |
+| Minimum diameter, d_stress      |     1.105 in |
+| Support reaction, R_y           |      600 lbf |
+
+### Design Diameter
+
+The theoretical minimum diameter based on bending stress is:
+
+```text
+d_stress = 1.105 in
+```
+
+For the final CAD design, a practical standard diameter should be selected that is equal to or greater than the calculated minimum diameter.
 
 ---
 
 # 8. Reaction Force Transfer to Feature B
 
-The reactions developed at the base of **Feature A** become the applied loads for **Feature B**.
+The reaction forces developed at the base of Feature A become the applied loads for Feature B.
 
 Therefore:
 
 ### Transverse Force
 
-$$
-P_B=R_y
-$$
+```text
+P_B = R_y
+```
 
-$$
-\boxed{
-P_B=600\text{ lbf}
-}
-$$
+```text
+P_B = 600 lbf
+```
 
 ### Applied Moment
 
-$$
-M_B=M_{\max}
-$$
+```text
+M_B = M_max
+```
 
-$$
-\boxed{
-M_B=1,200\text{ lb}\cdot\text{in}
-}
-$$
+```text
+M_B = 1,200 lb-in
+```
 
-Thus, the loading passed from Feature A to Feature B is:
+Therefore, the loads transferred from Feature A to Feature B are:
 
-| Feature B Input         |           Value |
-| ----------------------- | --------------: |
-| Transverse Force, $P_B$ |     **600 lbf** |
-| Moment, $M_B$           | **1,200 lb·in** |
+```text
+P_B = 600 lbf
+```
 
-This establishes the sequential load path:
+```text
+M_B = 1,200 lb-in
+```
 
-$$
-\boxed{
-\text{Applied Load}
-\rightarrow
-\text{Feature A}
-\rightarrow
-\text{Feature B}
-\rightarrow
-\text{Feature C}
-\rightarrow
-\text{Feature D}
-\rightarrow
-\text{Feature E}
-}
-$$
-
-Each feature will be analyzed using the reactions transferred from the preceding feature.
+These values will be used as the starting loads for the **Feature B stress analysis**.
 
 ---
 
-# 9. Feature A — Summary
+# 9. Summary
 
-The Feature A cylindrical support pin was modeled as a solid circular cantilever subjected to a **600 lbf transverse load** at a distance of **2.00 in** from the fixed support.
+Feature A was modeled as a solid circular cantilever pin subjected to a 600 lbf transverse load at a length of 2.00 in.
 
-The resulting maximum bending moment is:
+The maximum bending moment is:
 
-$$
-\boxed{M_{\max}=1,200\text{ lb}\cdot\text{in}}
-$$
+```text
+M_max = 1,200 lb-in
+```
 
-Using an allowable stress of:
+Using an ASTM A36 yield strength of 36,259.43 psi and a Factor of Safety of 4:
 
-$$
-\boxed{\sigma_{\text{allow}}=9,064.86\text{ psi}}
-$$
+```text
+sigma_allow = 9,064.86 psi
+```
 
-the required section modulus is:
+The required section modulus is:
 
-$$
-\boxed{Z_{\text{req}}\approx0.13238\text{ in}^3}
-$$
+```text
+Z_req = 0.13238 in^3
+```
 
-The resulting minimum theoretical dimensions are:
+The resulting minimum pin dimensions based on bending stress are:
 
-$$
-\boxed{r_{\text{stress}}\approx0.5524\text{ in}}
-$$
+```text
+r_stress = 0.5524 in
+```
 
-$$
-\boxed{d_{\text{stress}}\approx1.105\text{ in}}
-$$
+```text
+d_stress = 1.105 in
+```
 
-The resulting reactions are transferred to Feature B for the next stage of the structural analysis.
+The reaction loads transferred to Feature B are:
 
----
+```text
+P_B = 600 lbf
+```
 
-## Next Analysis
+```text
+M_B = 1,200 lb-in
+```
 
-The next step is to use:
+These reaction loads will be used for the next stage of the sequential load-path analysis.
 
-$$
-\boxed{P_B=600\text{ lbf}}
-$$
+```
 
-and
-
-$$
-\boxed{M_B=1,200\text{ lb}\cdot\text{in}}
-$$
-
-as the loading conditions for the **Feature B stress and deflection analysis**.
-
+**Note:** I also changed the math notation to GitHub-friendly plain text such as `sigma_allow`, `r_stress`, `d_stress`, and `a = b/c`, so it will be easier to read and copy into your GitHub portfolio.
+```
