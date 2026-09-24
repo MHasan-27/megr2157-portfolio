@@ -155,7 +155,7 @@ Here is the complete **Feature C Analysis** (Cross Beam / Simply Supported Beam)
 2. Transferred load `P_C = 300 lbf` acts as a concentrated center point load at `x = L_C / 2 = 1.25 in`.
 3. Direct shear stress failure is non-governing per project instructions.
 
-#### (d) Free Body Diagram (FBD)
+#### (d) Free Body Diagram And Calculation (FBD)
 
 
 
@@ -233,7 +233,7 @@ Here is the complete **Feature D Analysis** (Vertical Wall Support / Cantilever 
 2. Point load `P_D = 150 lbf` is applied at free end `x = L_D = 2.00 in`.
 3. Direct shear stress failure is non-governing per prompt instructions.
 
-#### (d) Free Body Diagram (FBD)
+#### (d) Free Body Diagram And Calculation (FBD)
 
 
 
@@ -264,3 +264,60 @@ Re-evaluating bending stress and deflection using nominal thickness `t_D = 0.500
 `delta_D = 0.001324 in <= delta_max = 0.005000 in` (Passes)
 
 **Final Decision:** Use **`t_D = 0.500 in`** (and width `w_D = 1.000 in`) for Feature D.
+
+Here is the complete **Feature E Analysis** (Mounting Flange / Wall Attachment Base) following the sequential load path, formatted using simple plain text for all spatial variables:
+
+---
+
+## 1. Feature E: Stress Analysis (Cantilever Bending)
+
+#### (a) Known Values
+
+* Transferred Load (P_E): 150 lbf
+* Overhang Span Length (L_E): 2.00 in
+* Cross-Section Width (w_E): 1.00 in
+* Allowable Stress (sigma_allow): 9,064.86 psi
+
+#### (b) Unknowns
+
+* Reaction bending moment at wall connection (M_maxE)
+* Required Section Modulus (Z_reqE)
+* Required minimum thickness/height (h_stressE)
+
+#### (c) Assumptions
+
+1. Feature E behaves as a short rectangular cantilever base fixed at the wall anchor interface (`x = 0`).
+2. Transferred force `P_E = 150 lbf` acts at the cantilever tip (`x = L_E = 2.00 in`).
+3. Direct shear stresses and fastener tear-out are neglected per baseline problem constraints.
+
+#### (d) Free Body Diagram And Calculation (FBD)
+
+
+
+## 3. Feature E: Conclusion
+
+Comparing the required minimum dimensions derived from both analyses:
+
+* **Stress Analysis Dimension:** `h_stressE = 0.4456 in`
+* **Stiffness Analysis Dimension:** `h_stiffE = 0.3211 in`
+
+Since `h_stressE > h_stiffE`, **Stress Analysis governs** the dimensioning for Feature E.
+
+To ensure safety and match standard nominal plate stock, the nominal thickness/height for Feature E is selected as **`h_E = 0.500 in`** (1/2 inch plate).
+
+---
+
+### Verification & Double Check
+
+Re-evaluating bending stress and deflection using nominal dimension `h_E = 0.500 in`:
+
+1. **Bending Stress Check (sigma_E):**
+`Z_E = (1.00 * (0.500)^2) / 6 = 0.04167 in^3`
+`sigma_E = 300 / 0.04167 = 7,199.6 psi`
+`sigma_E = 7,199.6 psi <= sigma_allow = 9,064.86 psi` (Passes)
+2. **Deflection Check (delta_E):**
+`I_E = (1.00 * (0.500)^3) / 12 = 0.010417 in^4`
+`delta_E = (150 * (2.00)^3) / (3 * 29007547.53 * 0.010417) = 1200 / 906485.86 = 0.001324 in`
+`delta_E = 0.001324 in <= delta_max = 0.005000 in` (Passes)
+
+**Final Decision:** Use **`h_E = 0.500 in`** (and width `w_E = 1.000 in`) for Feature E.
