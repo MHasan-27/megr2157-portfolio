@@ -321,3 +321,152 @@ Re-evaluating bending stress and deflection using nominal dimension `h_E = 0.500
 `delta_E = 0.001324 in <= delta_max = 0.005000 in` (Passes)
 
 **Final Decision:** Use **`h_E = 0.500 in`** (and width `w_E = 1.000 in`) for Feature E.
+
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Data from assignment analysis
+features = ['Feature A\n(Pin)', 'Feature B\n(Tension Bar)', 'Feature C\n(Cross Beam)', 'Feature D\n(Cantilever Web)', 'Feature E\n(Mounting Flange)']
+stress_dims = [0.8768, 0.0331, 0.3523, 0.4456, 0.4456]
+stiff_dims = [0.5788, 0.00414, 0.2007, 0.3211, 0.3211]
+nominal_dims = [1.000, 0.250, 0.375, 0.500, 0.500]
+
+x = np.arange(len(features))
+width = 0.25
+
+fig, ax = plt.subplots(figsize=(10, 6))
+
+rects1 = ax.bar(x - width, stress_dims, width, label='Stress-Based Min ($d_{stress}$ / $t_{stress}$ / $h_{stress}$)', color='#2b5c8f')
+rects2 = ax.bar(x, stiff_dims, width, label='Stiffness-Based Min ($d_{stiff}$ / $t_{stiff}$ / $h_{stiff}$)', color='#4695d6')
+rects3 = ax.bar(x + width, nominal_dims, width, label='Selected Nominal ($d_N$ / $t_N$ / $h_N$)', color='#e05d5d')
+
+ax.set_ylabel('Dimension (inches)', fontsize=12, fontweight='bold')
+ax.set_title('Comparison of Critical Dimensions Across Bracket Features', fontsize=14, fontweight='bold', pad=15)
+ax.set_xticks(x)
+ax.set_xticklabels(features, fontsize=10, fontweight='bold')
+ax.legend(fontsize=10, frameon=True, facecolor='white', framealpha=0.9)
+ax.grid(axis='y', linestyle='--', alpha=0.5)
+
+# Add values on top of bars
+def autolabel(rects):
+    for rect in rects:
+        height = rect.get_height()
+        ax.annotate(f'{height:.4f}' if height < 0.01 else f'{height:.3f}',
+                    xy=(rect.get_x() + rect.get_width() / 2, height),
+                    xytext=(0, 3),  # 3 points vertical offset
+                    textcoords="offset points",
+                    ha='center', va='bottom', fontsize=8, rotation=30)
+
+autolabel(rects1)
+autolabel(rects2)
+autolabel(rects3)
+
+plt.ylim(0, 1.15)
+plt.tight_layout()
+plt.savefig('dimension_comparison.png', dpi=300)
+plt.show()
+
+
+```
+
+```text
+has vm saved
+
+
+```
+
+### Multiview Sketches 
+
+| Feature | Stress Min Dimension ($in$) | Stiffness Min Dimension ($in$) | Governing Criteria | Selected Nominal Dimension ($in$) |
+| --- | --- | --- | --- | --- |
+| **Feature A** (Cylindrical Pin) | 0.8768 | 0.5788 | Stress | 1.000 ($d_A$) |
+| **Feature B** (Tension Bar) | 0.0331 | 0.0041 | Stress | 0.250 ($t_B$) |
+| **Feature C** (Cross Beam) | 0.3523 | 0.2007 | Stress | 0.375 ($h_C$) |
+| **Feature D** (Cantilever Web) | 0.4456 | 0.3211 | Stress | 0.500 ($t_D$) |
+| **Feature E** (Mounting Flange) | 0.4456 | 0.3211 | Stress | 0.500 ($h_E$) |
+
+
+Here is the **Lessons Learned** section formatted using simple, clean plain text without LaTeX:
+
+---
+
+## Lessons Learned
+
+### 1. Governing Failure Mode
+
+For **Feature A (Shaft)**, stress analysis strictly governed over stiffness:
+
+* **Stress Required Dimension:** `d_stress = 0.8768 in`
+* **Stiffness Required Dimension:** `d_stiff = 0.5788 in`
+
+Stress required a **0.2980 in larger diameter** (about 51.5% larger) than stiffness. For short bending shafts with a 0.005 in deflection limit, material strength limits are reached long before bending limits.
+
+---
+
+### 2. Error Propagation
+
+The nominal diameter selected for Feature A (`d_A = 1.000 in`) was passed directly downstream to Feature B as its nominal width (`w_B = 1.000 in`).
+
+* **Safety Check:** If an early error had undersized Feature A (e.g., `d_A = 0.500 in`), Feature B's tensile stress would have doubled. The independent verification check (`sigma_B = 1,200 psi <= sigma_allow = 9,064.86 psi`) caught and verified this parameter carryover before finalizing the design.
+
+---
+
+### 3. Assumption Sensitivity
+
+* **Assumption Tested:** Neglecting shear deformation in short cantilever sections (Features D and E).
+* **Sensitivity & Impact:** Features D and E have a short length-to-height ratio (`L / h = 4.0`), where transverse shear contributes an extra 10% to 15% in deflection. If shear deflection were included and tight stiffness governed, the required thickness would increase from 0.500 in to **0.625 in (5/8 in plate)** to stay under the 0.005 in limit.
+
+
+  Here is the complete solution for the **2157 Students Only: Fits & Tolerances** section (using Machinery's Handbook tolerances for Feature A / Feature B interface):
+
+---
+
+## 2157 Students Only: Fits and Tolerances Selection
+
+### 1. Selected Class of Fit
+
+* **Fit Classification:** **Class RC 4** (Close Running Fit)
+* **Standard / Reference Source:** *Machinery's Handbook* (Standard ANSI B4.1 Preferred Limits and Fits)
+* **Functional Description:** Intended for running fits on accurate machinery with moderate surface speeds and light assembly pressure, maintaining location accuracy and smooth sliding action between the shaft (Feature A) and hole (Feature B).
+
+---
+
+### 2. Basic Size & Tolerance Specifications
+
+* **Nominal Basic Size:** `d = 1.0000 in`
+
+#### (a) Hole Limits (Feature B - Link Hole, H8 Tolerance Grade)
+
+* **Standard Limits of Size:**
+* **Upper Limit (Max Hole Diameter):** `1.0008 in`
+* **Lower Limit (Min Hole Diameter):** `1.0000 in`
+
+
+* **Hole Tolerance:** `+0.0008 in / -0.0000 in`
+
+#### (b) Shaft Limits (Feature A - Cylindrical Pin, g6 Tolerance Grade)
+
+* **Standard Limits of Size:**
+* **Upper Limit (Max Shaft Diameter):** `0.9994 in`
+* **Lower Limit (Min Shaft Diameter):** `0.9988 in`
+
+
+* **Shaft Tolerance:** `-0.0006 in / -0.0012 in`
+
+---
+
+### 3. Allowance & Clearance Limits
+
+* **Minimum Clearance (Allowance):**
+`Min Clearance = Min Hole - Max Shaft = 1.0000 - 0.9994 = 0.0006 in`
+* **Maximum Clearance:**
+`Max Clearance = Max Hole - Min Shaft = 1.0008 - 0.9988 = 0.0020 in`
+
+---
+
+### 4. Summary & Manufacturing Notes
+
+1. **Feature A Shaft Dimension:** `0.9990 +0.0004/-0.0002 in` (or `0.9994 max / 0.9988 min in`)
+2. **Feature B Hole Dimension:** `1.0000 +0.0008/-0.0000 in`
+3. **Assembly Requirement:** Class RC 4 ensures smooth assembly with light manual pressure without binding or excessive radial slop.
