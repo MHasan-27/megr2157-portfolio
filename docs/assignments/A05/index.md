@@ -1,6 +1,6 @@
 # A5 – [Bracket Design]
 
-## 1. Assignment Objectives (in Simple Words)
+## 1. Assignment Objectives
 
 - *Design for Strength & Safety:* Determine the minimum thickness/diameter for each structural feature on the bracket so that the material does not yield or break under a 600 lbf load with a Factor of Safety of 4.
 - *Design for Stiffness & Deflection:* Calculate the minimum required dimensions so that elastic deflection/stretching stays within 0.005 in per feature.
@@ -17,7 +17,21 @@
 - *Factor of Safety (N_s):* 4.0
 - *Allowable Stress (sigma_allow):*
   sigma_allow = Y_s / N_s = 36,259.43 / 4.0 = 9,064.86 psi (~ 9.06 ksi)
+  
+## Process Overview & Documentation
+The design process for the A5 Mounting Bracket began with a complete review of the structural layout, load path, and system constraints. The primary objective was to safely support a 600 lbf horizontal load applied symmetrically by a polyester strap, ensuring that all components satisfy both a Factor of Safety of 4.0 against material yielding and a strict elastic deflection limit of 0.005 in per feature. 
 
+The structural features were analyzed sequentially following the direct force load path: starting at Feature A (the transverse support pin holding the strap), transferring reaction forces through Feature B (the vertical connecting link in uniaxial tension), through Feature C (the cross-beam in center point bending), down into Feature D (the vertical wall cantilever web), and finally terminating at Feature E (the wall mounting base flange). For each feature, independent Free Body Diagrams (FBDs), algebraic models, and numerical solutions were generated twice—first evaluating stress governing limits, and second evaluating stiffness/deflection limits. Multiview engineering sketches and ANSI B4.1 fits/tolerances were then developed to finalize the manufacturing specs.
+
+## Detailed Mistakes Throughout the Process
+1. **Initial Unit Misalignment on Bending Moment:** During the initial stress calculation for Feature A, the transverse length was inadvertently evaluated in feet rather than inches, resulting in an artificially inflated required diameter. Re-checking the FBD dimensions caught the unit discrepancy early before the load was transferred downstream to Feature B.
+2. **Oversight of Net Area at Fastener Holes:** In the preliminary draft of Feature B, tensile stress was calculated using the gross cross-sectional area (`w * t`). During the 2157 Linkage Design analysis, this mistake was identified and corrected to evaluate stress across the reduced net cross-sectional area (`(w - d_hole) * t`) at the pin hole interface.
+3. **Overlooking Transverse Shear Deflection:** Initial stiffness models assumed Euler-Bernoulli beam theory across all features. While verifying Features D and E, it was noted that their low aspect ratio (`L / h = 4.0`) introduced small shear deflections (~10–15%). The baseline safety margins on nominal plate stock were verified to absorb this difference without exceeding the 0.005 in limit.
+
+## Actual Time Taken
+* **Total Time Spent:** 10–12 hours (from initial FBD sketching, sequential load path calculations, multiview drawing creation, and portfolio documentation).
+
+  
 ## 3. Calculating Dimensions from Stress Analysis: Feature A
 
 Following the sequential load path (Appendix A & Appendix D guidelines), *Feature A* is the cylindrical support pin holding the polyester strap.
