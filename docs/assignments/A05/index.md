@@ -45,7 +45,7 @@ Following the sequential load path (Appendix A & Appendix D guidelines), *Featur
 
 ### (d) Free Body Diagram and Calculation (FBD)
 
-***(Adding Picture of Calculation)
+![Feature A](./Feature%20A.jpg)
 
 
 ### Feature A: Conclusion
@@ -99,7 +99,7 @@ Here is the complete **Feature B Analysis** (Vertical Connecting Link / Tension 
 
 #### (d) Free Body Diagram And Calculation (FBD)
 
-
+![Feature B](./Feature%20B.png)
 
 ## 3. Feature B: Conclusion
 
@@ -157,23 +157,7 @@ Here is the complete **Feature C Analysis** (Cross Beam / Simply Supported Beam)
 
 #### (d) Free Body Diagram And Calculation (FBD)
 
-
-
-## 2. Feature C: Stiffness Analysis (Center Point Deflection)
-
-#### (b) Unknowns
-
-* Required Area Moment of Inertia (I_reqC)
-* Required minimum height/thickness (h_stiffC)
-
-#### (c) Assumptions
-
-1. Feature C experiences mid-span vertical elastic deflection under point load `P_C = 300 lbf`.
-2. Mid-span deflection follows standard simply supported beam elastic curve theory (`delta = (P * L^3) / (48 * E * I)`).
-3. Shear deformations are assumed negligible.
-
-#### (d) Free Body Diagram (FBD)
-
+![Feature C](./Feature%20C.png)
 
 
 ## 3. Feature C: Conclusion
@@ -235,7 +219,7 @@ Here is the complete **Feature D Analysis** (Vertical Wall Support / Cantilever 
 
 #### (d) Free Body Diagram And Calculation (FBD)
 
-
+![Feature D](./Feature%20D.jpg)
 
 ## 3. Feature D: Conclusion
 
@@ -292,7 +276,7 @@ Here is the complete **Feature E Analysis** (Mounting Flange / Wall Attachment B
 
 #### (d) Free Body Diagram And Calculation (FBD)
 
-
+![Feature E](./Feature%20E.jpg)
 
 ## 3. Feature E: Conclusion
 
@@ -322,59 +306,8 @@ Re-evaluating bending stress and deflection using nominal dimension `h_E = 0.500
 
 **Final Decision:** Use **`h_E = 0.500 in`** (and width `w_E = 1.000 in`) for Feature E.
 
-```python
-import matplotlib.pyplot as plt
-import numpy as np
-
-# Data from assignment analysis
-features = ['Feature A\n(Pin)', 'Feature B\n(Tension Bar)', 'Feature C\n(Cross Beam)', 'Feature D\n(Cantilever Web)', 'Feature E\n(Mounting Flange)']
-stress_dims = [0.8768, 0.0331, 0.3523, 0.4456, 0.4456]
-stiff_dims = [0.5788, 0.00414, 0.2007, 0.3211, 0.3211]
-nominal_dims = [1.000, 0.250, 0.375, 0.500, 0.500]
-
-x = np.arange(len(features))
-width = 0.25
-
-fig, ax = plt.subplots(figsize=(10, 6))
-
-rects1 = ax.bar(x - width, stress_dims, width, label='Stress-Based Min ($d_{stress}$ / $t_{stress}$ / $h_{stress}$)', color='#2b5c8f')
-rects2 = ax.bar(x, stiff_dims, width, label='Stiffness-Based Min ($d_{stiff}$ / $t_{stiff}$ / $h_{stiff}$)', color='#4695d6')
-rects3 = ax.bar(x + width, nominal_dims, width, label='Selected Nominal ($d_N$ / $t_N$ / $h_N$)', color='#e05d5d')
-
-ax.set_ylabel('Dimension (inches)', fontsize=12, fontweight='bold')
-ax.set_title('Comparison of Critical Dimensions Across Bracket Features', fontsize=14, fontweight='bold', pad=15)
-ax.set_xticks(x)
-ax.set_xticklabels(features, fontsize=10, fontweight='bold')
-ax.legend(fontsize=10, frameon=True, facecolor='white', framealpha=0.9)
-ax.grid(axis='y', linestyle='--', alpha=0.5)
-
-# Add values on top of bars
-def autolabel(rects):
-    for rect in rects:
-        height = rect.get_height()
-        ax.annotate(f'{height:.4f}' if height < 0.01 else f'{height:.3f}',
-                    xy=(rect.get_x() + rect.get_width() / 2, height),
-                    xytext=(0, 3),  # 3 points vertical offset
-                    textcoords="offset points",
-                    ha='center', va='bottom', fontsize=8, rotation=30)
-
-autolabel(rects1)
-autolabel(rects2)
-autolabel(rects3)
-
-plt.ylim(0, 1.15)
-plt.tight_layout()
-plt.savefig('dimension_comparison.png', dpi=300)
-plt.show()
 
 
-```
-
-```text
-has vm saved
-
-
-```
 
 ### Multiview Sketches 
 
@@ -386,6 +319,8 @@ has vm saved
 | **Feature D** (Cantilever Web) | 0.4456 | 0.3211 | Stress | 0.500 ($t_D$) |
 | **Feature E** (Mounting Flange) | 0.4456 | 0.3211 | Stress | 0.500 ($h_E$) |
 
+![Drawing Stress](./Drawing%20Stress.png)
+![Drawing Stiffness](./Drawing%20Stiffness.png)
 
 Here is the **Lessons Learned** section formatted using simple, clean plain text without LaTeX:
 
@@ -424,7 +359,9 @@ The nominal diameter selected for Feature A (`d_A = 1.000 in`) was passed direct
 
 ## 2157 Students Only: Fits and Tolerances Selection
 
-### 1. Selected Class of Fit
+### 1. Design and Selected Class of Fit
+
+![2157 students only Calculation](./2157%20students%20only%20Calculation.jpg)
 
 * **Fit Classification:** **Class RC 4** (Close Running Fit)
 * **Standard / Reference Source:** *Machinery's Handbook* (Standard ANSI B4.1 Preferred Limits and Fits)
@@ -470,3 +407,7 @@ The nominal diameter selected for Feature A (`d_A = 1.000 in`) was passed direct
 1. **Feature A Shaft Dimension:** `0.9990 +0.0004/-0.0002 in` (or `0.9994 max / 0.9988 min in`)
 2. **Feature B Hole Dimension:** `1.0000 +0.0008/-0.0000 in`
 3. **Assembly Requirement:** Class RC 4 ensures smooth assembly with light manual pressure without binding or excessive radial slop.
+
+### Resource 
+
+   [Download Part A.SLDPRT](https://raw.githubusercontent.com/MHasan-27/megr2157-portfolio/main/docs/assignments/A05/Part%20A.SLDPRT)
