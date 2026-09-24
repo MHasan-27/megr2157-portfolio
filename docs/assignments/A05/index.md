@@ -72,7 +72,7 @@ Here is the complete **Feature B Analysis** (Vertical Connecting Link / Tension 
 * **Elastic Modulus (E):** 29,007,547.53 psi
 * **Factor of Safety (N_s):** 4.0
 * **Allowable Stress (sigma_allow):**
-sigma_allow = sigma_y / N_s = 36259.43 / 4.0 = 9064.86 psi
+`sigma_allow = sigma_y / N_s = 36259.43 / 4.0 = 9064.86 psi`
 * **Maximum Deflection (delta_max):** 0.005 in
 
 ---
