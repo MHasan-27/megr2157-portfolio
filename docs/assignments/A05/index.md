@@ -204,3 +204,63 @@ Re-evaluating bending stress and deflection using nominal height `h_C = 0.375 in
 
 **Final Decision:** Use **`h_C = 0.375 in`** (and width `w_C = 1.000 in`) for Feature C.
 
+Here is the complete **Feature D Analysis** (Vertical Wall Support / Cantilever Web) following the sequential load path, formatted using simple plain text for all spatial variables:
+
+---
+
+### Baseline Transferred Parameters from Feature C
+
+* **Transferred Reaction Force (P_D):** 150 lbf (symmetrical support reaction from Feature C, `P_D = R_1C = 150 lbf`)
+* 
+## 1. Feature D: Stress Analysis (Cantilever Bending)
+
+#### (a) Known Values
+
+* Transferred Transverse Load (P_D): 150 lbf
+* Feature Length (L_D): 2.00 in
+* Feature Width/Depth (w_D): 1.00 in
+* Allowable Stress (sigma_allow): 9,064.86 psi
+
+#### (b) Unknowns
+
+* Support reaction force (R_yD) and reaction bending moment (M_maxD)
+* Required Section Modulus (Z_reqD)
+* Required minimum thickness (t_stressD)
+
+#### (c) Assumptions
+
+1. Feature D acts as a vertical rectangular cantilever beam fixed at `x = 0` (wall junction).
+2. Point load `P_D = 150 lbf` is applied at free end `x = L_D = 2.00 in`.
+3. Direct shear stress failure is non-governing per prompt instructions.
+
+#### (d) Free Body Diagram (FBD)
+
+
+
+## 3. Feature D: Conclusion
+
+Comparing the required minimum dimensions derived from both analyses:
+
+* **Stress Analysis Dimension:** `t_stressD = 0.4456 in`
+* **Stiffness Analysis Dimension:** `t_stiffD = 0.3211 in`
+
+Since `t_stressD > t_stiffD`, **Stress Analysis governs** the dimensioning for Feature D.
+
+To ensure safety and match standard nominal plate stock, the nominal thickness for Feature D is selected as **`t_D = 0.500 in`** (1/2 inch plate).
+
+---
+
+### Verification & Double Check
+
+Re-evaluating bending stress and deflection using nominal thickness `t_D = 0.500 in`:
+
+1. **Bending Stress Check (sigma_D):**
+`Z_D = (1.00 * (0.500)^2) / 6 = 0.04167 in^3`
+`sigma_D = 300 / 0.04167 = 7,199.6 psi`
+`sigma_D = 7,199.6 psi <= sigma_allow = 9,064.86 psi` (Passes)
+2. **Deflection Check (delta_D):**
+`I_D = (1.00 * (0.500)^3) / 12 = 0.010417 in^4`
+`delta_D = (150 * (2.00)^3) / (3 * 29007547.53 * 0.010417) = 1200 / 906485.86 = 0.001324 in`
+`delta_D = 0.001324 in <= delta_max = 0.005000 in` (Passes)
+
+**Final Decision:** Use **`t_D = 0.500 in`** (and width `w_D = 1.000 in`) for Feature D.
