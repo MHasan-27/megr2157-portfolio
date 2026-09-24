@@ -25,6 +25,7 @@ Following the sequential load path (Appendix A & Appendix D guidelines), *Featur
 ### (a) Knowns
 
 - Applied Load (F): 600 lbf transverse point load at free end
+- P = F/2 = 300 lbf
 - Pin Length (L_A): 2.00 in (assumed based on strap width)
 - Yield Strength (Y_s): 36,259.43 psi
 - Factor of Safety (N_s): 4.0
@@ -44,41 +45,21 @@ Following the sequential load path (Appendix A & Appendix D guidelines), *Featur
 
 ### (d) Free Body Diagram (FBD)
 
-- *At Support (x = 0):* Vertical reaction force R_y = 600 lbf (pointing upward) and reaction bending moment M_max = F * L_A = 1,200 lb*in (counter-clockwise).
-- *At Free End (x = 2.00 in):* Downward force F = 600 lbf applied by the strap.
+***(Adding Picture of Calculation)
 
-### (e) Algebraic Model
 
-Maximum bending moment occurs at the fixed support (x = 0):
-M_max = F * L_A
+### Feature A: Conclusion
 
-Bending stress formula:
-sigma = M_max / Z <= sigma_allow
+Comparing the required minimum dimensions derived from both analyses:
 
-For a solid circular cross-section:
-Z = (pi * r^3) / 4 = (pi * d^3) / 32
+* **Stress Analysis Dimension:** d_stress= 0.8768  in
+* **Stiffness Analysis Dimension:** d_stiff = 0.5788 in
 
-Solving algebraically for required Section Modulus (Z_req) and minimum radius (r_stress):
-Z_req = M_max / sigma_allow = (F * L_A) / sigma_allow
-r_stress = ((4 * Z_req) / pi)^(1/3) = ((4 * F * L_A) / (pi * sigma_allow))^(1/3)
-d_stress = 2 * r_stress
+Since d_stress > d_stiff, **Stress Analysis governs** the dimensioning for Feature A.
 
-### (f) Numerical Solution
+To ensure safety, ease of manufacturing, and alignment with standard stock sizes, the nominal dimension for Feature A is rounded up to **d_A = 1.000  in**.
 
-1. *Calculate Maximum Bending Moment:*
-   M_max = (600 lbf) * (2.00 in) = 1,200 lb*in
+---
 
-2. *Calculate Required Section Modulus (Z_req):*
-   Z_req = (1,200 lb*in) / (9,064.86 psi) ~ 0.13238 in^3
 
-3. *Calculate Minimum Radius (r_stress):*
-   r_stress = ((4 * 0.13238) / pi)^(1/3) = (0.16855)^(1/3) ~ 0.5524 in
 
-4. *Calculate Minimum Diameter (d_stress):*
-   d_stress = 2 * 0.5524 in = 1.105 in
-
-## Reaction Force Transfer to Feature B
-
-The reaction forces at the base of Feature A become the applied loads for Feature B:
-- *Transverse Force (P_B):* R_y = 600 lbf
-- *Moment (M_B):* 1,200 lb*in
