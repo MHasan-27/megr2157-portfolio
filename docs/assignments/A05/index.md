@@ -437,6 +437,7 @@ Here is the **Resources & References** section formatted using simple plain text
 1. **Machinery's Handbook (31st Edition)**
 * *Section / Pages:* Pages 186–194 (Mechanics, Energy, Deflection, and Beam Formulae)
 * *Section / Pages:* ANSI B4.1 Preferred Limits and Fits (Running and Sliding Fits — Class RC 4 Table, H8/f7 Limits)
+* *AI used to format Markdown, embed images, and link CAD files.
 
 
 2. **Standard Material Specifications & Properties**
