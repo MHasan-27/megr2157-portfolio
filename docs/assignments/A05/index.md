@@ -408,6 +408,33 @@ The nominal diameter selected for Feature A (`d_A = 1.000 in`) was passed direct
 2. **Feature B Hole Dimension:** `1.0000 +0.0008/-0.0000 in`
 3. **Assembly Requirement:** Class RC 4 ensures smooth assembly with light manual pressure without binding or excessive radial slop.
 
-### Resource 
+### Fits & Tolerances Reference Charts
 
-   [Download Part A.SLDPRT](https://raw.githubusercontent.com/MHasan-27/megr2157-portfolio/main/docs/assignments/A05/Part%20A.SLDPRT)
+![Clearance Types](./clearencetype.jpeg)
+![Tolerance Grades](./tolerance_grades.jpg)
+
+
+Here is the **Resources & References** section formatted using simple plain text without LaTeX:
+
+---
+
+## Resources & References
+
+1. **Machinery's Handbook (31st Edition)**
+* *Section / Pages:* Pages 186–194 (Mechanics, Energy, Deflection, and Beam Formulae)
+* *Section / Pages:* ANSI B4.1 Preferred Limits and Fits (Running and Sliding Fits — Class RC 4 Table, H8/f7 Limits)
+
+
+2. **Standard Material Specifications & Properties**
+* *ASTM A36 Structural Steel:*
+* Yield Strength (sigma_y): 36,259.43 psi (250 MPa)
+* Elastic Modulus (E): 29,007,547.53 psi (200 GPa)
+
+
+
+
+3. **Course Assignment Guidelines & Equations**
+* [UNC Charlotte MEGR 2157: A5 Bracket Design Assignment Guidelines](https://instructure.charlotte.edu/courses/272052/assignments/2902672?module_item_id=7950961&utm_source=gemini)
+* Appendix A: Bending Stress and Beam Flexure Models (`M = (W * L) / 2`, `Z = I / c`)
+* Appendix D: Cantilever and Simply Supported Beam Deflection Equations (`delta = (P * L^3) / (3 * E * I)`, `delta = (P * L^3) / (48 * E * I)`)
+*  [Download Part A.SLDPRT](https://raw.githubusercontent.com/MHasan-27/megr2157-portfolio/main/docs/assignments/A05/Part%20A.SLDPRT)
