@@ -127,5 +127,80 @@ Re-evaluating stress and deflection using nominal thickness `t_B = 0.250 in`:
 
 **Final Decision:** Use **`t_B = 0.250 in`** (and width `w_B = 1.000 in`) for Feature B.
 
+Here is the complete **Feature C Analysis** (Cross Beam / Simply Supported Beam) following the sequential load path, formatted using simple plain text for all spatial variables:
 
+---
+
+---
+
+## 1. Feature C: Stress Analysis (Center Point Load Bending)
+
+#### (a) Known Values
+
+* Transferred Center Load (P_C): 300 lbf
+* Beam Span Length (L_C): 2.50 in
+* Cross-Section Width (w_C): 1.00 in
+* Allowable Stress (sigma_allow): 9,064.86 psi
+
+#### (b) Unknowns
+
+* End support reaction forces (R_1C, R_2C)
+* Maximum mid-span bending moment (M_maxC)
+* Required Section Modulus (Z_reqC)
+* Required minimum height/thickness (h_stressC)
+
+#### (c) Assumptions
+
+1. Feature C behaves as a simply supported rectangular beam with supports at `x = 0` and `x = L_C`.
+2. Transferred load `P_C = 300 lbf` acts as a concentrated center point load at `x = L_C / 2 = 1.25 in`.
+3. Direct shear stress failure is non-governing per project instructions.
+
+#### (d) Free Body Diagram (FBD)
+
+
+
+## 2. Feature C: Stiffness Analysis (Center Point Deflection)
+
+#### (b) Unknowns
+
+* Required Area Moment of Inertia (I_reqC)
+* Required minimum height/thickness (h_stiffC)
+
+#### (c) Assumptions
+
+1. Feature C experiences mid-span vertical elastic deflection under point load `P_C = 300 lbf`.
+2. Mid-span deflection follows standard simply supported beam elastic curve theory (`delta = (P * L^3) / (48 * E * I)`).
+3. Shear deformations are assumed negligible.
+
+#### (d) Free Body Diagram (FBD)
+
+
+
+## 3. Feature C: Conclusion
+
+Comparing the required minimum dimensions derived from both analyses:
+
+* **Stress Analysis Dimension:** `h_stressC = 0.3523 in`
+* **Stiffness Analysis Dimension:** `h_stiffC = 0.2007 in`
+
+Since `h_stressC > h_stiffC`, **Stress Analysis governs** the dimensioning for Feature C.
+
+To align with standard nominal plate stock sizes, the nominal thickness/height for Feature C is selected as **`h_C = 0.375 in`** (3/8 inch plate).
+
+---
+
+### Verification & Double Check
+
+Re-evaluating bending stress and deflection using nominal height `h_C = 0.375 in`:
+
+1. **Bending Stress Check (sigma_C):**
+`Z_C = (1.00 * (0.375)^2) / 6 = 0.02344 in^3`
+`sigma_C = 187.5 / 0.02344 = 7,999.15 psi`
+`sigma_C = 7,999.15 psi <= sigma_allow = 9,064.86 psi` (Passes)
+2. **Deflection Check (delta_C):**
+`I_C = (1.00 * (0.375)^3) / 12 = 0.004395 in^4`
+`delta_C = (300 * (2.50)^3) / (48 * 29007547.53 * 0.004395) = 4687.5 / 6119339.46 = 0.000766 in`
+`delta_C = 0.000766 in <= delta_max = 0.005000 in` (Passes)
+
+**Final Decision:** Use **`h_C = 0.375 in`** (and width `w_C = 1.000 in`) for Feature C.
 
