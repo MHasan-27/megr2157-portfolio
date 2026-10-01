@@ -110,7 +110,7 @@ Rather than overriding the model with a rounded nominal value, `"d_stress_A"` ($
 
 ### Tolerancing & Manufacturing Justification
 - **Tighter Class (`X.XXX ± .005`):** Applied to the T-slot sliding channel. Because this surface forms a precision sliding fit over the rigid beam, tight control over dimensions prevents joint backlash, jamming, and uneven wear.
-- **Looser Class (`X.X ± .02`):** Applied to outer structural fillets and non-mating plate lengths. These surfaces do not engage with mating parts.
+- **Looser Class (`X.XX ± .01`):** Applied to outer structural fillets and non-mating plate lengths. These surfaces do not engage with mating parts.
 - **Cost & Feasibility Impact:** Defaulting to tight tolerances across non-critical dimensions forces machinists to use slower feed rates, finer tooling passes, and rigorous CMM inspection routines, significantly increasing manufacturing costs and scrap rates without providing functional benefit.
 
 ### Time Log
