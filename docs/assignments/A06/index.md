@@ -106,7 +106,7 @@ Feature A (Pin Diameter d_A) was directly driven by the maximum bending stress e
 In SolidWorks Equation Manager, this was bound as:
 `"d_stress_A" = ((32 * "P" * "L_A") / (pi * "sigma_allow"))^(1/3)`
 
-Rather than overriding the model with a rounded nominal value, `"d_stress_A"` (0.8768 in) directly forms the geometry of Feature A. When allowable stress sigma_{allow} or load $P$ changes, SolidWorks re-evaluates `"d_stress_A"`, and dependent features across the feature tree update automatically.
+Rather than overriding the model with a rounded nominal value, `"d_stress_A"` (0.8768 in) directly forms the geometry of Feature A. When allowable stress sigma_allow or load P changes, SolidWorks re-evaluates `"d_stress_A"`, and dependent features across the feature tree update automatically.
 
 ### Tolerancing & Manufacturing Justification
 - **Tighter Class (`X.XXX ± .005`):** Applied to the T-slot sliding channel. Because this surface forms a precision sliding fit over the rigid beam, tight control over dimensions prevents joint backlash, jamming, and uneven wear.
