@@ -101,7 +101,7 @@ The T-slot sliding interface over the rigid beam was dimensioned using the tight
 ### Analytical Driving Equation
 Feature A (Pin Diameter d_A) was directly driven by the maximum bending stress equation for a circular cantilever pin:
 
-$$\sigma = \frac{M c}{I} = \frac{32 P L_A}{\pi d_A^3} \implies d_A = \left( \frac{32 \cdot P \cdot L_A}{\pi \cdot \sigma_{allow}} \right)^{1/3}$$
+`sigma = M*c/I = (32*P*L_A)/(pi*d_A^3) => d_A = ((32*P*L_A)/(pi*sigma_allow))^(1/3)`
 
 In SolidWorks Equation Manager, this was bound as:
 `"d_stress_A" = ((32 * "P" * "L_A") / (pi * "sigma_allow"))^(1/3)`
