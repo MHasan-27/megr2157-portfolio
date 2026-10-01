@@ -1,17 +1,17 @@
 # A6: Bracket Drawing (Drawings Part 1)
 
 ## Download CAD & Drawing Files
-- **Bracket Solid Model:** [A6 Bracket Drawing.SLDPRT](https://github.com/MHasan-27/megr2157-portfolio/raw/main/docs/assignments/A06/A6%20Bracket%20Drawing.SLDPRT)
-- **Bracket Engineering Drawing:** [A6 Bracket Drawing.SLDDRW](https://github.com/MHasan-27/megr2157-portfolio/raw/main/docs/assignments/A06/A6%20Bracket%20Drawing.SLDDRW)
-- **Link Solid Model (2157 Only):** [Link.SLDPRT](https://github.com/MHasan-27/megr2157-portfolio/raw/main/docs/assignments/A06/Link.SLDPRT)
-- **Link Engineering Drawing (2157 Only):** [Link.SLDDRW](https://github.com/MHasan-27/megr2157-portfolio/raw/main/docs/assignments/A06/Link.SLDDRW)
+- **Bracket Solid Model:** [A6 Bracket Drawing.SLDPRT](https://github.com/MHasan-27/megr2157-portfolio/blob/main/docs/assignments/A06/A6%20Bracket%20Drawing.SLDPRT)
+- **Bracket Engineering Drawing:** [A6 Bracket Drawing.SLDDRW](https://github.com/MHasan-27/megr2157-portfolio/blob/main/docs/assignments/A06/A6%20Bracket%20Drawing.SLDDRW)
+- **Link Solid Model (2157 Only):** [Link.SLDPRT](https://github.com/MHasan-27/megr2157-portfolio/blob/main/docs/assignments/A06/Link.SLDPRT)
+- **Link Engineering Drawing (2157 Only):** [Link.SLDDRW](https://github.com/MHasan-27/megr2157-portfolio/blob/main/docs/assignments/A06/Link.SLDDRW)
 
 ---
 
 ## 1. Parametric Design
 
 ### Global Variables & Equations Table
-To make the CAD model fully dynamic, feature dimensions were tied to global variables driven by analytical stress and stiffness equations calculated in Assignment 5.
+To make the CAD model fully dynamic and driven purely by analytical failure criteria, every feature dimension is parametrically tied to its exact calculated **stress dimension** from Assignment 5 rather than rounded nominal stock sizes.
 
 ![SolidWorks Equations and Global Variables](Equation%20List%20and%20Global%20Variable.png)
 
@@ -25,46 +25,53 @@ To make the CAD model fully dynamic, feature dimensions were tied to global vari
 | `"sigma_allow"`| `= "Ys" / "Ns"` | `9064.86` | Allowable Stress [psi] |
 | `"delta_max"` | `= 0.005` | `0.005` | Maximum Deflection Limit [in] |
 | `"L_A"` | `= 2.00` | `2.00` | Feature A Pin Length [in] |
-| `"d_stress_A"` | `= ((32 * "P" * "L_A") / (pi * "sigma_allow"))^(1/3)` | `0.8768` | Min Bending Stress Diameter [in] |
-| `"d_stiff_A"` | `= ((64 * "P" * ("L_A"^3)) / (3 * pi * "E" * "delta_max"))^(1/4)` | `0.5788` | Min Stiffness Diameter [in] |
-| `"d_A"` | `= 1.000` | `1.000` | Selected Nominal Diameter [in] |
-| `"w_B"` | `= "d_A"` | `1.000` | Feature B Width (Tied to Pin Dia) [in] |
-| `"t_B"` | `= 0.250` | `0.250` | Feature B Selected Thickness [in] |
-| `"h_C"` | `= 0.375` | `0.375` | Feature C Selected Height [in] |
-| `"t_D"` | `= 0.500` | `0.500` | Feature D Selected Thickness [in] |
-| `"h_E"` | `= 0.500` | `0.500` | Feature E Selected Thickness [in] |
+| `"d_stress_A"` | `= ((32 * "P" * "L_A") / (pi * "sigma_allow"))^(1/3)` | `0.8768` | Feature A Pin Stress Diameter [in] |
+| `"w_B"` | `= "d_stress_A"` | `0.8768` | Feature B Width (Tied to Pin Stress Dia) [in] |
+| `"L_B"` | `= 2.00` | `2.00` | Feature B Link Length [in] |
+| `"t_stress_B"` | `= "P" / ("w_B" * "sigma_allow")` | `0.0378` | Feature B Min Stress Thickness [in] |
+| `"L_C"` | `= 2.50` | `2.50` | Feature C Beam Span Length [in] |
+| `"w_C"` | `= "d_stress_A"` | `0.8768` | Feature C Beam Cross-Section Width [in] |
+| `"h_stress_C"` | `= ((1.5 * "P" * "L_C") / ("w_C" * "sigma_allow"))^(1/2)` | `0.3764` | Feature C Min Bending Stress Height [in] |
+| `"P_D"` | `= "P" / 2` | `150.00` | Feature D Reaction Load from Beam [lbf] |
+| `"L_D"` | `= 2.00` | `2.00` | Feature D Web Cantilever Length [in] |
+| `"w_D"` | `= "d_stress_A"` | `0.8768` | Feature D Web Width [in] |
+| `"t_stress_D"` | `= ((6 * "P_D" * "L_D") / ("w_D" * "sigma_allow"))^(1/2)` | `0.4759` | Feature D Min Bending Stress Thickness [in] |
+| `"P_E"` | `= "P_D"` | `150.00` | Feature E Transferred Flange Load [lbf] |
+| `"L_E"` | `= 2.00` | `2.00` | Feature E Flange Overhang Span [in] |
+| `"w_E"` | `= "d_stress_A"` | `0.8768` | Feature E Flange Width [in] |
+| `"h_stress_E"` | `= ((6 * "P_E" * "L_E") / ("w_E" * "sigma_allow"))^(1/2)` | `0.4759` | Feature E Min Bending Stress Thickness [in] |
 
 ---
 
 ### Step-by-Step Modeling Process
 
 #### Step 1: Feature A – Transverse Support Pin
-Created the base cylinder driven by parameter `"d_A"`.
+Created the base cylindrical pin driven directly by stress parameter `"d_stress_A"` ($0.8768\text{ in}$).
 
 ![Step 1 - Modeling Feature A](Step%201.png)
 
 #### Step 2: Feature B – Vertical Connecting Link
-Extruded the vertical connecting link, parameterizing the width directly to `"w_B"` (equal to `"d_A"`).
+Extruded the vertical connecting link, parameterizing its width directly to `"w_B"` ($0.8768\text{ in}$) and thickness to `"t_stress_B"` ($0.0378\text{ in}$).
 
 ![Step 2 - Modeling Feature B](Step%202.png)
 
 #### Step 3: Feature C – Simply Supported Cross-Beam
-Added the central horizontal cross-beam, setting its depth/height equal to `"h_C"`.
+Constructed the horizontal cross-beam, setting its height equal to `"h_stress_C"` ($0.3764\text{ in}$).
 
 ![Step 3 - Modeling Feature C](Step%203.png)
 
 #### Step 4: Feature D – Vertical Cantilever Web
-Extruded the vertical web support using parameter `"t_D"`.
+Extruded the vertical web support using stress thickness parameter `"t_stress_D"` ($0.4759\text{ in}$).
 
 ![Step 4 - Modeling Feature D](Step%204.png)
 
 #### Step 5: Feature E – Mounting Base Flange
-Constructed the base attachment flange using parameter `"h_E"`.
+Constructed the base attachment flange using stress height parameter `"h_stress_E"` ($0.4759\text{ in}$).
 
 ![Step 5 - Modeling Feature E](Step%205.png)
 
 #### Step 6: Complete Bracket & Parametric Validation
-Final bracket geometry rebuilds dynamically whenever global load or allowable stress variables are adjusted.
+Final bracket geometry rebuilds dynamically based on stress calculations whenever global load or allowable stress variables are updated.
 
 ![Step 6 - Bracket Completion](Step%206.png)
 ![Step 6.1 - Final Solid Model View](Step%206.1.png)
@@ -99,7 +106,7 @@ $$\sigma = \frac{M c}{I} = \frac{32 P L_A}{\pi d_A^3} \implies d_A = \sqrt[3]{\f
 In SolidWorks Equation Manager, this was bound as:
 `"d_stress_A" = ((32 * "P" * "L_A") / (pi * "sigma_allow"))^(1/3)`
 
-When allowable stress $\sigma_{allow}$ or load $P$ changes, SolidWorks re-evaluates `"d_stress_A"`. Dependent geometric features—such as Feature B width `"w_B"`—automatically scale and rebuild without manual intervention.
+Rather than overriding the model with a rounded nominal value, `"d_stress_A"` ($0.8768\text{ in}$) directly forms the geometry of Feature A. When allowable stress $\sigma_{allow}$ or load $P$ changes, SolidWorks re-evaluates `"d_stress_A"`, and dependent features across the feature tree update automatically.
 
 ### Tolerancing & Manufacturing Justification
 - **Tighter Class (`X.XXX ± .005`):** Applied to the T-slot sliding channel. Because this surface forms a precision sliding fit over the rigid beam, tight control over dimensions prevents joint backlash, jamming, and uneven wear.
@@ -118,7 +125,7 @@ When allowable stress $\sigma_{allow}$ or load $P$ changes, SolidWorks re-evalua
 ## 4. 2157 Students Only (20%) – Connecting Link Design
 
 ### Parametric Link Equations
-A connecting link was modeled to attach to the bracket's Feature A pin interface. The hole diameter is parametrically bound to the pin diameter `$d_A$` with clearance.
+A connecting link was modeled to attach to the bracket's Feature A pin interface ($d_A = d_{stress\_A} = 0.8768\text{ in}$). The hole diameter and net width are parametrically driven by stress calculations.
 
 ![Link Equations and Global Variables](Link%20Global%20Variable%20and%20Equation.png)
 
@@ -129,13 +136,12 @@ A connecting link was modeled to attach to the bracket's Feature A pin interface
 | `"E"` | `= 29007547.53` | `29007547.53` | Elastic Modulus [psi] |
 | `"w_link"` | `= 1.50` | `1.50` | Link Overall Width [in] |
 | `"L_link"` | `= 3.00` | `3.00` | Total Link Length [in] |
-| `"d_hole"` | `= 1.00` | `1.00` | Nominal Pin Hole Diameter [in] |
+| `"d_hole"` | `= "d_stress_A"` | `0.8768` | Pin Hole Diameter (Driven by Feature A Stress Dim) [in] |
 | `"center_dist"`| `= 2.00` | `2.00` | Center-to-Center Distance [in] |
 | `"A_net_req"` | `= "P" / "sigma_allow"` | `0.03309` | Required Net Area [in^2] |
-| `"w_net"` | `= "w_link" - "d_hole"` | `0.50` | Net Width Across Hole [in] |
-| `"t_stress"` | `= "A_net_req" / "w_net"` | `0.06618` | Minimum Stress Thickness [in] |
-| `"t_nominal"` | `= 0.250` | `0.250` | Selected Plate Thickness [in] |
-| `"delta_act"` | `= ("P" * "L_link") / ("A_net_act" * "E")` | `0.000248` | Actual Extension [in] ($\le 0.005\text{ in}$) |
+| `"w_net"` | `= "w_link" - "d_hole"` | `0.6232` | Net Width Across Hole Section [in] |
+| `"t_stress"` | `= "A_net_req" / "w_net"` | `0.0531` | Minimum Calculated Stress Thickness [in] |
+| `"delta_act"` | `= ("P" * "L_link") / (("w_net" * "t_stress") * "E")` | `0.000938` | Actual Extension [in] ($\le 0.005\text{ in}$) |
 
 ### Link CAD Model & Isometric View
 
