@@ -46,7 +46,7 @@ To make the CAD model fully dynamic and driven purely by analytical failure crit
 ### Step-by-Step Modeling Process
 
 #### Step 1: Sketch Feature B Profile
-Started the modeling sequence with Feature B to establish a simple, clean design path. Sketched the vertical link cross-section bound to width parameter `"w_B"` ($0.8768\text{ in}$).
+Started the modeling sequence with Feature B to establish a simple, clean design path. Sketched the vertical link cross-section bound to width parameter `"w_B"` ($0.8768 in).
 
 ![Step 1 - Modeling Feature B Sketch](Step%201.png)
 
@@ -56,22 +56,22 @@ Extruded the Feature B sketch to the calculated minimum stress thickness using p
 ![Step 2 - Extruding Feature B](Step%202.png)
 
 #### Step 3: Sketch Feature A
-Sketched the Feature A cylindrical pin profile directly onto the face of Feature B, referencing diameter parameter `"d_stress_A"` ($0.8768\text{ in}$).
+Sketched the Feature A cylindrical pin profile directly onto the face of Feature B, referencing diameter parameter `"d_stress_A"` (0.8768 in).
 
 ![Step 3 - Sketching Feature A](Step%203.png)
 
 #### Step 4: Extrude Feature A
-Extruded Feature A outward by the full pin length parameter `"L_A"` ($2.00\text{ in}$).
+Extruded Feature A outward by the full pin length parameter `"L_A"` ($2.00 in).
 
 ![Step 4 - Extruding Feature A Pin](Step%204.png)
 
 #### Step 5: Extrude Block for Features C, D, and E
-Constructed a solid base block encompassing the outer envelope dimensions for Features C, D, and E, then extruded the block across length `"L_D"` ($2.00\text{ in}$).
+Constructed a solid base block encompassing the outer envelope dimensions for Features C, D, and E, then extruded the block across length `"L_D"` ($2.00 in).
 
 ![Step 5 - Extruding Base Block for Features C, D, E](Step%205.png)
 
 #### Step 6: Sketch & Cut-Extrude Final Profile
-Sketched the exact cutout profiles for Features C, D, and E using parameters `"h_stress_C"` ($0.3764\text{ in}$), `"t_stress_D"` ($0.4759\text{ in}$), and `"h_stress_E"` ($0.4759\text{ in}$), then performed a Cut-Extrude to remove excess material and achieve the final bracket geometry.
+Sketched the exact cutout profiles for Features C, D, and E using parameters `"h_stress_C"` ($0.3764\text{ in}$), `"t_stress_D"` ($0.4759 in), and `"h_stress_E"` ($0.4759 in), then performed a Cut-Extrude to remove excess material and achieve the final bracket geometry.
 
 ![Step 6 - Cut-Extrude Features C, D, E](Step%206.png)
 ![Step 6.1 - Final Solid Model View](Step%206.1.png)
@@ -101,12 +101,12 @@ The T-slot sliding interface over the rigid beam was dimensioned using the tight
 ### Analytical Driving Equation
 Feature A (Pin Diameter $d_A$) was directly driven by the maximum bending stress equation for a circular cantilever pin:
 
-$$\sigma = \frac{M c}{I} = \frac{32 P L_A}{\pi d_A^3} \implies d_A = \sqrt[3]{\frac{32 \cdot P \cdot L_A}{\pi \cdot \sigma_{allow}}}$$
+$$\sigma = \frac{M c}{I} = \frac{32 P L_A}{\pi d_A^3} \implies d_A = \left( \frac{32 \cdot P \cdot L_A}{\pi \cdot \sigma_{allow}} \right)^{1/3}$$
 
 In SolidWorks Equation Manager, this was bound as:
 `"d_stress_A" = ((32 * "P" * "L_A") / (pi * "sigma_allow"))^(1/3)`
 
-Rather than overriding the model with a rounded nominal value, `"d_stress_A"` ($0.8768\text{ in}$) directly forms the geometry of Feature A. When allowable stress $\sigma_{allow}$ or load $P$ changes, SolidWorks re-evaluates `"d_stress_A"`, and dependent features across the feature tree update automatically.
+Rather than overriding the model with a rounded nominal value, `"d_stress_A"` ($0.8768 in) directly forms the geometry of Feature A. When allowable stress sigma_{allow} or load $P$ changes, SolidWorks re-evaluates `"d_stress_A"`, and dependent features across the feature tree update automatically.
 
 ### Tolerancing & Manufacturing Justification
 - **Tighter Class (`X.XXX ± .005`):** Applied to the T-slot sliding channel. Because this surface forms a precision sliding fit over the rigid beam, tight control over dimensions prevents joint backlash, jamming, and uneven wear.
@@ -125,7 +125,7 @@ Rather than overriding the model with a rounded nominal value, `"d_stress_A"` ($
 ## 4. 2157 Students Only (20%) – Connecting Link Design
 
 ### Parametric Link Equations
-A connecting link was modeled to attach to the bracket's Feature A pin interface ($d_A = d_{stress\_A} = 0.8768\text{ in}$). The hole diameter and net width are parametrically driven by stress calculations.
+A connecting link was modeled to attach to the bracket's Feature A pin interface ($d_A = d_stress_A = 0.8768 in). The hole diameter and net width are parametrically driven by stress calculations.
 
 ![Link Equations and Global Variables](Link%20Global%20Variable%20and%20Equation.png)
 
