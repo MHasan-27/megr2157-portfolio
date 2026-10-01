@@ -45,35 +45,35 @@ To make the CAD model fully dynamic and driven purely by analytical failure crit
 
 ### Step-by-Step Modeling Process
 
-#### Step 1: Feature A – Transverse Support Pin
-Created the base cylindrical pin driven directly by stress parameter `"d_stress_A"` ($0.8768\text{ in}$).
+#### Step 1: Sketch Feature B Profile
+Started the modeling sequence with Feature B to establish a simple, clean design path. Sketched the vertical link cross-section bound to width parameter `"w_B"` ($0.8768\text{ in}$).
 
-![Step 1 - Modeling Feature A](Step%201.png)
+![Step 1 - Modeling Feature B Sketch](Step%201.png)
 
-#### Step 2: Feature B – Vertical Connecting Link
-Extruded the vertical connecting link, parameterizing its width directly to `"w_B"` ($0.8768\text{ in}$) and thickness to `"t_stress_B"` ($0.0378\text{ in}$).
+#### Step 2: Extrude Feature B
+Extruded the Feature B sketch to the calculated minimum stress thickness using parameter `"t_stress_B"` ($0.0378\text{ in}$).
 
-![Step 2 - Modeling Feature B](Step%202.png)
+![Step 2 - Extruding Feature B](Step%202.png)
 
-#### Step 3: Feature C – Simply Supported Cross-Beam
-Constructed the horizontal cross-beam, setting its height equal to `"h_stress_C"` ($0.3764\text{ in}$).
+#### Step 3: Sketch Feature A
+Sketched the Feature A cylindrical pin profile directly onto the face of Feature B, referencing diameter parameter `"d_stress_A"` ($0.8768\text{ in}$).
 
-![Step 3 - Modeling Feature C](Step%203.png)
+![Step 3 - Sketching Feature A](Step%203.png)
 
-#### Step 4: Feature D – Vertical Cantilever Web
-Extruded the vertical web support using stress thickness parameter `"t_stress_D"` ($0.4759\text{ in}$).
+#### Step 4: Extrude Feature A
+Extruded Feature A outward by the full pin length parameter `"L_A"` ($2.00\text{ in}$).
 
-![Step 4 - Modeling Feature D](Step%204.png)
+![Step 4 - Extruding Feature A Pin](Step%204.png)
 
-#### Step 5: Feature E – Mounting Base Flange
-Constructed the base attachment flange using stress height parameter `"h_stress_E"` ($0.4759\text{ in}$).
+#### Step 5: Extrude Block for Features C, D, and E
+Constructed a solid base block encompassing the outer envelope dimensions for Features C, D, and E, then extruded the block across length `"L_D"` ($2.00\text{ in}$).
 
-![Step 5 - Modeling Feature E](Step%205.png)
+![Step 5 - Extruding Base Block for Features C, D, E](Step%205.png)
 
-#### Step 6: Complete Bracket & Parametric Validation
-Final bracket geometry rebuilds dynamically based on stress calculations whenever global load or allowable stress variables are updated.
+#### Step 6: Sketch & Cut-Extrude Final Profile
+Sketched the exact cutout profiles for Features C, D, and E using parameters `"h_stress_C"` ($0.3764\text{ in}$), `"t_stress_D"` ($0.4759\text{ in}$), and `"h_stress_E"` ($0.4759\text{ in}$), then performed a Cut-Extrude to remove excess material and achieve the final bracket geometry.
 
-![Step 6 - Bracket Completion](Step%206.png)
+![Step 6 - Cut-Extrude Features C, D, E](Step%206.png)
 ![Step 6.1 - Final Solid Model View](Step%206.1.png)
 
 ---
