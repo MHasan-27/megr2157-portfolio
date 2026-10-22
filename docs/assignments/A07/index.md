@@ -175,4 +175,4 @@ Percent Difference = (|V_2 - V_3|) / ((V_2 + V_3) / 2) x 100%
 | **Max Stress & Location** | 8.907 x 10^3 psi <br>(Bottom flange fillet) | 9.38 x 10^3 psi <br>(Bottom flange fillet) | 1.01 x 10^4 psi <br>(Bottom flange fillet) |
 | **Max Deflection & Location** | 1.815 x 10^(-2) mm <br>(Pin tip) | 1.823 x 10^(-2) mm <br>(Pin tip) | 1.833 x 10^(-2) mm <br>(Pin tip) |
 | **Factor of Safety (FOS)** | 4.1 | 3.9 | 3.6 |
-| **Mass** | Optimized / Reduced | Optimized / Reduced | Optimized / Reduced |
+| **Mass (lb)** | 1.95 | 1.95 | 1.95 |
