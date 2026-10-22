@@ -24,7 +24,7 @@ The workflow follows a structured two-tier optimization framework:
   * **Factor of Safety Target (Ns):** 4.0 (Global Variable "Ns")
   * **Allowable Bending Stress (sigma_allow):** 9,064.86 psi (Calculated via "Ys" / "Ns")
 * **Global Variables & Equations Reference:**
-  ![Equation List and Global Variable](Equation List and Global Variable.png)
+  ![Equation List and Global Variable](Equation%20List%20and%20Global%20Variable.png)
 * **Boundary Conditions & Constraints:**
   * Fully fix and constrain the bottom face of the top mounting flanges to simulate the bracket resting against the vertical wall interface.
 * **Applied Loading:**
@@ -36,45 +36,45 @@ The workflow follows a structured two-tier optimization framework:
 
 #### Run 1 (Coarse / Default Mesh - ~10% Element Size)
 * **Mesh Visualization:**
-  ![D 1 Mesh 1](D 1 Mesh 1.png)
+  ![D 1 Mesh 1](D%201%20Mesh%201.png)
 * **Number of Elements:** 22,690
 * **Simulation Results:**
   * **Max Stress:** 1.788 x 10^6 psi located at the bottom flange fillet
-    ![Design 1 Static 1 Stress](Design 1-Static 1-Stress-Stress1.jpg)
+    ![Design 1 Static 1 Stress](Design%201-Static%201-Stress-Stress1.jpg)
   * **Max Deflection:** 1.153 x 10^2 mm located at the pin tip
-    ![Design 1 Static 1 Displacement](Design 1-Static 1-Displacement-Displacement1.jpg)
+    ![Design 1 Static 1 Displacement](Design%201-Static%201-Displacement-Displacement1.jpg)
   * **Factor of Safety (FOS):** 0.02
-    ![Design 1 Static 1 FOS](Design 1-Static 1-Factor of Safety-Factor of Safety1.jpg)
+    ![Design 1 Static 1 FOS](Design%201-Static%201-Factor%20of%20Safety-Factor%20of%20Safety1.jpg)
   * **Strain:**
-    ![Design 1 Static 1 Strain](Design 1-Static 1-Strain-Strain1.jpg)
+    ![Design 1 Static 1 Strain](Design%201-Static%201-Strain-Strain1.jpg)
 
 #### Run 2 (Refined Mesh - ~7% Element Size)
 * **Mesh Visualization:**
-  ![D 1 Mesh 2](D 1 Mesh 2.png)
+  ![D 1 Mesh 2](D%201%20Mesh%202.png)
 * **Number of Elements:** 36,170
 * **Simulation Results:**
   * **Max Stress:** 2.005 x 10^6 psi located at the bottom flange fillet
-    ![Design 1 Static 2 Stress](Design 1-Static 2-Stress-Stress1.jpg)
+    ![Design 1 Static 2 Stress](Design%201-Static%202-Stress-Stress1.jpg)
   * **Max Deflection:** 1.278 x 10^2 mm located at the pin tip
-    ![Design 1 Static 2 Displacement](Design 1-Static 2-Displacement-Displacement1.jpg)
+    ![Design 1 Static 2 Displacement](Design%201-Static%202-Displacement-Displacement1.jpg)
   * **Factor of Safety (FOS):** 0.018
-    ![Design 1 Static 2 FOS](Design 1-Static 2-Factor of Safety-Factor of Safety1.jpg)
+    ![Design 1 Static 2 FOS](Design%201-Static%202-Factor%20of%20Safety-Factor%20of%20Safety1.jpg)
   * **Strain:**
-    ![Design 1 Static 2 Strain](Design 1-Static 2-Strain-Strain1.jpg)
+    ![Design 1 Static 2 Strain](Design%201-Static%202-Strain-Strain1.jpg)
 
 #### Run 3 (Finest Mesh - ~2% Element Size / Slider Far Right)
 * **Mesh Visualization:**
-  ![D 1 Mesh 3](D 1 Mesh 3.png)
+  ![D 1 Mesh 3](D%201%20Mesh%203.png)
 * **Number of Elements:** 66,178
 * **Simulation Results:**
   * **Max Stress:** 2.162 x 10^6 psi located at the bottom flange fillet
-    ![Design 1 Static 3 Stress](Design 1-Static 3-Stress-Stress1.jpg)
+    ![Design 1 Static 3 Stress](Design%201-Static%203-Stress-Stress1.jpg)
   * **Max Deflection:** 1.287 x 10^2 mm located at the pin tip
-    ![Design 1 Static 3 Displacement](Design 1-Static 3-Displacement-Displacement1.jpg)
+    ![Design 1 Static 3 Displacement](Design%201-Static%203-Displacement-Displacement1.jpg)
   * **Factor of Safety (FOS):** 0.017
-    ![Design 1 Static 3 FOS](Design 1-Static 3-Factor of Safety-Factor of Safety1.jpg)
+    ![Design 1 Static 3 FOS](Design%201-Static%203-Factor%20of%20Safety-Factor%20of%20Safety1.jpg)
   * **Strain:**
-    ![Design 1 Static 3 Strain](Design 1-Static 3-Strain-Strain1.jpg)
+    ![Design 1 Static 3 Strain](Design%201-Static%203-Strain-Strain1.jpg)
     
 ### 3. Convergence Error Estimation (Between Run 2 and Run 3)
 Using the relative difference formula to validate the baseline model:
@@ -192,24 +192,51 @@ Percent Difference = (|V_2 - V_3|) / ((V_2 + V_3) / 2) x 100%
 * **Mass Reduction Strategy:** Material was selectively removed from these low-stress regions (pocketing/coremaking) to decrease overall component weight without compromising structural integrity or stiffness.
 * **Objective:** Run subsequent simulation iterations on the light-weighted geometry to verify that maximum stresses remain within acceptable limits, deflections stay controlled, and the component approaches an optimized, lightweight design profile while meeting the target safety factor.
 
+---
+
 ### 2. Inner Loop: Mesh Convergence Validation (Run 1 to Run 3)
-* **Run 1 (Coarse / Default Mesh - ~10% Element Size):**
-  * **Number of Elements:** 18,705
-  * **Max Stress & Location:** 8.907 x 10^3 psi located at the bottom flange fillet
-  * **Max Deflection & Location:** 1.815 x 10^(-2) mm located at the pin tip
+
+#### Run 1 (Coarse / Default Mesh - ~10% Element Size)
+* **Mesh Visualization:**
+  ![Design 3 Mesh 1](Design%203-Static%201-Mesh%201.png)
+* **Number of Elements:** 18,705
+* **Simulation Results:**
+  * **Max Stress:** 8.907 x 10^3 psi located at the bottom flange fillet
+    ![Design 3 Static 1 Stress](Design%203-Static%201-Stress-Stress1.jpg)
+  * **Max Deflection:** 1.815 x 10^(-2) mm located at the pin tip
+    ![Design 3 Static 1 Displacement](Design%203-Static%201-Displacement-Displacement1.jpg)
   * **Factor of Safety (FOS):** 4.1
+    ![Design 3 Static 1 FOS](Design%203-Static%201-Factor%20of%20Safety-Factor%20of%20Safety1.jpg)
+  * **Strain:**
+    ![Design 3 Static 1 Strain](Design%203-Static%201-Strain-Strain1.jpg)
 
-* **Run 2 (Refined Mesh - ~7% Element Size):**
-  * **Number of Elements:** 28,092
-  * **Max Stress & Location:** 9.38 x 10^3 psi located at the bottom flange fillet
-  * **Max Deflection & Location:** 1.823 x 10^(-2) mm located at the pin tip
+#### Run 2 (Refined Mesh - ~7% Element Size)
+* **Mesh Visualization:**
+  ![Design 3 Mesh 2](Design%203-Static%202-Mesh%202.png)
+* **Number of Elements:** 28,092
+* **Simulation Results:**
+  * **Max Stress:** 9.38 x 10^3 psi located at the bottom flange fillet
+    ![Design 3 Static 2 Stress](Design%203-Static%202-Stress-Stress1.jpg)
+  * **Max Deflection:** 1.823 x 10^(-2) mm located at the pin tip
+    ![Design 3 Static 2 Displacement](Design%203-Static%202-Displacement-Displacement1.jpg)
   * **Factor of Safety (FOS):** 3.9
+    ![Design 3 Static 2 FOS](Design%203-Static%202-Factor%20of%20Safety-Factor%20of%20Safety1.jpg)
+  * **Strain:**
+    ![Design 3 Static 2 Strain](Design%203-Static%202-Strain-Strain1.jpg)
 
-* **Run 3 (Finest Mesh - ~2% Element Size / Slider Far Right):**
-  * **Number of Elements:** 52,729
-  * **Max Stress & Location:** 1.01 x 10^4 psi located at the bottom flange fillet
-  * **Max Deflection & Location:** 1.833 x 10^(-2) mm located at the pin tip
+#### Run 3 (Finest Mesh - ~2% Element Size / Slider Far Right)
+* **Mesh Visualization:**
+  ![Design 3 Mesh 3](Design%203-Static%203-Mesh%203.png)
+* **Number of Elements:** 52,729
+* **Simulation Results:**
+  * **Max Stress:** 1.01 x 10^4 psi located at the bottom flange fillet
+    ![Design 3 Static 3 Stress](Design%203-Static%203-Stress-Stress1.jpg)
+  * **Max Deflection:** 1.833 x 10^(-2) mm located at the pin tip
+    ![Design 3 Static 3 Displacement](Design%203-Static%203-Displacement-Displacement1.jpg)
   * **Factor of Safety (FOS):** 3.6
+    ![Design 3 Static 3 FOS](Design%203-Static%203-Factor%20of%20Safety-Factor%20of%20Safety1.jpg)
+  * **Strain:**
+    ![Design 3 Static 3 Strain](Design%203-Static%203-Strain-Strain1.jpg)
 
 ### 3. Convergence Error Estimation (Between Run 2 and Run 3)
 Using the relative difference formula to validate the model:
