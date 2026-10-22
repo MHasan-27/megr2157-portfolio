@@ -75,6 +75,7 @@ The workflow follows a structured two-tier optimization framework:
     ![Design 1 Static 3 FOS](Design 1-Static 3-Factor of Safety-Factor of Safety1.jpg)
   * **Strain:**
     ![Design 1 Static 3 Strain](Design 1-Static 3-Strain-Strain1.jpg)
+    
 ### 3. Convergence Error Estimation (Between Run 2 and Run 3)
 Using the relative difference formula to validate the baseline model:
 
