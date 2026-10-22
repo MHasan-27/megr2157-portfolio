@@ -123,3 +123,56 @@ Percent Difference = (|V_2 - V_3|) / ((V_2 + V_3) / 2) x 100%
 | **Factor of Safety (FOS)** | 4.0 | 3.9 | 3.5 |
 | **Mass** | 2.55 lb | 2.55 lb | 2.55 lb |
 | **Mass** | $2.55\text{ lb}$ | $2.55\text{ lb}$ | $2.55\text{ lb}$ |
+
+
+## Design 3: Mass Removal & Optimization
+
+### 1. Design Changes & Rationale
+* **Identifying Low-Stress Regions:** Reviewing the stress distribution plots from Design 2 revealed that large portions of the upper bracket body experienced minimal mechanical stress, operating well below the material yield strength.
+* **Mass Reduction Strategy:** Material was selectively removed from these low-stress regions (pocketing/coremaking) to decrease overall component weight without compromising structural integrity or stiffness.
+* **Objective:** Run subsequent simulation iterations on the light-weighted geometry to verify that maximum stresses remain within acceptable limits, deflections stay controlled, and the component approaches an optimized, lightweight design profile while meeting the target safety factor.
+
+### 2. Inner Loop: Mesh Convergence Validation (Run 1 to Run 3)
+* **Run 1 (Coarse / Default Mesh - ~10% Element Size):**
+  * **Number of Elements:** 18,705
+  * **Max Stress & Location:** 8.907 x 10^3 psi located at the bottom flange fillet
+  * **Max Deflection & Location:** 1.815 x 10^(-2) mm located at the pin tip
+  * **Factor of Safety (FOS):** 4.1
+
+* **Run 2 (Refined Mesh - ~7% Element Size):**
+  * **Number of Elements:** 28,092
+  * **Max Stress & Location:** 9.38 x 10^3 psi located at the bottom flange fillet
+  * **Max Deflection & Location:** 1.823 x 10^(-2) mm located at the pin tip
+  * **Factor of Safety (FOS):** 3.9
+
+* **Run 3 (Finest Mesh - ~2% Element Size / Slider Far Right):**
+  * **Number of Elements:** 52,729
+  * **Max Stress & Location:** 1.01 x 10^4 psi located at the bottom flange fillet
+  * **Max Deflection & Location:** 1.833 x 10^(-2) mm located at the pin tip
+  * **Factor of Safety (FOS):** 3.6
+
+### 3. Convergence Error Estimation (Between Run 2 and Run 3)
+Using the relative difference formula to validate the model:
+
+Percent Difference = (|V_2 - V_3|) / ((V_2 + V_3) / 2) x 100%
+
+* **Calculation for Factor of Safety (SF) (V_2 = 3.9, V_3 = 3.6):**
+  Percent Difference = (|3.9 - 3.6|) / ((3.9 + 3.6) / 2) x 100% = 8.00%
+
+* **Calculation for Max Stress (V_2 = 9.38 x 10^3 psi, V_3 = 1.01 x 10^4 psi):**
+  Percent Difference = (|9.38 x 10^3 - 1.01 x 10^4|) / ((9.38 x 10^3 + 1.01 x 10^4) / 2) x 100% = 7.49%
+
+* **Calculation for Max Deflection (V_2 = 1.823 x 10^(-2) mm, V_3 = 1.833 x 10^(-2) mm):**
+  Percent Difference = (|1.823 x 10^(-2) - 1.833 x 10^(-2)|) / ((1.823 x 10^(-2) + 1.833 x 10^(-2)) / 2) x 100% = 0.55%
+
+* **Validation Check:** Deflection shows excellent convergence with minimal variation (0.55%), while stress and safety factor values closely approach stable asymptotic thresholds following the mass removal optimization.
+
+### 4. Design 3 Summary Data Table
+
+| Metric | Run 1 (Coarse) | Run 2 (Medium) | Run 3 (Fine / Final) |
+| :--- | :--- | :--- | :--- |
+| **Number of Elements** | 18,705 | 28,092 | 52,729 |
+| **Max Stress & Location** | 8.907 x 10^3 psi <br>(Bottom flange fillet) | 9.38 x 10^3 psi <br>(Bottom flange fillet) | 1.01 x 10^4 psi <br>(Bottom flange fillet) |
+| **Max Deflection & Location** | 1.815 x 10^(-2) mm <br>(Pin tip) | 1.823 x 10^(-2) mm <br>(Pin tip) | 1.833 x 10^(-2) mm <br>(Pin tip) |
+| **Factor of Safety (FOS)** | 4.1 | 3.9 | 3.6 |
+| **Mass** | Optimized / Reduced | Optimized / Reduced | Optimized / Reduced |
