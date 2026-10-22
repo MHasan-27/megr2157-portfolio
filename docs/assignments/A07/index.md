@@ -117,45 +117,45 @@ Percent Difference = (|V_2 - V_3|) / ((V_2 + V_3) / 2) x 100%
 
 #### Run 1 (Coarse / Default Mesh - ~10% Element Size)
 * **Mesh Visualization:**
-  ![D 2 Mesh 1](D2 Mesh 1.png)
+  ![D2 Mesh 1](D2%20Mesh%201.png)
 * **Number of Elements:** 22,906
 * **Simulation Results:**
   * **Max Stress:** 8.401 x 10^3 psi located at the bottom flange fillet
-    ![Design 2 Static 1 Stress](Design 2-Static 1-Stress-Stress1.jpg)
+    ![Design 2 Static 1 Stress](Design%202-Static%201-Stress-Stress1.jpg)
   * **Max Deflection:** 1.771 x 10^(-2) mm located at the pin tip
-    ![Design 2 Static 1 Displacement](Design 2-Static 1-Displacement-Displacement1.jpg)
+    ![Design 2 Static 1 Displacement](Design%202-Static%201-Displacement-Displacement1.jpg)
   * **Factor of Safety (FOS):** 4.0
-    ![Design 2 Static 1 FOS](Design 2-Static 1-Factor of Safety-Factor of Safety1.jpg)
+    ![Design 2 Static 1 FOS](Design%202-Static%201-Factor%20of%20Safety-Factor%20of%20Safety1.jpg)
   * **Strain:**
-    ![Design 2 Static 1 Strain](Design 2-Static 1-Strain-Strain1.jpg)
+    ![Design 2 Static 1 Strain](Design%202-Static%201-Strain-Strain1.jpg)
 
 #### Run 2 (Refined Mesh - ~7% Element Size)
 * **Mesh Visualization:**
-  ![D 2 Mesh 2](D2 Mesh 2.png)
+  ![D2 Mesh 2](D2%20Mesh%202.png)
 * **Number of Elements:** 36,276
 * **Simulation Results:**
   * **Max Stress:** 9.297 x 10^3 psi located at the bottom flange fillet
-    ![Design 2 Static 2 Stress](Design 2-Static 2-Stress-Stress1.jpg)
+    ![Design 2 Static 2 Stress](Design%202-Static%202-Stress-Stress1.jpg)
   * **Max Deflection:** 1.779 x 10^(-2) mm located at the pin tip
-    ![Design 2 Static 2 Displacement](Design 2-Static 2-Displacement-Displacement1.jpg)
+    ![Design 2 Static 2 Displacement](Design%202-Static%202-Displacement-Displacement1.jpg)
   * **Factor of Safety (FOS):** 3.9
-    ![Design 2 Static 2 FOS](Design 2-Static 2-Factor of Safety-Factor of Safety1.jpg)
+    ![Design 2 Static 2 FOS](Design%202-Static%202-Factor%20of%20Safety-Factor%20of%20Safety1.jpg)
   * **Strain:**
-    ![Design 2 Static 2 Strain](Design 2-Static 2-Strain-Strain1.jpg)
+    ![Design 2 Static 2 Strain](Design%202-Static%202-Strain-Strain1.jpg)
 
 #### Run 3 (Finest Mesh - ~2% Element Size / Slider Far Right)
 * **Mesh Visualization:**
-  ![D 2 Mesh 3](D2 Mesh 3.png)
+  ![D2 Mesh 3](D2%20Mesh%203.png)
 * **Number of Elements:** 65,703
 * **Simulation Results:**
   * **Max Stress:** 1.031 x 10^4 psi located at the bottom flange fillet
-    ![Design 2 Static 3 Stress](Design 2-Static 3-Stress-Stress1.jpg)
+    ![Design 2 Static 3 Stress](Design%202-Static%203-Stress-Stress1.jpg)
   * **Max Deflection:** 1.785 x 10^(-2) mm located at the pin tip
-    ![Design 2 Static 3 Displacement](Design 2-Static 3-Displacement-Displacement1.jpg)
+    ![Design 2 Static 3 Displacement](Design%202-Static%203-Displacement-Displacement1.jpg)
   * **Factor of Safety (FOS):** 3.5
-    ![Design 2 Static 3 FOS](Design 2-Static 3-Factor of Safety-Factor of Safety1.jpg)
+    ![Design 2 Static 3 FOS](Design%202-Static%203-Factor%20of%20Safety-Factor%20of%20Safety1.jpg)
   * **Strain:**
-    ![Design 2 Static 3 Strain](Design 2-Static 3-Strain-Strain1.jpg)
+    ![Design 2 Static 3 Strain](Design%202-Static%203-Strain-Strain1.jpg)
 
 ### 3. Convergence Error Estimation (Between Run 2 and Run 3)
 Using the relative difference formula to validate the model:
