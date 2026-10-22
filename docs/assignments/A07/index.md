@@ -6,12 +6,16 @@
 * **Parameter Optimization:** Systematically modify model geometries and parameters to design a high-stiffness, high-strength, and lightweight component under defined external loads.
 * **Documentation & Reflection:** Document key engineering lessons learned, convergence error estimations, and workflow iterations in an online portfolio.
 
-## Description
-Our task is to create a high-stiffness, high-strength, and lightweight component using Finite Element Analysis (FEA) to guide your decision-making process throughout our design. Each step of the analysis requires that before you make geometric changes, we ensure the component's results—specifically stress, displacement, and the Factor of Safety (FOS)—converge within a 7% difference. This is achieved by modifying the number of elements across consecutive runs. If after three attempts the model fails to converge within the target threshold, use the stiffness and stress from the finer mesh size, select the finest mesh size, and proceed through the engineering process.
+## Description & Methodology
+Our task is to create a high-stiffness, high-strength, and lightweight component using Finite Element Analysis (FEA) to guide your decision-making process throughout our design. 
+
+The workflow follows a structured two-tier optimization framework:
+* **Outer Loop (Design Optimization):** Focuses on geometric alterations and performance improvements (modifying thickness, adding support ribs, and removing mass) to achieve an optimized component while targeting the desired Factor of Safety (FOS).
+* **Inner Loop (Mesh Convergence Validation):** Performed at every outer loop stage to guarantee numerical accuracy. For each geometric iteration, the simulation is run across progressively refined mesh resolutions (Run 1 Coarse, Run 2 Medium, Run 3 Fine) to verify that stress, displacement, and FOS converge within the target 7% relative difference threshold. If convergence isn't met after three attempts, we select the finest mesh size and proceed.
 
 ---
 
-## Design 1: Baseline FEA & Mesh Convergence (Inner Loop)
+## Design 1: Baseline FEA & Initial Validation (Outer Loop Iteration 1)
 
 ### 1. Preprocessing & Setup
 * **Material Properties (ASTM A36 Steel):**
@@ -57,7 +61,7 @@ Percent Difference = (|V_2 - V_3|) / ((V_2 + V_3) / 2) x 100%
 * **Calculation for Max Deflection (V_2 = 127.8 mm, V_3 = 128.7 mm):**
   Percent Difference = (|127.8 - 128.7|) / ((127.8 + 128.7) / 2) x 100% = 0.70%
 
-* **Validation Check:** The resulting percentage differences for safety factor and deflection successfully meet or come extremely close to the convergence targets, allowing you to move forward to the next design iteration.
+* **Validation Check:** The resulting percentage differences for safety factor and deflection successfully meet or come extremely close to the convergence targets, allowing you to move forward to the next outer loop iteration.
 
 ### 4. Design 1 Summary Data Table
 
@@ -71,7 +75,7 @@ Percent Difference = (|V_2 - V_3|) / ((V_2 + V_3) / 2) x 100%
 
 ---
 
-## Design 2: Geometry Modification & Iteration
+## Design 2: Structural Reinforcement & Iteration (Outer Loop Iteration 2)
 
 ### 1. Design Changes & Rationale
 * **Thickness Adjustment:** The primary structural thickness (feature B) was increased to 3 times its original baseline dimension to significantly improve flexural rigidity and load-bearing capacity.
@@ -122,10 +126,10 @@ Percent Difference = (|V_2 - V_3|) / ((V_2 + V_3) / 2) x 100%
 | **Max Deflection & Location** | 1.771 x 10^(-2) mm <br>(Pin tip) | 1.779 x 10^(-2) mm <br>(Pin tip) | 1.785 x 10^(-2) mm <br>(Pin tip) |
 | **Factor of Safety (FOS)** | 4.0 | 3.9 | 3.5 |
 | **Mass** | 2.55 lb | 2.55 lb | 2.55 lb |
-| **Mass** | $2.55\text{ lb}$ | $2.55\text{ lb}$ | $2.55\text{ lb}$ |
 
+---
 
-## Design 3: Mass Removal & Optimization
+## Design 3: Mass Removal & Optimization (Outer Loop Iteration 3)
 
 ### 1. Design Changes & Rationale
 * **Identifying Low-Stress Regions:** Reviewing the stress distribution plots from Design 2 revealed that large portions of the upper bracket body experienced minimal mechanical stress, operating well below the material yield strength.
