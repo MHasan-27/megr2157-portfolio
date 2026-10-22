@@ -180,3 +180,52 @@ Percent Difference = (|V_2 - V_3|) / ((V_2 + V_3) / 2) x 100%
 | **Max Deflection & Location** | 1.815 x 10^(-2) mm <br>(Pin tip) | 1.823 x 10^(-2) mm <br>(Pin tip) | 1.833 x 10^(-2) mm <br>(Pin tip) |
 | **Factor of Safety (FOS)** | 4.1 | 3.9 | 3.6 |
 | **Mass (lb)** | 1.95 | 1.95 | 1.95 |
+
+## 2157 Students Only: Linkage FEA & Optimization (Design 3 Assembly)
+
+### 1. Overview & Setup
+As required for MEGR 2157 students, the same iterative FEA and mesh convergence process was applied to the assembled linkage connected with the optimized Design 3 bracket. The simulation evaluated structural performance under the applied operating loads to verify that the linkage maintains safe stress levels and controlled deflections.
+
+### 2. Inner Loop: Mesh Convergence Validation (Run 1 to Run 3)
+* **Run 1 (Coarse / Default Mesh - ~10% Element Size):**
+  * **Number of Elements:** 16,873
+  * **Max Stress & Location:** 3.262 x 10^3 psi located at the bottom flange fillet
+  * **Max Deflection & Location:** 2.662 x 10^(-2) mm located at the pin tip
+  * **Factor of Safety (FOS):** 11.0
+
+* **Run 2 (Refined Mesh - ~7% Element Size):**
+  * **Number of Elements:** 29,370
+  * **Max Stress & Location:** 3.757 x 10^3 psi located at the bottom flange fillet
+  * **Max Deflection & Location:** 2.696 x 10^(-2) mm located at the pin tip
+  * **Factor of Safety (FOS):** 9.7
+
+* **Run 3 (Finest Mesh - ~2% Element Size / Slider Far Right):**
+  * **Number of Elements:** 68,052
+  * **Max Stress & Location:** 3.968 x 10^3 psi located at the bottom flange fillet
+  * **Max Deflection & Location:** 2.737 x 10^(-2) mm located at the pin tip
+  * **Factor of Safety (FOS):** 9.1
+
+### 3. Convergence Error Estimation (Between Run 2 and Run 3)
+Using the relative difference formula to validate the linkage model:
+
+Percent Difference = (|V_2 - V_3|) / ((V_2 + V_3) / 2) x 100%
+
+* **Calculation for Factor of Safety (SF) (V_2 = 9.7, V_3 = 9.1):**
+  Percent Difference = (|9.7 - 9.1|) / ((9.7 + 9.1) / 2) x 100% = 6.38%
+
+* **Calculation for Max Stress (V_2 = 3.757 x 10^3 psi, V_3 = 3.968 x 10^3 psi):**
+  Percent Difference = (|3.757 x 10^3 - 3.968 x 10^3|) / ((3.757 x 10^3 + 3.968 x 10^3) / 2) x 100% = 5.47%
+
+* **Calculation for Max Deflection (V_2 = 2.696 x 10^(-2) mm, V_3 = 2.737 x 10^(-2) mm):**
+  Percent Difference = (|2.696 x 10^(-2) - 2.737 x 10^(-2)|) / ((2.696 x 10^(-2) + 2.737 x 10^(-2)) / 2) x 100% = 1.51%
+
+* **Validation Check:** All parameters (stress, deflection, and safety factor) successfully converge well within the required 7% threshold, validating the accuracy of the linkage assembly simulation.
+
+### 4. Linkage Summary Data Table
+
+| Metric | Run 1 (Coarse) | Run 2 (Medium) | Run 3 (Fine / Final) |
+| :--- | :--- | :--- | :--- |
+| **Number of Elements** | 16,873 | 29,370 | 68,052 |
+| **Max Stress & Location** | 3.262 x 10^3 psi <br>(Bottom flange fillet) | 3.757 x 10^3 psi <br>(Bottom flange fillet) | 3.968 x 10^3 psi <br>(Bottom flange fillet) |
+| **Max Deflection & Location** | 2.662 x 10^(-2) mm <br>(Pin tip) | 2.696 x 10^(-2) mm <br>(Pin tip) | 2.737 x 10^(-2) mm <br>(Pin tip) |
+| **Factor of Safety (FOS)** | 11.0 | 9.7 | 9.1 |
