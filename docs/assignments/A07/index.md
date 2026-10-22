@@ -267,27 +267,54 @@ Percent Difference = (|V_2 - V_3|) / ((V_2 + V_3) / 2) x 100%
 ## 2157 Students Only: Linkage FEA & Optimization (Design 3 Assembly)
 
 ### 1. Overview & Setup
-As required for MEGR 2157 students, the same iterative FEA and mesh convergence process was applied to the assembled linkage connected with the optimized Design 3 bracket. The simulation evaluated structural performance under the applied operating loads to verify that the linkage maintains safe stress levels and controlled deflections.
+As required for MEGR 2157 students, the same iterative FEA and mesh convergence process was applied to the assembled linkage connected with the optimized Design 3 bracket (`Assem A7 2157 only.SLDASM`). The simulation evaluated structural performance under the applied operating loads to verify that the linkage maintains safe stress levels and controlled deflections.
+
+---
 
 ### 2. Inner Loop: Mesh Convergence Validation (Run 1 to Run 3)
-* **Run 1 (Coarse / Default Mesh - ~10% Element Size):**
-  * **Number of Elements:** 16,873
-  * **Max Stress & Location:** 3.262 x 10^3 psi located at the bottom flange fillet
-  * **Max Deflection & Location:** 2.662 x 10^(-2) mm located at the pin tip
+
+#### Run 1 (Coarse / Default Mesh - ~10% Element Size)
+* **Mesh Visualization:**
+  ![Assembly Mesh 1](D%204%20Mesh%201.png)
+* **Number of Elements:** 16,873
+* **Simulation Results:**
+  * **Max Stress:** 3.262 x 10^3 psi located at the bottom flange fillet
+    ![Assembly Static 1 Stress](Assem1-Static%201-Stress-Stress1.jpg)
+  * **Max Deflection:** 2.662 x 10^(-2) mm located at the pin tip
+    ![Assembly Static 1 Displacement](Assem1-Static%201-Displacement-Displacement1.jpg)
   * **Factor of Safety (FOS):** 11.0
+    ![Assembly Static 1 FOS](Assem1-Static%201-Factor%20of%20Safety-Factor%20of%20Safety1.jpg)
+  * **Strain:**
+    ![Assembly Static 1 Strain](Assem1-Static%201-Strain-Strain1.jpg)
 
-* **Run 2 (Refined Mesh - ~7% Element Size):**
-  * **Number of Elements:** 29,370
-  * **Max Stress & Location:** 3.757 x 10^3 psi located at the bottom flange fillet
-  * **Max Deflection & Location:** 2.696 x 10^(-2) mm located at the pin tip
+#### Run 2 (Refined Mesh - ~7% Element Size)
+* **Mesh Visualization:**
+  ![Assembly Mesh 2](D4%20Mesh%202.png)
+* **Number of Elements:** 29,370
+* **Simulation Results:**
+  * **Max Stress:** 3.757 x 10^3 psi located at the bottom flange fillet
+    ![Assembly Static 2 Stress](Assem1-Static%202-Stress-Stress1.jpg)
+  * **Max Deflection:** 2.696 x 10^(-2) mm located at the pin tip
+    ![Assembly Static 2 Displacement](Assem1-Static%202-Displacement-Displacement1.jpg)
   * **Factor of Safety (FOS):** 9.7
+    ![Assembly Static 2 FOS](Assem1-Static%202-Factor%20of%20Safety-Factor%20of%20Safety1.jpg)
+  * **Strain:**
+    ![Assembly Static 2 Strain](Assem1-Static%202-Strain-Strain1.jpg)
 
-* **Run 3 (Finest Mesh - ~2% Element Size / Slider Far Right):**
-  * **Number of Elements:** 68,052
-  * **Max Stress & Location:** 3.968 x 10^3 psi located at the bottom flange fillet
-  * **Max Deflection & Location:** 2.737 x 10^(-2) mm located at the pin tip
+#### Run 3 (Finest Mesh - ~2% Element Size / Slider Far Right)
+* **Mesh Visualization:**
+  ![Assembly Mesh 3](D4%20Mesh%203.png)
+* **Number of Elements:** 68,052
+* **Simulation Results:**
+  * **Max Stress:** 3.968 x 10^3 psi located at the bottom flange fillet
+    ![Assembly Static 3 Stress](Assem1-Static%203-Stress-Stress1.jpg)
+  * **Max Deflection:** 2.737 x 10^(-2) mm located at the pin tip
+    ![Assembly Static 3 Displacement](Assem1-Static%203-Displacement-Displacement1.jpg)
   * **Factor of Safety (FOS):** 9.1
-
+    ![Assembly Static 3 FOS](Assem1-Static%203-Factor%20of%20Safety-Factor%20of%20Safety1.jpg)
+  * **Strain:**
+    ![Assembly Static 3 Strain](Assem1-Static%203-Strain-Strain1.jpg)
+    
 ### 3. Convergence Error Estimation (Between Run 2 and Run 3)
 Using the relative difference formula to validate the linkage model:
 
@@ -312,3 +339,28 @@ Percent Difference = (|V_2 - V_3|) / ((V_2 + V_3) / 2) x 100%
 | **Max Stress & Location** | 3.262 x 10^3 psi <br>(Bottom flange fillet) | 3.757 x 10^3 psi <br>(Bottom flange fillet) | 3.968 x 10^3 psi <br>(Bottom flange fillet) |
 | **Max Deflection & Location** | 2.662 x 10^(-2) mm <br>(Pin tip) | 2.696 x 10^(-2) mm <br>(Pin tip) | 2.737 x 10^(-2) mm <br>(Pin tip) |
 | **Factor of Safety (FOS)** | 11.0 | 9.7 | 9.1 |
+
+
+---
+
+---
+
+## Lessons Learned & Reflections
+
+### Engineering Lessons Learned
+* **Mesh Density & Computational Trade-offs:** Refining the global mesh size from coarse (approx. 10% element size) to fine (approx. 2% element size) directly impacts computational solution time and result accuracy. As element count increases, local stress concentrations and maximum deflections stabilize, demonstrating asymptotic convergence toward true continuum mechanics solutions.
+* **Impact of Geometric Simplification and Fillets:** Sharp internal corners and unblended transitions create severe artificial stress concentrations in finite element models. Introducing controlled fillet radii across structural intersections effectively redistributes multi-axial loads and lowers peak localized stresses.
+* **Two-Tier Optimization Framework:** Decoupling the design workflow into an outer loop (geometric alterations for strength and stiffness) and an inner loop (mesh convergence validation) establishes a robust, repeatable methodology for structural design optimization under defined safety factor targets.
+
+### Time Spent
+* **Total Execution Time:** Approximately 12 hours spent on CAD geometry modifications, boundary condition setups, static simulation runs across all convergence iterations for both the bracket and the 2157 linkage assembly, error calculations, and portfolio documentation.
+  
+
+## CAD Files & Technical Drawings
+You can download the complete SolidWorks parts, drawings, and assembly files for this assignment below:
+
+* **Design 1 Drawing:** [Design 1 A6 Bracket Drawing (.SLDPRT)](Design%201%20A6%20Bracket%20Drawing.SLDPRT)
+* **Design 2 Drawing:** [Design 2 A6 Bracket Drawing (.SLDPRT)](Design%202%20A6%20Bracket%20Drawing.SLDPRT)
+* **Design 3 Part:** [Design 3 Part File (.SLDPRT)](Design%203.SLDPRT)
+* **2157 Linkage Part:** [Link Part File (.SLDPRT)](Link.SLDPRT)
+* **2157 Assembly File:** [Design 3 Assembly (.SLDASM)](Assem%20A7%202157%20only.SLDASM)
