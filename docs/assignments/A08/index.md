@@ -265,3 +265,147 @@ The following off-the-shelf CAD models were downloaded directly from McMaster-Ca
 
 5. **Assembly & Mating Realities**  
    Lesson: Aligning 3D teeth manually in SolidWorks before applying a Mechanical Gear Mate is critical to prevent visually overlapping teeth during motion simulation.
+
+
+# 6. MEGR 2157: Technical Drawings & ASME Y14.5 Tolerancing Standards
+
+## Overview & Scope
+
+A complete set of seven (7) engineering CAD drawings—comprising six multi-view component drawings and one top-level assembly drawing—was produced in accordance with ASME Y14.5 standards to define the geometric features, fits, and manufacturing specifications for the gearbox assembly.
+
+---
+
+## Drawing Checklist & Layout Standards
+
+- **Standard Projection:** Third-Angle Projection Layout (ANSI/ASME Y14.3)
+- **Title Block Standard Tolerances:**
+  - X.X ± 0.02 in
+  - X.XX ± 0.01 in
+  - X.XXX ± 0.005 in
+  - Angles: ± 0.5°
+
+---
+
+## 1. Multi-View Component Drawings
+
+### a. Input Shaft Drawing
+
+- **Views Included:** Front View, Right Side View, Isometric Detail View
+- **Dimensions:**
+  - Major Diameter: di = 0.125 in
+  - Overall Length: Li = 1.000 in
+  - Pinion Hub Fit Length: 0.250 in
+- **Critical Tolerancing Callouts:**
+  - **Journal Bearing Fit (RC 5 - Loose Running Fit):**  
+    Ø 0.1250 +0.0000 / -0.0005 in
+  - **Pinion Hub Press-Fit (FN 2 - Medium Drive Fit):**  
+    Ø 0.1250 +0.0005 / +0.0002 in
+
+![Input Shaft Drawing View](Input%20Shaft.JPG)
+
+---
+
+### b. Output Shaft Drawing
+
+- **Views Included:** Front View, Right Side View, Isometric Detail View
+- **Dimensions:**
+  - Major Diameter: do = 0.250 in
+  - Overall Length: Lo = 1.000 in
+  - Spur Gear Hub Fit Length: 0.250 in
+- **Critical Tolerancing Callouts:**
+  - **Journal Bearing Fit (RC 5 - Loose Running Fit):**  
+    Ø 0.2500 +0.0000 / -0.0005 in
+  - **Spur Gear Hub Press-Fit (FN 2 - Medium Drive Fit):**  
+    Ø 0.2500 +0.0006 / +0.0003 in
+
+![Output Shaft Drawing View](Output%20Shaft.JPG)
+
+---
+
+### c. Gearbox Bottom Base Drawing
+
+- **Views Included:** Top View, Front Section View (Section A-A), Isometric View
+- **Dimensions:**
+  - Overall Housing Block: 3.00 in × 2.00 in × 1.00 in
+  - Bearing Pocket Counterbores: 0.250 in and 0.375 in
+  - Center-to-Center Bore Spacing: Cd = 0.6875 in
+- **Critical Tolerancing Callouts:**
+  - **Center Distance Precision Tolerance:**  
+    0.6875 ± 0.0010 in
+  - **Press-Fit Sleeve Bearing Pocket (H7 Fit):**  
+    Ø 0.2500 +0.0006 / -0.0000 in  
+    and  
+    Ø 0.3750 +0.0006 / -0.0000 in
+
+![Gear Box Drawing View](Gear%20Box.JPG)
+
+---
+
+### d. Gearbox Top Cover Drawing
+
+- **Views Included:** Bottom View, Front Section View, Isometric View
+- **Dimensions:**
+  - Outer Footprint: 3.00 in × 2.00 in × 1.00 in
+  - Internal Gear Cavity Relief Radius: 0.625 in
+  - Fastener Mounting Clearance Holes: 4 × Ø 0.134 in (M3 Clearance)
+- **Critical Tolerancing Callouts:**
+  - **Bolt Hole Center Location Tolerance:**  
+    2.500 ± 0.005 in and 1.500 ± 0.005 in
+  - **Bearing Pocket Alignment:**  
+    Ø 0.2500 +0.0006 / -0.0000 in
+
+---
+
+### e. Input Shaft Plain Journal Bearing Drawing
+
+- **Views Included:** Front View, Right Section View, Isometric Detail View
+- **Specifications:**
+  - McMaster-Carr Part Number: **6391K111**
+  - Inner Diameter (ID): 0.125 in
+  - Outer Diameter (OD): 0.250 in
+  - Length (L): 0.250 in
+- **Critical Tolerancing Callouts:**
+  - **Inner Diameter Running Clearance:**  
+    Ø 0.1258 ± 0.0003 in
+
+---
+
+### f. Output Shaft Plain Journal Bearing Drawing
+
+- **Views Included:** Front View, Right Section View, Isometric Detail View
+- **Specifications:**
+  - McMaster-Carr Part Number: **6391K136**
+  - Inner Diameter (ID): 0.250 in
+  - Outer Diameter (OD): 0.375 in
+  - Length (L): 0.250 in
+- **Critical Tolerancing Callouts:**
+  - **Inner Diameter Running Clearance:**  
+    Ø 0.2508 ± 0.0003 in
+
+---
+
+## 2. Top-Level Assembly Drawing
+
+### View Layout & Contents
+
+- **Primary Views:** Full Front View, Top View, Right Section View showing internal gear meshing across the split parting line, and Isometric Exploded View
+- **Bill of Materials (BOM Table):** Itemizes all 10 components including McMaster-Carr part numbers, quantities, descriptions, and material callouts
+- **Balloons & Callouts:** Numerical balloons indexing every sub-component to the BOM
+
+![Assembly Hidden Parts](Assem%20Gear%20Hiden%20Parts.JPG)  
+![Assembly Hidden Lines](Assem%20Parts%20Hidden%20line.png)  
+![Gear Assemble Picture](Gear%20Assemble%20Picture.png)
+
+---
+
+## Download Links (CAD Files & Drawing Documents)
+
+**Drawing Files (.SLDDRW):**
+- [Input Shaft Engineering Drawing (SLDDRW)](Input%20Shaft.SLDDRW)
+- [Output Shaft Engineering Drawing (SLDDRW)](Output%20Shaft.SLDDRW)
+- [Gearbox Base Housing Drawing (SLDDRW)](Gear%20Box.SLDDRW)
+- [Gearbox Cover Housing Drawing (SLDDRW)](Gear%20Box%20Cover.SLDDRW)
+
+**Complete PDF Package:**
+- [Gear Assemble Picture PDF](Gear%20Assemble%20Picture.pdf)
+- [GearBox Complete Technical Presentation PDF](GearBox%20-%20Google%20Slides.pdf)
