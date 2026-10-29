@@ -393,7 +393,8 @@ A complete set of seven (7) engineering CAD drawings—comprising six multi-view
 
 ![Assembly Hidden Parts](Assem%20Gear%20Hiden%20Parts.JPG)  
 ![Assembly Hidden Lines](Assem%20Parts%20Hidden%20line.png)  
-![Gear Assemble Picture](Gear%20Assemble%20Picture.png)
+![Gear Pinion Relation](Gear%20pinion%20Relation.png)
+![Gearbox Assembly Cross Section](Gearbox%20assemble%20cross%20section.png)
 
 ---
 
