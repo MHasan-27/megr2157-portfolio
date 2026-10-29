@@ -130,7 +130,7 @@
 
 ### iii. Equations & Algebraic Modeling
 
-*(Equations and calculations to be inserted here in plain text)*
+![A 8-6](A%208-6.jpg)
 
 ---
 
@@ -150,7 +150,7 @@ The following off-the-shelf McMaster-Carr Sleeve Bearings made from self-lubrica
 # 3. Gearbox Housing Sketch & Fastening Method
 
 The gearbox housing is designed as a two-piece split housing (Top Cover and Bottom Base) with a horizontal parting line aligned across the shaft centers.
-
+![A 8-7](A%208-7.jpg)
 ## Fastening Method Selection & Justification
 
 - **Selected Fasteners:** 4 Black-Oxide Alloy Steel Socket Head Screws, M3 × 0.5 mm Thread Size, 12 mm Long (McMaster-Carr 91290A500).
