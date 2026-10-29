@@ -228,7 +228,6 @@ The following off-the-shelf CAD models were downloaded directly from McMaster-Ca
 3. **Coincident Mates:** Positioned the pinion and output gear along the shafts so their face centers align perfectly in the mid-plane of the housing cavity.
 4. **Mechanical Gear Mate:** Applied a Gear Mate between the pinion and output gear pitch diameters using the exact teeth ratio (18:48), enabling dynamic mouse-driven rotation in CAD.
 
-![Gear Assemble Picture](Gear%20Assemble%20Picture.png)
 ---
 ### Download Links (CAD Files & Drawings)
 
