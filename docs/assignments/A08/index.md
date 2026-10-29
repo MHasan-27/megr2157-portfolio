@@ -1,113 +1,147 @@
-# Engineering Design Report: Shaft Analysis
+## A8: Gearbox Design
 
-## 1. Design of the Shafts
+# 1. Design of the Shafts
 
-### a. Input Shaft (Power-Transmission)
+## a. Input Shaft (Power-Transmission)
 
-#### i. Knowns and Unknowns
+### i. Knowns and Unknowns
 
-* **Knowns:**
-* Output Torque ($T_{out}$): $1.25\text{ in-lbf}$
-* Output Speed ($N_{out}$): $1100\text{ RPM}$
-* Gear Ratio ($N_{gear}:N_{pinion}$): $24:9$ ($48\text{ teeth}:18\text{ teeth}$)
-* Input Speed ($N_{in}$): $1100 \times (24/9) \approx 2933.33\text{ RPM}$
-* Input Torque ($T_{in}$): $1.25 \times (9/24) = 0.46875\text{ in-lbf}$
-* Input Shaft Diameter ($d_{in}$): $0.125\text{ in}$
-* Input Shaft Length ($L_{in}$): $1.0\text{ in}$
-* Pinion Material: Brass (McMaster-Carr 7880K19)
+**Knowns:**
+- Output Torque (To):  
+- Output Speed (no):  
+- Gear Ratio (i):  
+- Input Speed (ni):  
+- Input Torque (Ti):  
+- Input Shaft Diameter (di):  
+- Input Shaft Length (Li):  
+- Pinion Material: Brass (McMaster-Carr 7880K19)
 
+**Unknowns:**
+- Transmitted Horsepower (HP)
+- Allowable Horsepower capacity (HP_allow)
+- Minimum required diameter (d_min)
+- Maximum torsional shear stress (tau_max)
+- Adequacy of di
 
-* **Unknowns:**
-* Transmitted Horsepower ($P_{in}$)
-* Allowable Horsepower capacity ($P_{allow,in}$)
-* Minimum required diameter ($D_{req,in}$)
-* Maximum torsional shear stress ($\tau_{in}$)
-* Adequacy of $d_{in} = 0.125\text{ in}$
+### iii. Equations & Algebraic Modeling
 
+*(Equations and calculations to be inserted here in plain text)*
 
+### v. Conclusion & Recommendation
 
-#### ii. Free-Body Diagram (FBD) of Input Shaft
-
-
-
-```
-
-#### iii. Equations & Algebraic Modeling
-
-* **Transmitted Power ($P_{in}$):**
-
-$$P_{in} = \frac{T_{in} \cdot N_{in}}{63025}$$
-
-
-* **Maximum Torsional Shear Stress ($\tau_{in}$):**
-
-$$\tau_{in} = \frac{16 T_{in}}{\pi d_{in}^3}$$
-
-
-* **Minimum Required Diameter ($D_{req,in}$):**
-
-$$D_{req,in} = \left( \frac{16 T_{in}}{\pi \tau_{allow}} \right)^{1/3}$$
-
-
-
-#### v. Conclusion & Recommendation
-
-* **Verdict:** Sufficient.
-* **Explanation:** The minimum required diameter ($D_{req,in} \approx 0.065\text{ in}$) is significantly smaller than the provided shaft diameter ($d_{in} = 0.125\text{ in}$). Furthermore, the power transmitted ($0.022\text{ hp}$) is well within the shaft's allowable power capacity ($0.1508\text{ hp}$).
-* **Recommendation:** $d_{in} = 0.125\text{ in}$ is fully adequate; no diameter increase is required.
+- **Verdict:** Sufficient.
+- **Explanation:** The minimum required diameter (d_min) is significantly smaller than the provided shaft diameter (di). Furthermore, the power transmitted (HP) is well within the shaft’s allowable power capacity (HP_allow).
+- **Recommendation:** di is fully adequate; no diameter increase is required.
 
 ---
 
-### b. Output Shaft (Short Shaft)
+## b. Output Shaft (Short Shaft)
 
-#### i. Knowns and Unknowns
+### i. Knowns and Unknowns
 
-* **Knowns:**
-* Output Torque ($T_{out}$): $1.25\text{ in-lbf}$
-* Output Speed ($N_{out}$): $1100\text{ RPM}$
-* Output Shaft Diameter ($d_{out}$): $0.250\text{ in}$
-* Output Shaft Length ($L_{out}$): $1.0\text{ in}$
-* Output Gear Material: Brass (McMaster-Carr 7880K24)
+**Knowns:**
+- Output Torque (To):  
+- Output Speed (no):  
+- Output Shaft Diameter (do):  
+- Output Shaft Length (Lo):  
+- Output Gear Material: Brass (McMaster-Carr 7880K24)
 
+**Unknowns:**
+- Transmitted Horsepower (HP)
+- Allowable Horsepower capacity (HP_allow)
+- Minimum required diameter (d_min)
+- Maximum torsional shear stress (tau_max)
+- Adequacy of do
 
-* **Unknowns:**
-* Transmitted Horsepower ($P_{out}$)
-* Allowable Horsepower capacity ($P_{allow,out}$)
-* Minimum required diameter ($D_{req,out}$)
-* Maximum torsional shear stress ($\tau_{out}$)
-* Adequacy of $d_{out} = 0.250\text{ in}$
+### iii. Equations & Algebraic Modeling
 
+*(Equations and calculations to be inserted here in plain text)*
 
+### v. Conclusion & Recommendation
 
-#### ii. Free-Body Diagram (FBD) of Output Shaft
+- **Verdict:** Sufficient.
+- **Explanation:** The required minimum diameter (d_min) is far below the actual shaft diameter (do). The allowable power capacity (HP_allow) also easily exceeds the transmitted power (HP).
+- **Recommendation:** do is fully adequate; no diameter change is required.
 
-```text
-╱
-         └─────────┘
-         |<-- d -->| (d = 0.250 in)
+# 2. Design Journal Bearings
 
-```
+## a. Size, Length, Pressure, Velocity, and PV Rating
 
-#### iii. Equations & Algebraic Modeling
+### i. Knowns and Unknowns
 
-* **Transmitted Power ($P_{out}$):**
+**Knowns:**
+- Gear Ratio (i):  
+- System Power (HP):  
+- Input Torque (Ti):  
+- Output Torque (To):  
+- Input Speed (ni):  
+- Output Speed (no):  
+- Input Shaft Diameter (di):  
+- Output Shaft Diameter (do):  
+- Shaft Lengths (L):  
+- Gear Pitch Diameters:  (7880K24),  (7880K19)
+- Pressure Angle (φ):  
+- Selected Journal Bearing Length (L):  
+- Fit / Clearance Class: RC 5 Running Fit clearance of  
 
-$$P_{out} = \frac{T_{out} \cdot N_{out}}{63025}$$
+**Unknowns:**
+- Bearing load (W)
+- Journal bearing projected area (A)
+- Journal bearing pressure (P), velocity (V), and PV rating
+- Journal bearing wall thickness
+- Material selection based on pressure, velocity, and PV rating
 
+### iii. Equations & Algebraic Modeling
 
-* **Maximum Torsional Shear Stress ($\tau_{out}$):**
+*(Equations and calculations to be inserted here in plain text)*
 
-$$\tau_{out} = \frac{16 T_{out}}{\pi d_{out}^3}$$
+### v. Material Selection Using Lecture Table 4
 
+- **Selected Material:** Porous Bronze (Oil-Embedded SAE 841 Bronze)
+- **Table 4 Material Limits (Machinery's Handbook):**
+  - Load Capacity (P):  
+  - Max Surface Speed (V):  
+  - PV Limit:  
+- **Justification:** The governing input shaft PV demand ( ) exceeds non-metallic limits like Acetal ( ). Oil-embedded SAE 841 Porous Bronze satisfies all pressure, velocity, and PV requirements with a factor of safety.
 
-* **Minimum Required Diameter ($D_{req,out}$):**
+---
 
-$$D_{req,out} = \left( \frac{16 T_{out}}{\pi \tau_{allow}} \right)^{1/3}$$
+## b. Design the Thickness of the Journal Bearing
 
+### i. Knowns and Unknowns
 
+**Knowns:**
+- Resultant Bearing Load (W):  
+- Input Shaft Diameter / Bearing Inner Diameter (di):  ( )
+- Output Shaft Diameter / Bearing Inner Diameter (do):  ( )
+- Bearing Length (L):  
+- Bearing Material: Oil-Embedded SAE 841 Porous Bronze
+- Allowable Tensile/Compressive Strength of SAE 841 Bronze (σ_allow):  to  
+- Allowable Shear Stress (τ_allow):  
+- Standard Commercial Wall Thickness (t):  ( ) for  and  sleeve bearings
 
-#### v. Conclusion & Recommendation
+**Unknowns:**
+- Tangential hoop stress (σ_t) and radial stress (σ_r) due to press fit / internal load
+- Minimum required wall thickness (t_min) for mechanical integrity under radial bearing load
+- Outer diameter of the journal bearings (Do)
 
-* **Verdict:** Sufficient.
-* **Explanation:** The required minimum diameter ($D_{req,out} \approx 0.09125\text{ in}$) is far below the actual shaft diameter ($d_{out} = 0.250\text{ in}$). The allowable power capacity ($0.4523\text{ hp}$) also easily exceeds the transmitted power ($0.022\text{ hp}$).
-* **Recommendation:** $d_{out} = 0.250\text{ in}$ is fully adequate; no diameter change is required.
+### iii. Equations & Algebraic Modeling
+
+*(Equations and calculations to be inserted here in plain text)*
+
+---
+
+## c. McMaster-Carr Component Selection
+
+The following off-the-shelf McMaster-Carr Sleeve Bearings made from self-lubricating, oil-embedded SAE 841 porous bronze satisfy all dimensional, wall thickness, and PV requirements:
+
+**1. Input Shaft Journal Bearing ( ID ×  OD × L):**
+- Component Name: SAE 841 Oil-Embedded Bronze Sleeve Bearing
+- McMaster-Carr Part Number: 6391K111
+- Dimensions:  ID ×  OD ×  Length (  Wall Thickness)
+
+**2. Output Shaft Journal Bearing ( ID ×  OD × L trimmed /  L):**
+- Component Name: SAE 841 Oil-Embedded Bronze Sleeve Bearing
+- McMaster-Carr Part Number: 6391K136
+- Dimensions:  ID ×  OD ×  Length (or 6391K131 for  length)
+    
