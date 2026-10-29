@@ -234,7 +234,7 @@ The following off-the-shelf CAD models were downloaded directly from McMaster-Ca
 - **Output Shaft CAD File:** [Output Shaft.SLDPRT](Output%20Shaft.SLDPRT)
 - **Gearbox Base CAD File:** [Gear Box.SLDPRT](Gear%20Box.SLDPRT)
 - **Gearbox Cover CAD File:** [Gear Box Cover.SLDPRT](Gear%20Box%20Cover.SLDPRT)
-- **20-Tooth Pinion Gear CAD File:** [7880K19_Metal Gear - 20 Degree Pressure Angle.SLDPRT](7880K19_Metal%20Gear%20-%2020%20Degree%20Pressure%20Angle.SLDPRT)
+- **18-Tooth Pinion Gear CAD File:** [7880K19_Metal Gear - 20 Degree Pressure Angle.SLDPRT](7880K19_Metal%20Gear%20-%2020%20Degree%20Pressure%20Angle.SLDPRT)
 - **48-Tooth Spur Gear CAD File:** [7880K24_Metal Gear - 20 Degree Pressure Angle.SLDPRT](7880K24_Metal%20Gear%20-%2020%20Degree%20Pressure%20Angle.SLDPRT)
 - **Input Sleeve Bearing CAD File:** [6391K111_Oil-Embedded 841 Bronze Sleeve Bearing.SLDPRT](6391K111_Oil-Embedded%20841%20Bronze%20Sleeve%20Bearing.SLDPRT)
 - **Output Sleeve Bearing CAD File:** [6391K136_Oil-Embedded 841 Bronze Sleeve Bearing.SLDPRT](6391K136_Oil-Embedded%20841%20Bronze%20Sleeve%20Bearing.SLDPRT)
