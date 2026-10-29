@@ -177,6 +177,8 @@ The high tensile strength (170,000 psi, Class 12.9) of alloy steel M3 socket hea
 
 To ensure full design adaptability, all critical geometric features of the gearbox housing and assembly are driven by SolidWorks Global Variables (Tools > Equations).
 
+![Parameters](Parameters.png)
+
 ### Derived Feature Equations in CAD Sketches
 1. Center-to-Center Bore Spacing: = "Cd" (0.6875 in)
 2. Input Journal Bearing Bore Diameter: = "Din" + 2 * "t" (0.250 in)
@@ -207,10 +209,12 @@ The following off-the-shelf CAD models were downloaded directly from McMaster-Ca
 - Part Number: 91290A500
 - Specifications: Black-Oxide Alloy Steel Socket Head Screws, M3 × 0.5 mm Thread, 12 mm Length
 
+
+
 ## c. Solid Model Housing Generation & Assembly Workflow
 
 ### Housing Design Steps
-1. **Base Enclosure:** Extruded a rectangular housing base (2.50 in × 2.00 in × 0.75 in) using high-performance ABS-PC (Acrylonitrile Butadiene Styrene / Polycarbonate) for high heat resistance and mechanical strength.
+1. **Base Enclosure:** Extruded a rectangular housing base (3 in × 2.00 in × 2 in) using high-performance ABS-PC (Acrylonitrile Butadiene Styrene / Polycarbonate) for high heat resistance and mechanical strength.
 2. **Internal Gear Pocket Cut:** Cut-extruded an elliptical internal cavity providing a minimum of 0.0625 in wall clearance around the meshing 1.0 in gear and 0.375 in pinion.
 3. **Parting Line Split:** Split the main block horizontally through the centerlines of both shaft bores, creating a Top Housing Cover and Bottom Housing Base.
 4. **Bearing Seat Bores:** Added counterbore pockets at the split plane to hold the 0.250 in and 0.375 in outer diameters of the oil-embedded bronze sleeve bearings.
@@ -223,7 +227,25 @@ The following off-the-shelf CAD models were downloaded directly from McMaster-Ca
 4. **Mechanical Gear Mate:** Applied a Gear Mate between the pinion and output gear pitch diameters using the exact teeth ratio (18:48), enabling dynamic mouse-driven rotation in CAD.
 
 ---
+### Download Links (CAD Files & Drawings)
 
+- **SolidWorks Assembly File:** [Assem Gear.SLDASM](Assem%20Gear.SLDASM)
+- **Input Shaft CAD File:** [Input Shaft.SLDPRT](Input%20Shaft.SLDPRT)
+- **Output Shaft CAD File:** [Output Shaft.SLDPRT](Output%20Shaft.SLDPRT)
+- **Gearbox Base CAD File:** [Gear Box.SLDPRT](Gear%20Box.SLDPRT)
+- **Gearbox Cover CAD File:** [Gear Box Cover.SLDPRT](Gear%20Box%20Cover.SLDPRT)
+- **20-Tooth Pinion Gear CAD File:** [7880K19_Metal Gear - 20 Degree Pressure Angle.SLDPRT](7880K19_Metal%20Gear%20-%2020%20Degree%20Pressure%20Angle.SLDPRT)
+- **48-Tooth Spur Gear CAD File:** [7880K24_Metal Gear - 20 Degree Pressure Angle.SLDPRT](7880K24_Metal%20Gear%20-%2020%20Degree%20Pressure%20Angle.SLDPRT)
+- **Input Sleeve Bearing CAD File:** [6391K111_Oil-Embedded 841 Bronze Sleeve Bearing.SLDPRT](6391K111_Oil-Embedded%20841%20Bronze%20Sleeve%20Bearing.SLDPRT)
+- **Output Sleeve Bearing CAD File:** [6391K136_Oil-Embedded 841 Bronze Sleeve Bearing.SLDPRT](6391K136_Oil-Embedded%20841%20Bronze%20Sleeve%20Bearing.SLDPRT)
+- **Fasteners CAD File:** [91290A117_Black-Oxide Alloy Steel Socket Head Screw.SLDPRT](91290A117_Black-Oxide%20Alloy%20Steel%20Socket%20Head%20Screw.SLDPRT)
+- **Engineering Drawings:**
+  - [Input Shaft Drawing (SLDDRW)](Input%20Shaft.SLDDRW)
+  - [Output Shaft Drawing (SLDDRW)](Output%20Shaft.SLDDRW)
+  - [Gearbox Base Drawing (SLDDRW)](Gear%20Box.SLDDRW)
+  - [Gearbox Cover Drawing (SLDDRW)](Gear%20Box%20Cover.SLDDRW)
+ 
+  
 # 5. Lessons Learned & Reflection
 
 1. **Importance of Symbolic Algebraic Derivations Before Calculation**  
