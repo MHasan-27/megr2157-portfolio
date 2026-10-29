@@ -220,12 +220,15 @@ The following off-the-shelf CAD models were downloaded directly from McMaster-Ca
 4. **Bearing Seat Bores:** Added counterbore pockets at the split plane to hold the 0.250 in and 0.375 in outer diameters of the oil-embedded bronze sleeve bearings.
 5. **Fastener Mounting Holes:** Added 4 corner clearance holes (3.40 mm diameter) on the top cover and 4 tapped blind holes (M3 × 0.5 mm) on the bottom base for the socket head cap screws.
 
+![Gear Box Drawing](Gear%20Box.JPG)
+
 ### Assembly Mating (.SLDASM)
 1. **Fixed Base:** Anchored the Bottom Housing Base.
 2. **Concentric Mates:** Mated the sleeve bearings and rotary shafts into their respective housing bore pockets.
 3. **Coincident Mates:** Positioned the pinion and output gear along the shafts so their face centers align perfectly in the mid-plane of the housing cavity.
 4. **Mechanical Gear Mate:** Applied a Gear Mate between the pinion and output gear pitch diameters using the exact teeth ratio (18:48), enabling dynamic mouse-driven rotation in CAD.
 
+![Gear Assemble Picture](Gear%20Assemble%20Picture.png)
 ---
 ### Download Links (CAD Files & Drawings)
 
