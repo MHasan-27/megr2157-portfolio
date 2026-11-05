@@ -40,51 +40,11 @@ Design a pulley system to transfer power between two parallel axes separated by 
 
 ### b. Free Body Diagram (FBD) of Belt/Pulley System
 
-*(Insert Free Body Diagram here)*
-
-### c. Symbolic Equations
-
-Capstan (belt friction) equation:
-
-T1 / T2 = e^(mu * theta)
-
-Static tension relation:
-
-T0 = (T1 + T2) / 2
-
-Transmitted torque:
-
-T = (T1 - T2) * R
-
-Minimum cross-sectional area:
-
-A_min = T1 / sigma_allow
-
-Belt length (open belt drive, equal diameter pulleys):
-
-L = 2C + pi * D
+![A9-1 Free Body Diagram](A9%20-1%20FBD.jpg)
+![A9-1 Numerical Analysis](A9%20-1%20Numerical.jpg)
 
 ### d. Numerical Solutions & Belt Selection
-
-From the relations above with T0 = 6.0 lbf, mu = 0.35, and theta = pi:
-
-T1 / T2 = e^(0.35 * pi) ≈ 3.00
-
-Solving simultaneously with T0 = 6.0 lbf yields:
-
-T1 = 9.00 lbf,   T2 = 3.00 lbf
-
-Minimum cross-sectional area:
-
-A_min = 9.00 / 157 ≈ 0.0573 in²
-
-Required belt diameter (assuming circular cross-section):
-
-db = sqrt(4 * A_min / pi) ≈ 0.270 in
-
-Belt length:
-
-L = 2*(6.0) + pi*(3.0) = 12 + 9.42 = 21.42 in
+![McMaster 5/16 in Belt Specification](McMaster%205-16%20in%20Belt.png)
 
 ---
 
@@ -108,29 +68,8 @@ L = 2*(6.0) + pi*(3.0) = 12 + 9.42 = 21.42 in
 
 ### b. Free Body Diagram (FBD) of Shaft
 
-*(Insert Free Body Diagram here)*
+![A9-2 Free Body Diagram](A9%20-2%20FBD.jpg)
 
-### c. Symbolic Equations for Minimum Shaft Diameter
-
-Radial load:
-
-F_radial = T1 + T2
-
-Transmitted torque:
-
-T = (T1 - T2) * R
-
-Minimum shaft diameter (based on shear stress):
-
-ds = (16 * T / (pi * tau_allow))^(1/3)
-
-### d. Numerical Calculations
-
-F_radial = 9.00 + 3.00 = 12.0 lbf
-
-T = (9.00 - 3.00) * 1.5 = 9.00 in-lbf
-
-ds = (16 * 9.00 / (pi * 17,310))^(1/3) ≈ 0.138 in
 
 **Selected standard shaft diameter:** ds = 0.250 in (matches commercial sleeve bearing bore and provides additional stiffness).
 
@@ -158,37 +97,11 @@ ds = (16 * 9.00 / (pi * 17,310))^(1/3) ≈ 0.138 in
 
 ### b. Free Body Diagram & Schematic
 
-*(Insert Free Body Diagram / Schematic here)*
-
-### c. Symbolic Equations
-
-Projected area:
-
-Ap = ds * Lb
-
-Operating pressure:
-
-P = W / Ap
-
-Surface speed:
-
-V = (pi * ds * n) / 12   (fpm)
-
-PV rating:
-
-PV = P * V
-
-### d. Numerical Solutions
-
-Ap = 0.250 * 0.375 = 0.09375 in²
-
-P = 12.0 / 0.09375 = 128.0 psi
-
-V = (pi * 0.250 * 2000) / 12 = 130.90 fpm
-
-PV = 128.0 * 130.90 = 16,755 psi · fpm
+![A9-3 Free Body Diagram](A9%20-3%20FBD.jpg)
 
 ### e. Material Selection Based on Table 4
+
+![Material Selection Table](Material%20Selection%20Table.png)
 
 **Selected Material:** Porous Bronze (SAE 841 Oil-Embedded Bronze)
 
