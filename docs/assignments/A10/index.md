@@ -4,9 +4,9 @@
 
 Part 1 (Leadscrew Diameter) using AISI 1018 Low-Carbon Steel (Sy = 370 MPa = 53,700 psi), formatted according to your assignment structure.
 
-## 1.) Minimum Diameter (d) using Axial Stress (Mohammad)
+## 1.) Minimum Diameter (d) using Axial Stress
 
-### a.) List all Knowns and Unknowns (0.5 pts)
+### a.) List all Knowns and Unknowns 
 
 **Knowns:**
 - Total required tensile load: F_total = 2 kN = 2000 N
@@ -19,37 +19,13 @@ Part 1 (Leadscrew Diameter) using AISI 1018 Low-Carbon Steel (Sy = 370 MPa = 53,
 - Allowable axial stress: sigma_allow
 - Minimum required root/minor diameter of each screw: dr
 
-*(Insert FBD / handwritten notes image here)*
+<img width="678" height="809" alt="image" src="https://github.com/user-attachments/assets/99e6f337-68e1-40e4-b13f-913b5e4ad59f" />
+<img width="974" height="531" alt="image" src="https://github.com/user-attachments/assets/a1564001-76cc-46a8-9def-1def132790ff" />
 
-### b.) FBD
 
-*(Insert FBD image here)*
+## 2.) Range of Rotational Speed Given Linear Speed 
 
-### c.) Symbolic Solve
-
-sigma_allow = Sy / SF
-
-sigma = F_screw / Ar = 4 F_screw / (pi d²)
-
-sigma ≤ sigma_allow
-
-4 F_screw / (pi d²) ≤ Sy / SF
-
-dr ≥ sqrt( 4 F_screw * SF / (pi * Sy) )
-
-### d.) Numerical Solve
-
-sigma_allow = (370 × 10^6 N/m²) / 4 = 92.5 × 10^6 N/m²
-
-dr ≥ sqrt( 4 (1000) * 4 / (pi * 370 × 10^6) )
-
-dr ≥ 0.00371 m ≈ 3.71 mm ≈ 0.146 in
-
----
-
-## 2.) Range of Rotational Speed Given Linear Speed (10 pts)
-
-### a.) List Knowns and Unknowns (0.5 pts)
+### a.) List Knowns and Unknowns 
 
 **Knowns:**
 - Minimum crosshead linear velocity: V_min = 1 mm/min
@@ -61,29 +37,14 @@ dr ≥ 0.00371 m ≈ 3.71 mm ≈ 0.146 in
 - Minimum rotational speed: N_min (in RPM)
 - Maximum rotational speed: N_max (in RPM)
 
-*(Insert rotational speed FBD / handwritten notes image here)*
+<img width="777" height="1006" alt="image" src="https://github.com/user-attachments/assets/72e9a785-def2-4062-b0b1-b739a623e3fd" />
 
-### Symbolic Solve
-
-Linear velocity = V  
-Rotational speed = omega or N  
-
-V = omega * L  →  omega = V / L  
-
-omega_min = V_min / L  
-omega_max = V_max / L  
-
-### Numerical Solve
-
-N_min = V_min / L = 1 mm/min / 2.54 mm/rev ≈ 0.394 RPM  
-
-N_max = V_max / L = 50 mm/min / 2.54 mm/rev ≈ 19.69 RPM  
 
 ---
 
-## 3.) Maximum Driving Torque per Screw for 2 kN Load (10 pts)
+## 3.) Maximum Driving Torque per Screw for 2 kN Load 
 
-### a.) List Knowns and Unknowns (0.5 pts)
+### a.) List Knowns and Unknowns 
 
 **Knowns:**
 - Axial load per screw: Fa = 1000 N
@@ -98,31 +59,12 @@ N_max = V_max / L = 50 mm/min / 2.54 mm/rev ≈ 19.69 RPM
 **Unknowns:**
 - Torque required to raise load (raise axial tension): TR
 
-*(Insert torque FBD / handwritten notes image here)*
+<img width="844" height="1093" alt="image" src="https://github.com/user-attachments/assets/2509760d-36f3-4eac-93ad-de800585c9f9" />
 
-### Symbolic Solve
-
-T_thread = (Fa * dm / 2) * [ (mu sec alpha + tan lambda) / (1 − mu sec alpha * tan lambda) ]
-
-Tc = (Fa * muc * dc) / 2
-
-T_total = T_thread + Tc
-
-### Numerical Solve
-
-mu sec(14.5°) = 0.15 * sec(14.5°) ≈ 0.1548 (approx 0.124 in source notes)
-
-tan lambda = 0.0707
-
-T_thread ≈ 1.123 N·m
-
-Tc ≈ 0.900 N·m
-
-T_max = 1.123 + 0.900 = 2.023 N·m ≈ 17.9 in·lbf
 
 ---
 
-## 4.) Select the Leadscrew from Catalog Resources (5 pts)
+## 4.) Select the Leadscrew from Catalog Resources 
 
 Based on the calculated minimum root diameter (dr ≥ 3.71 mm), structural rigidity requirements, and standard component availability from McMaster-Carr:
 
@@ -148,55 +90,15 @@ Part Number: 59284
 1. Precision Acme Externally Threaded Nut: 673 Bronze, 1/2"-10 Thread Size  
 2. Precision Acme Flange: Black-Oxide 1117 Carbon Steel, 15/16"-16 Thread
 
-*(Insert product images / catalog screenshots here)*
+<img width="974" height="1261" alt="image" src="https://github.com/user-attachments/assets/d16d9d0b-42a1-4184-bcf8-bdf14a6c3d83" />
+
 
 ---
+<img width="974" height="1010" alt="image" src="https://github.com/user-attachments/assets/c7d8eb66-1738-4162-87da-c8d630dac9fa" />
 
 ## Nut Analysis
+<img width="974" height="904" alt="image" src="https://github.com/user-attachments/assets/86d2931f-ef2b-4880-9ab9-f62ad26107b3" />
 
-**Knowns:**  
-Bronze Nut Roton 90222  
-Mounting Flange Roton 89838  
-Thread 1/2 - 10 RH  
-Pitch (p) 2.54 mm  
-Axial load per nut (F) 1000 N  
-SF 4  
-Operating load rating 1250 lbf  
-Nut static load rating 4000 lbf
-
-**Unknowns:**  
-Engaged Threads  
-Bearing Stress  
-Bending Stress
-
-F_design = SF(F) = 4(1000) = 4000 N  
-F_rated = 1250(4.44822) = 5560.3 N
-
-*(Insert Nut FBD image here)*
-
-### Nut Analysis Calculations
-
-F = 2000 / 2 = 1000 N per nut, SF = 4, P = 2.54 mm  
-d_pit = 12.7 − 2.54/2 = 11.43 mm  
-Le = 19.05, Sy = 125 MPa  
-
-nt = Le / P  
-sigma_b = 2F / (pi * d_pit * nt * P)  
-M = Fb / 4  
-Z = nt * (P/2)^2 * pi * P * d_min / 6  
-
-d_min = d − P  
-sigma_allow = Sy / SF  
-
-nt = 19.05 / 2.54 = 7.5  
-d_min = 12.7 − 2.54 = 10.16 mm  
-
-sigma_b = 2(1000) / (pi * 11.43 * 7.5 * 2.54) = 2.92 MPa  
-sigma_bend = 6(1000) / (7.5 * pi * 10.16 * 2.54) = 9.87 MPa  
-sigma_allow = 125 / 4 = 31.25 MPa  
-
-9.87 < 31.25  
-n = 125 / 9.87 = 12.7 > 4
 
 ---
 
@@ -206,70 +108,21 @@ n = 125 / 9.87 = 12.7 > 4
 
 **Knowns and Unknowns and FBD**
 
-*(Insert Crosshead FBD image here)*
-
-**Knowns:**  
-Center load (P) = 2000 N  
-SF = 4  
-Max deflection = 0.1 mm  
-Each nut = 1000 N  
-Screw Center - Center (L) = 300 mm  
-Crosshead width (b) = 60 mm  
-Crosshead vertical height (h) = ?  
-
-sigma_max = ? , delta_max = ?
-
-ΣMB = 0 → RB = P/2 = 1000 N ↑  
-ΣFy = 0 → RA = 1000 N ↑  
-M_max = RA * L / 2 = P L / 4 = 2000 * 300 / 4 = 150,000 N·mm
-
-### Symbolic Solution – Crosshead
-
-M_max = P L / 4  
-I = b h³ / 12  
-C = h / 2  
-
-sigma_max = M_max * C / I → 3 P L / (2 b h²)  
-
-sigma_max ≤ Sy / SF  
-3 P L / (2 b h²) ≤ Sy / SF  
-
-h_min,strength = sqrt( 3 P L * SF / (2 b Sy) )
-
-### Numerical Solution Using 6061-T6 aluminum Sy = 276 MPa
-
-sigma_allow = Sy / SF = 276 / 4 = 69 MPa  
-
-h_min = sqrt( 3 * 2000 * 300 * 4 / (2 * 60 * 276) ) = 14.74 mm
+<img width="974" height="932" alt="image" src="https://github.com/user-attachments/assets/5aa46a87-314f-4ae0-b681-ab045af28c20" />
+ 
+  **Symbolically and Numerical Solve the Unknown**
+  
+<img width="974" height="839" alt="image" src="https://github.com/user-attachments/assets/fc0b7a00-3259-4c7d-a31c-1b9c8985e4d3" />
 
 ---
 
-### 2. Simple Beam Deflection Analysis (10 pts)
+### 2. Simple Beam Deflection Analysis 
 
 **Crosshead Deflection Analysis**
 
-E = 68900 N/mm²  
-delta_allow = 0.1 mm  
-RA = 1000  
-RB = 1000  
+<img width="853" height="640" alt="image" src="https://github.com/user-attachments/assets/032c3213-227a-4337-be46-4ef6d14f9ff0" />
 
-delta_max = P L³ / (48 E I)  
-I = b h³ / 12  
-
-h_min,deflection = [ P L³ / (4 E b delta_allow) ]^(1/3) ≈ 31.96 mm  
-
-h_min,strength = 14.74 mm  
-h_min,deflection = 31.96 mm  
-
-Selected: b = 60 mm, h = 35 mm  
-
-I = b h³ / 12 = 60 * (35)³ / 12 = 214,375 mm⁴  
-
-sigma_max = M_max * C / I = 150000 * (35/2) / 214375 ≈ 12.24 MPa  
-
-N = Sy / sigma_max = 276 / 12.24 ≈ 22.54 > 4  
-
-delta_max = P L³ / (48 E I) = 2000 * (300)³ / (48 * 68900 * 214375) ≈ 0.0762 mm
+<img width="844" height="548" alt="image" src="https://github.com/user-attachments/assets/31db75ba-855b-41a1-aa67-a3d0ca62a2a4" />
 
 ---
 
@@ -277,30 +130,28 @@ delta_max = P L³ / (48 E I) = 2000 * (300)³ / (48 * 68900 * 214375) ≈ 0.0762
 
 *(Insert Multiview sketch image here)*
 
-**Flange Details**  
-Outside = Ø 66.04  
-Bolt Circle = Ø53.086  
-4-flange holes = Ø6.756  
-Hole angles: 45°, 135°, 225°, 315°  
-8 × 1/4"-20 UNC Tapped Holes  
-12.7 mm Thread Depth  
-4 holes equally spaced on Ø53.086
+<img width="974" height="855" alt="image" src="https://github.com/user-attachments/assets/3881ebc4-9196-43fa-9a13-623c6aa8ec29" />
+
 
 **Global Variables Setup:**
 
-*(Insert Global Variables screenshot here)*
+<img width="974" height="283" alt="image" src="https://github.com/user-attachments/assets/fb0ef6ba-700a-4a47-ae4c-8a9ea36549eb" />
+
 
 - **Step 1 (Base Extrusion):** Sketch a 400 mm × 60 mm rectangle on the Front Plane and perform a Boss-Extrude to a depth of 35 mm to create the main solid crosshead body.
 
-*(Insert Step 1 CAD screenshot here)*
+<img width="973" height="603" alt="image" src="https://github.com/user-attachments/assets/f57587a3-336f-4f9c-b7ee-3134189f1333" />
+
 
 - **Step 2 (Leadscrew Clearance Holes):** Sketch two Ø14 mm circles spaced 300 mm apart (50 mm from each edge) and perform a Cut-Extrude through-all to create clearance holes for the leadscrews.
 
-*(Insert Step 2 CAD screenshot here)*
+<img width="972" height="489" alt="image" src="https://github.com/user-attachments/assets/0f9c40be-6078-4aa4-a2bd-942f80609282" />
+
 
 - **Step 3 (Flange Mounting Tapped Holes):** Use the Hole Wizard to add eight 1/4"-20 UNC tapped holes (4 around each leadscrew hole on a Ø53.086 mm bolt circle) to secure the bronze nut mounting flanges.
 
-*(Insert Step 3 CAD screenshot here)*
+<img width="974" height="519" alt="image" src="https://github.com/user-attachments/assets/0a682e35-dc43-49c5-a589-c0744421168f" />
+
 
 ---
 
@@ -339,7 +190,8 @@ If your team prefers to order all components through McMaster-Carr using the int
 - **Frame (Downloaded):** Downloaded 40 Series 80/20 double t-slot aluminum framing CAD files to construct the rigid outer test frame.
 - **Assembly Mates:** Mated the aluminum frame using rigid mates, fixed the leadscrews in place, and applied concentric and screw mates between the nuts, flanges, and crosshead to allow realistic vertical crosshead motion.
 
-*(Insert Assembly CAD screenshot here)*
+<img width="974" height="495" alt="image" src="https://github.com/user-attachments/assets/bef42e91-0abf-4a01-81f6-d618c17c893b" />
+
 
 ---
 
