@@ -1,13 +1,4 @@
 # A10 – Lead Screw Translating System
 
-## Objective
-
-
-## Analyze
-
-
-## Decide
-_Reference your concept selection (Pugh matrix) here. How does this design follow from that decision?_
-
-## Communicate
+<img width="678" height="809" alt="image" src="https://github.com/user-attachments/assets/d8cd2ac6-5f93-4797-bc76-bbfce7bcfbc3" />
 
