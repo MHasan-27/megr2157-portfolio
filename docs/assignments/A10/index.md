@@ -217,3 +217,13 @@ If your team prefers to order all components through McMaster-Carr using the int
 - Documentation & Portfolio Write-Up: 3 hours
 - **Total Time: 14.0 Hours**
 
+## Download Link
+
+- [A10 Assembly.SLDASM](./A10%20Assembly.SLDASM)
+- [Crosshead.SLDPRT](./Crosshead.SLDPRT)
+- [1329K102_Precision Acme Flange.SLDPRT](./1329K102_Precision%20Acme%20Flange.SLDPRT)
+- [95072A209_Precision Acme Externally Threaded Nut.SLDPRT](./95072A209_Precision%20Acme%20Externally%20Threaded%20Nut.SLDPRT)
+- [99030A005_1018 Carbon Steel Precision Acme Lead Screw(2).SLDPRT](./99030A005_1018%20Carbon%20Steel%20Precision%20Acme%20Lead%20Screw(2).SLDPRT)
+- [5537T038_T-Slotted Framing.SLDPRT](./5537T038_T-Slotted%20Framing.SLDPRT)
+- [5537T46_T-Slotted Framing.SLDPRT](./5537T46_T-Slotted%20Framing.SLDPRT)
+
