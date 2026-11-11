@@ -88,12 +88,13 @@ Part Number: 59284
 
 ### Select a Nut and Flange: (Brayan)
 
-1. Acme Threaded Mount Nut, 1/2 - 10, RH, Bronze  
-2. Mounting Flange, .938 - 16 UN, Steel
+**Roton Option:**
+1. [Acme Threaded Mount Nut, 1/2 - 10, RH, Bronze](https://www.roton.com/product/acme-bronze-threaded-mount-nut-right-90222/) (Part No. 90222)
+2. [Mounting Flange, .938 - 16 UN, Steel](https://www.roton.com/product/flange-steel-flange-89838/) (Part No. 89838)
 
-**Or; (Same Alternative Parts from McMaster)**  
-1. Precision Acme Externally Threaded Nut: 673 Bronze, 1/2"-10 Thread Size  
-2. Precision Acme Flange: Black-Oxide 1117 Carbon Steel, 15/16"-16 Thread
+**Or; (Same Alternative Parts from McMaster-Carr)**
+1. [Precision Acme Externally Threaded Nut: 673 Bronze, 1/2"-10 Thread Size](https://www.mcmaster.com/95072A209/) (Part No. 95072A209 – Left Hand version used in cost table)
+2. [Precision Acme Flange: Black-Oxide 1117 Carbon Steel, 15/16"-16 Thread](https://www.mcmaster.com/1329K102/) (Part No. 1329K102)
 
 <img width="974" height="1261" alt="image" src="https://github.com/user-attachments/assets/d16d9d0b-42a1-4184-bcf8-bdf14a6c3d83" />
 
