@@ -1,5 +1,10 @@
 # A10 – Lead Screw Translating System
 
+**Team Members**  
+- Mohammad Hasan (mhasan27@charlotte.edu)  
+- Brayan Maldonado-Guzman (bmaldon3@charlotte.edu)  
+- Candy Vasquez (cvasque6@charlotte.edu)
+
 # Leadscrew Diameter: (Mohammad)
 
 Part 1 (Leadscrew Diameter) using AISI 1018 Low-Carbon Steel (Sy = 370 MPa = 53,700 psi), formatted according to your assignment structure.
