@@ -167,25 +167,26 @@ Part Number: 59284
 
 If your team prefers to order all components through McMaster-Carr using the integrated flange nut setup:
 
-| Part No.   | Description                                                                 | Req. Qty. | Order Qty. | Unit of Measure | Price   | Total    |
-|------------|-----------------------------------------------------------------------------|-----------|------------|-----------------|---------|----------|
-| 1329K102   | Precision Acme Flange Black-Oxide 1117 Carbon Steel, 15/16"-16 Thread Size | 2         | 2          | Each            | $67.13  | $134.26  |
-| 99030A005  | 1018 Carbon Steel Precision Acme Lead Screw Right Hand, 1/2"-10 Thread Size, 3 Feet Long | 2 | 2 | Each | $18.72 | $37.44 |
-| 95072A209  | Precision Acme Externally Threaded Nut Left Hand, 673 Bronze, 1/2"-10 Thread Size | 2 | 2 | Each | $37.61 | $75.22 |
-| 5537T038   | T-Slotted Framing 6-Slot Rail, Silver, 80mm High, 40mm Wide, Solid, 1.5' Long | 2 | 2 | Each | $39.52 | $79.04 |
-| 5537T46    | T-Slotted Framing Double 6-Slot Rail, Silver, 80mm High, 40mm Wide, Solid 4' Long | 2 | 2 | Each | $98.37 | $196.74 |
-| **Total**  |                                                                             |           |            |                 |         | **$522.70** |
+| Part No.   | Description                                                                                      | Req. Qty. | Order Qty. | Unit of Measure | Price  | Total    |
+|------------|--------------------------------------------------------------------------------------------------|-----------|------------|-----------------|--------|----------|
+| [1329K102](https://www.mcmaster.com/1329K102/) | Precision Acme Flange Black-Oxide 1117 Carbon Steel, 15/16"-16 Thread Size | 2 | 2 | Each | $67.13 | $134.26 |
+| [99030A005](https://www.mcmaster.com/99030A005/) | 1018 Carbon Steel Precision Acme Lead Screw Right Hand, 1/2"-10 Thread Size, 3 Feet Long | 2 | 2 | Each | $18.72 | $37.44 |
+| [95072A209](https://www.mcmaster.com/95072A209/) | Precision Acme Externally Threaded Nut Left Hand, 673 Bronze, 1/2"-10 Thread Size | 2 | 2 | Each | $37.61 | $75.22 |
+| [5537T038](https://www.mcmaster.com/5537T038/) | T-Slotted Framing 6-Slot Rail, Silver, 80mm High, 40mm Wide, Solid, 1.5' Long | 2 | 2 | Each | $39.52 | $79.04 |
+| [5537T46](https://www.mcmaster.com/5537T46/) | T-Slotted Framing Double 6-Slot Rail, Silver, 80mm High, 40mm Wide, Solid 4' Long | 2 | 2 | Each | $98.37 | $196.74 |
+| **Total**  |                                                                                                  |           |            |                 |        | **$522.70** |
+
+---
 
 ### Roton Part Option
 
-| Item Number | Qnt | Name                                                                 | Cost/Item | Total Cost | Purchase Link              |
-|-------------|-----|----------------------------------------------------------------------|-----------|------------|----------------------------|
-| 1           | 2   | Acme Lead Screw, 1/2 - 10, RH, Steel                                 | $9.10     | $18.20     | Roton Part #59284          |
-| 2           | 2   | Acme Threaded Mount Nut, 1/2 - 10, RH, Bronze                        | $23.57    | $47.14     | Roton Part #90222          |
-| 3           | 2   | Mounting Flange, .938 - 16 UN, Steel                                 | $49.63    | $99.26     | Roton Part #89838          |
+| Item Number | Qty | Name                                                                                           | Cost/Item | Total Cost | Purchase Link |
+|-------------|-----|------------------------------------------------------------------------------------------------|-----------|------------|---------------|
+| 1           | 2   | [Acme Lead Screw, 1/2 - 10, RH, Steel](https://www.roton.com/family/acme-right-screws-and-nuts-7059284/) | $9.10 | $18.20 | Roton Part #59284 |
+| 2           | 2   | [Acme Threaded Mount Nut, 1/2 - 10, RH, Bronze](https://www.roton.com/product/acme-bronze-threaded-mount-nut-right-90222/) | $23.57 | $47.14 | Roton Part #90222 |
+| 3           | 2   | [Mounting Flange, .938 - 16 UN, Steel](https://www.roton.com/product/flange-steel-flange-89838/) | $49.63 | $99.26 | Roton Part #89838 |
 | 4           | 1   | 80/20 T-Slot Framing System Profile: Rectangle, 40 Series, Smooth, Double, 3 m Lg, 80mm x 40mm | $270.09 | $270.09 | Grainger Model 40-4080-1M |
-| **Total**   |     |                                                                      |           | **$434.69** |                            |
-
+| **Total**   |     |                                                                                                |           | **$434.69** |               |
 ---
 
 ## Parametric Modeling & CAD Assembly (Brayan and Mohammad)
