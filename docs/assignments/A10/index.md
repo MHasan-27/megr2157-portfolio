@@ -369,7 +369,7 @@ These optimized mesh results show good convergence, with both stress and deflect
 
 ---
 
-## 2.) Finite Element Analysis
+## 2.)  Drawing of the crosshead
 
 <img width="975" height="758" alt="image" src="https://github.com/user-attachments/assets/b30747da-2f88-49b1-b2ee-002128f38923" />
 
