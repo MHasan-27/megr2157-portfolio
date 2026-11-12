@@ -86,7 +86,7 @@ Based on the calculated minimum root diameter (dr ≥ 3.71 mm), structural rigid
 Acme Lead Screw, 1/2 – 10, RH, Steel  
 Part Number: 59284
 
-### Select a Nut and Flange: (Brayan)
+# Select a Nut and Flange: (Brayan)
 
 **Roton Option:**
 1. [Acme Threaded Mount Nut, 1/2 - 10, RH, Bronze](https://www.roton.com/product/acme-bronze-threaded-mount-nut-right-90222/) (Part No. 90222)
