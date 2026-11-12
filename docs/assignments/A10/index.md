@@ -387,6 +387,8 @@ These optimized mesh results show good convergence, with both stress and deflect
 
 - [A10 Assembly.SLDASM](./A10%20Assembly.SLDASM)
 - [Crosshead.SLDPRT](./Crosshead.SLDPRT)
+- [Crosshead optimized.SLDPRT](./Crosshead%20optimized.SLDPRT)
+- [Crosshead drawing.SLDDRW](./Crosshead%20drawing.SLDDRW)
 - [1329K102_Precision Acme Flange.SLDPRT](./1329K102_Precision%20Acme%20Flange.SLDPRT)
 - [95072A209_Precision Acme Externally Threaded Nut.SLDPRT](./95072A209_Precision%20Acme%20Externally%20Threaded%20Nut.SLDPRT)
 - [99030A005_1018 Carbon Steel Precision Acme Lead Screw(2).SLDPRT](./99030A005_1018%20Carbon%20Steel%20Precision%20Acme%20Lead%20Screw(2).SLDPRT)
