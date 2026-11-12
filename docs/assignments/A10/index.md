@@ -238,18 +238,33 @@ Perform a mesh convergence check (at least two refinements) and report key metri
 
 
 
-<img width="443" height="167" alt="image" src="https://github.com/user-attachments/assets/9c5692db-25bb-4b73-8d62-7d3210d6aece" /> <img width="443" height="167" alt="image" src="https://github.com/user-attachments/assets/528bc293-778d-43e0-9850-8ef869dbd0cd" />
 
+<img width="443" height="167" alt="image" src="https://github.com/user-attachments/assets/9c5692db-25bb-4b73-8d62-7d3210d6aece" /> <img width="500" height="200" alt="image" src="https://github.com/user-attachments/assets/cb55c9fb-3618-4fe0-a532-75f16478beb1" />
+
+
+
+<img width="402" height="182" alt="image" src="https://github.com/user-attachments/assets/71bb54bc-cdd6-48c5-8e66-eec9130d693e" /> <img width="527" height="156" alt="image" src="https://github.com/user-attachments/assets/de1d2677-be68-4424-8de0-6ac7c0589d12" />
+
+
+
+<img width="387" height="173" alt="image" src="https://github.com/user-attachments/assets/26f34707-2650-4882-b9c2-cb8f1f269de2" /> <img width="549" height="187" alt="image" src="https://github.com/user-attachments/assets/3a73f858-c1d4-4da8-b0db-c703f8c64556" />
 
 
 
 **Original Design Results**
 
-> Stress  
+Stress:
 
-> Displacement  
+<img width="975" height="463" alt="image" src="https://github.com/user-attachments/assets/f1a615e1-8453-429a-868a-c610c44797c2" />
 
-> Factor Of Safety  
+ Displacement:
+
+<img width="975" height="381" alt="image" src="https://github.com/user-attachments/assets/a1cd108c-7c22-45dc-b279-9c2782291b14" />
+
+Factor Of Safety: 
+
+<img width="975" height="381" alt="image" src="https://github.com/user-attachments/assets/f3a0a32d-6168-4084-8c40-9f37e41c2479" />
+
 
 | Metric                  | FEA TEST I (Coarse) | FEA TEST II (Medium/Default) | FEA TEST III (Fine) |
 |-------------------------|---------------------|------------------------------|---------------------|
@@ -300,11 +315,17 @@ To do this, pockets were added by removing material in the area between the two 
 
 **Optimized Design Results**
 
-> Stress  
+Stress:  
 
-> Deflection  
+<img width="975" height="377" alt="image" src="https://github.com/user-attachments/assets/5bfeb1db-cdbe-48d7-96ed-3b25cda7ed38" />
 
-> Factor of Safety  
+Deflection: 
+
+<img width="975" height="365" alt="image" src="https://github.com/user-attachments/assets/d23a1a53-6d28-48cc-a0d7-7422db16b488" />
+
+Factor of Safety:
+
+<img width="975" height="233" alt="image" src="https://github.com/user-attachments/assets/3a027f87-856d-4d88-9e1e-e0127a93a74a" />
 
 | Metric                  | FEA TEST I (Coarse) | FEA TEST II (Medium/Default) | FEA TEST III (Fine) |
 |-------------------------|---------------------|------------------------------|---------------------|
@@ -338,13 +359,19 @@ The optimization was successful in reducing the maximum stress while maintaining
 
 These optimized mesh results show good convergence, with both stress and deflection changing by less than 5% between the medium and fine meshes. Since the main goal was weight reduction, this optimization reduced the weight from 4.9 lbs (2230 g) down to 4.7 lbs (2113 g).
 
-> original  
+ original:  
 
-> optimized  
+<img width="399" height="284" alt="image" src="https://github.com/user-attachments/assets/b6919f77-e154-4f45-9abe-2d6fc97729b1" />
+
+ optimized:  
+
+<img width="432" height="290" alt="image" src="https://github.com/user-attachments/assets/ec3b8df1-979e-46ad-a625-4b250f9ba955" />
 
 ---
 
 ## 2.) Finite Element Analysis
+
+<img width="975" height="758" alt="image" src="https://github.com/user-attachments/assets/b30747da-2f88-49b1-b2ee-002128f38923" />
 
 
 **Total Time Spent:**
