@@ -749,7 +749,7 @@ In total, my work on the frame FEA studies, engineering drawing package, and fin
 
 **Total Combined Project Time: 29.5 Hours**
 
-## For 2157 Students 
+## For 2157 Students (Candy)
 
 <img width="3919" height="3024" alt="IMG_3186" src="https://github.com/user-attachments/assets/a76062d7-4d03-47db-9711-282cfca667f2" />
 <img width="3808" height="2986" alt="IMG_3185" src="https://github.com/user-attachments/assets/f8d78a17-d516-4d93-9f73-d64279c0d846" />
