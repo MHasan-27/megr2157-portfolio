@@ -43,6 +43,10 @@ The motor provides a suitable nominal operating point for the preliminary design
 
 ## 2. Motor Mount Bracket / Housing Design (Brayan)
 
+<img width="974" height="1098" alt="image" src="https://github.com/user-attachments/assets/da248187-c15b-4cdb-99e9-7d477c7b36c0" />
+<img width="974" height="1261" alt="image" src="https://github.com/user-attachments/assets/985692a6-c3de-431c-adf4-af3c7ca63f18" />
+
+
 I designed an elevated motor mount using a square plate. This arrangement provides space for the coupler above the frame and leaves an opening for access to its retaining screws.
 
 The plate began as a centered sketch. I examined the motor CAD model and measured the shaft location relative to the mounting-hole pattern. Since the shaft is offset from the pattern center, I positioned the plate's clearance opening approximately 15.00 mm from its center.
@@ -56,6 +60,8 @@ The mounting specifications are:
 - Mounting pattern: 67.183 mm x 40.00 mm
 - Plate thickness: 8 mm
 
+<img width="975" height="706" alt="image" src="https://github.com/user-attachments/assets/d2b249ca-0c09-43ea-be87-6ea442eab27a" />
+
 I inserted the plate into the assembly and aligned its mounting holes with the motor. After positioning the motor and coupler, I measured the space between the motor mounting face and the frame.
 
 I evaluated mounting-hole bearing stress and performed a plate-bending check. These calculations supported retaining the 8 mm plate under the stated assumptions.
@@ -65,6 +71,11 @@ I then used Interference Detection to inspect the motor, plate, and coupler. The
 ---
 
 ## 3. Coupler Design & Torsional Shear Analysis (Brayan)
+
+<img width="974" height="755" alt="image" src="https://github.com/user-attachments/assets/8d558cb5-9024-4607-96f8-ff0687f80f01" />
+<img width="974" height="1261" alt="image" src="https://github.com/user-attachments/assets/016f34a8-5c69-4326-954d-84c7c78e1952" />
+<img width="974" height="1261" alt="image" src="https://github.com/user-attachments/assets/08d15d0a-3636-41fc-98a3-8f536cc9c739" />
+<img width="974" height="884" alt="image" src="https://github.com/user-attachments/assets/f3eff804-a58e-419d-8da3-49f8230e6d77" />
 
 I designed a custom coupler to connect the motor's smooth keyed shaft to the fully threaded Acme leadscrew.
 
@@ -80,7 +91,12 @@ I investigated purchased couplers first, but did not verify a ready-made McMaste
 - Leadscrew-side starting bore diameter: 10.16 mm
 - Leadscrew-side bore depth: 28 mm
 
+<img width="975" height="738" alt="image" src="https://github.com/user-attachments/assets/f964bb83-4d2a-49c7-b3dc-89c36ce73290" />
+<img width="975" height="712" alt="image" src="https://github.com/user-attachments/assets/32b536d7-8f2f-428c-af81-8bc92cd3a148" />
+
 I added a cosmetic thread identifying a half-inch, 10-thread-per-inch, right-hand Acme connection with 25.4 mm of full engagement. This kept the CAD model manageable while communicating the intended thread.
+
+<img width="975" height="728" alt="image" src="https://github.com/user-attachments/assets/a30d7a72-ea92-4e21-80d9-ed3c91b2bef2" />
 
 I created a tangent reference plane to locate the radial retaining holes. Using Hole Wizard, I added an M4 tapped hole near the motor end and another near the leadscrew end.
 
@@ -147,6 +163,10 @@ a = 98.6 mm
   - Tensile stress (sigma_t)
   - Shear stress (tau)
 
+<img width="854" height="1105" alt="image" src="https://github.com/user-attachments/assets/42d62a2e-05f9-4c43-a21c-68ca54d77a89" />
+<img width="879" height="504" alt="image" src="https://github.com/user-attachments/assets/ef65db89-ffe9-499d-ae69-066bfad32af9" />
+
+
 ### Selected Connector (McMaster-Carr Double-Rail Corner Brackets)
 
 **Primary Part:**
@@ -198,22 +218,29 @@ Use Insert > Curve > Split Line on the top and bottom faces of the extrusion to 
 
 - End Corner Bracket Footprints (Left & Right Ends):
   - Split a 40 mm x 40 mm pad at each end of the bottom face (and end faces) representing the #5537T6 Extended Open Gusset Corner Brackets.
+    <img width="488" height="159" alt="image" src="https://github.com/user-attachments/assets/776530d7-7822-4957-90c4-9a86a65a9bce" />
+
 - Motor / Thrust Mount Footprints:
   - Split two mounting pads matching the motor mount footprint, e.g., 110 mm x 110 mm for the #4855N17 motor base.
+<img width="585" height="166" alt="image" src="https://github.com/user-attachments/assets/92ade9e8-e13d-4f2d-8d3c-e69879ac906b" />
 
 #### 3. Boundary Conditions (Fixtures)
 
 Apply Fixed Geometry to the two 40 mm x 40 mm end bracket contact pads (or specifically to the 4 M8 bolt-pad regions per end) where the #5537T6 corner brackets clamp the top beam to the vertical standoffs.
+<img width="598" height="353" alt="image" src="https://github.com/user-attachments/assets/8f809e92-10ef-4a6c-8dca-5f4497abb41e" />
+<img width="530" height="125" alt="image" src="https://github.com/user-attachments/assets/ea2387a5-65ad-4a03-aef8-f7a8d20f09a0" />
 
 #### 4. Applied Loads
 
 **Leadscrew Axial Reactions:**
 
 Apply Fy = -1000 N (downward) on each of the two motor/thrust bearing split pads (2000 N total axial tension path).
+<img width="655" height="260" alt="image" src="https://github.com/user-attachments/assets/9995fd90-ad69-470f-8103-b686ab34c433" />
 
 **Motor Reaction Torques:**
 
 Apply a torque of T = 8.816 N*m (SF = 4 design torque per motor; or 2.204 N*m operating torque) about the vertical axis (y-axis) on each motor mount pad, both acting in the same rotational direction (CCW/CW).
+<img width="578" height="301" alt="image" src="https://github.com/user-attachments/assets/cec58a3c-8298-4039-a27e-e3c62c4333ab" />
 
 Apply the loads to both sides (x2).
 
@@ -230,6 +257,11 @@ Curvature-based Solid Tetrahedral Mesh with Local Mesh Control (1.5 mm - 2.0 mm 
 | Coarse | 8.0 mm | 4.0 mm | 67.1654 | - | 0.016666 | - | 0.82 |
 | Medium | 5.0 mm | 2.5 mm | 119.8494 | 78.44% | 0.017669 | 6.02% | 0.46 |
 | Fine | 3.0 mm | 1.5 mm | 98.7234 | 17.64% | 0.017779 | 0.62% | 0.56 |
+
+<img width="619" height="330" alt="image" src="https://github.com/user-attachments/assets/9a59d9d0-b6ac-44f4-96d0-70d7400e744b" />
+<img width="647" height="319" alt="image" src="https://github.com/user-attachments/assets/12216285-02b7-4cc4-a783-c86b4c7a0922" />
+<img width="609" height="297" alt="image" src="https://github.com/user-attachments/assets/06791a84-3f3d-442a-a590-e988edb5a385" />
+
 
 **Analytical Benchmark Check:**
 
@@ -299,6 +331,9 @@ To optimize this design, I decided to remove material from low-stress regions to
 
 However, from my last optimization I learned to avoid removing material near high-stress areas as it impacts its ability to withstand bending. I also decided to add fillets to reduce stress concentrations via sharp corners.
 
+<img width="676" height="285" alt="image" src="https://github.com/user-attachments/assets/6b654bf9-c353-421c-9515-832908e5a228" />
+
+
 **Optimization Results:**
 
 | Parameter | Original Fine Mesh | Optimized Fine Mesh | Change |
@@ -306,6 +341,10 @@ However, from my last optimization I learned to avoid removing material near hig
 | Maximum von Mises Stress (MPa) | 98.7234 | 87.7194 | 11.15% decrease |
 | Maximum Deflection (mm) | 0.017779 | 0.021894 | 23.15% increase |
 | Factor of Safety | 0.56 | 0.63 | 12.50% increase |
+
+<img width="505" height="275" alt="image" src="https://github.com/user-attachments/assets/65e56015-d8e9-4af7-9acb-5b8f638534b8" />
+<img width="482" height="260" alt="image" src="https://github.com/user-attachments/assets/05403703-5c6a-4e14-bbfc-9e08bcfd508b" />
+<img width="504" height="274" alt="image" src="https://github.com/user-attachments/assets/d9e65334-45b3-467c-aedb-5cc7c5a33c6a" />
 
 This optimization represents a more successful improvement compared with the original design.
 
@@ -338,6 +377,8 @@ Material Properties:
 | Elastic Modulus (E) | 68,900 MPa |
 | Poisson's Ratio (v) | 0.33 |
 
+<img width="432" height="529" alt="image" src="https://github.com/user-attachments/assets/00964a5c-3ba9-4e4a-9764-0b7aab1163ff" />
+
 #### 2. Split Lines (Isolating Bracket Interfaces in SOLIDWORKS)
 
 Use Insert > Curve > Split Line to create realistic contact footprints.
@@ -346,11 +387,15 @@ Use Insert > Curve > Split Line to create realistic contact footprints.
 
 On the upper inner 80 mm face, split two 40 mm x 40 mm pads spaced 40 mm apart (located 40 mm down from the top edge, directly beneath the top horizontal crossbeam) where the two #5537T665 gusset brackets attach.
 
+<img width="244" height="293" alt="image" src="https://github.com/user-attachments/assets/a62a9337-26e6-4bf8-942f-7257537d1556" />
+
 #### 3. Boundary Conditions (Fixtures)
 
 **Bottom Base Face:**
 
 Apply Fixed Geometry to the bottom end face (and base bracket mounting pads) to anchor the column to the baseplate/frame.
+
+<img width="416" height="366" alt="image" src="https://github.com/user-attachments/assets/747f6843-344d-4e50-9095-cee3af4d6bce" />
 
 #### 4. Applied Loads (Two Required Loads)
 
@@ -377,6 +422,9 @@ Or at Worst-Case Motor Stall Torque (T_stall = 22.6 N*m):
 F_transverse = +/-565.0 N
 ```
 
+<img width="546" height="473" alt="image" src="https://github.com/user-attachments/assets/144040c2-8b57-44b9-a71a-55c80f681ee8" />
+<img width="547" height="347" alt="image" src="https://github.com/user-attachments/assets/647f95d0-457d-4e39-a9c0-7eebf1e45f06" />
+
 ### b.) Meshing & Verification (Mesh Convergence Study)
 
 **Mesh Type:**
@@ -390,6 +438,10 @@ Curvature-based Solid Tetrahedral Mesh with Local Mesh Control (1.5 mm - 2.0 mm 
 | Coarse | 12.0 mm | 5.0 mm | 76.5020 | - | - | - | - |
 | Medium | 8.0 mm | 3.0 mm | 81.6757 | +6.77% | 21.1284 | -0.059% | 0.73 |
 | Fine | 5.0 mm | 1.5 mm | 88.1300 | +7.90% | 21.1403 | +0.115% | 0.63 |
+
+<img width="353" height="432" alt="image" src="https://github.com/user-attachments/assets/73fdce8c-3db5-4662-a1f9-83f913c6717e" /> <img width="301" height="436" alt="image" src="https://github.com/user-attachments/assets/9f66814f-82d1-4865-9a4b-f8db454155b7" /> <img width="294" height="393" alt="image" src="https://github.com/user-attachments/assets/60eeac8f-d564-47e3-956f-284ae6c82d9b" />
+
+
 
 The mesh convergence shows how the maximum vertical deflection stayed pretty consistent across all mesh refinements, with values staying close to 21.14 mm.
 
@@ -462,6 +514,10 @@ The simulation results show that the highest stress is concentrated around the b
 To improve the design, the connection between the rod and the base could be strengthened by increasing the material thickness in that area. This would help spread the forces more evenly and make the structure less likely to bend at its base.
 
 To limit the movement at the top, the rod itself could be made thicker or reinforced along its length. This would increase its overall stiffness and help it withstand the applied loads with less bending or twisting.
+
+<img width="401" height="281" alt="image" src="https://github.com/user-attachments/assets/15ac40b0-8321-4a77-810b-9e08ae84c4a0" />
+<img width="483" height="577" alt="image" src="https://github.com/user-attachments/assets/502ec76b-faf9-443a-983d-7398148b1651" /> <img width="418" height="549" alt="image" src="https://github.com/user-attachments/assets/2a7277a2-9395-4408-8349-954f8e3ee5d3" />
+<img width="439" height="430" alt="image" src="https://github.com/user-attachments/assets/ed0c6659-c27c-4d24-96cc-9d1b5dcce659" />
 
 #### 2. Shift in Critical Locations & Performance Gain
 
@@ -574,12 +630,32 @@ These tolerances ensure proper RC3 clearance and drop-in alignment with the 40.0
 **1. Base Plate (Boss-Extrude1)**
 
 Sketched a 60.0 mm x 60.0 mm center-rectangle on the Top Plane, added four 5.20 mm holes spaced 40.0 mm apart (10.0 mm from edges), and extruded 10.0 mm.
+<img width="974" height="709" alt="image" src="https://github.com/user-attachments/assets/bdea9326-9ad7-49e3-97b5-0cf8b5d06aad" />
 
 **2. Bearing Hub (Boss-Extrude2)**
 
 Sketched concentric circles of 35.0 mm outside diameter and 12.718 mm inside diameter on the top face, then extruded 25.0 mm with Merge Result checked.
+<img width="973" height="777" alt="image" src="https://github.com/user-attachments/assets/5759a7ba-25e9-423c-908d-bde8f3ee8afe" />
 
 ---
+### Final Assembly
+
+**Assembly Isometric View:**
+<img width="794" height="1349" alt="image" src="https://github.com/user-attachments/assets/2121dca9-65ce-4f07-b0c8-5ece16c879bf" />
+
+**Entire Assembly Cross-Section:**
+<img width="696" height="1348" alt="image" src="https://github.com/user-attachments/assets/fb392856-6cf9-4c93-a5d9-5d7bc4d9e653" />
+
+**Motor Shaft–Coupler–Leadscrew Cross-Section:**
+<img width="974" height="445" alt="image" src="https://github.com/user-attachments/assets/8e40cefa-355c-4781-a2ee-33f384977b89" />
+
+**Crosshead–Lead Screw–Flange–Threaded Nut Cross-Section:**
+<img width="974" height="368" alt="image" src="https://github.com/user-attachments/assets/80fef450-f91f-479e-a58b-904c18f71f0d" />
+
+**Floating Bearing Mount–Lead Screw Cross-Section:**
+<img width="974" height="453" alt="image" src="https://github.com/user-attachments/assets/05edcf3e-703c-4675-b9c5-7389f96612b3" />
+
+--------
 
 ## 8. Bill of Material and Labor Costs (Mohammad)
 
