@@ -13,6 +13,10 @@ I began by reviewing the torque and speed requirements from the leadscrew design
 
 The tensile tester uses two leadscrews to distribute the load and move the crosshead. Each motor needs enough torque to turn its screw while supporting the required crosshead speed range.
 
+<img width="974" height="735" alt="image" src="https://github.com/user-attachments/assets/97485556-65e7-48da-a3b4-08ab7ea9fe50" />
+<img width="974" height="1057" alt="image" src="https://github.com/user-attachments/assets/2584f487-b550-4a4c-abff-b854c4258aee" />
+
+
 I selected the McMaster-Carr 4855N17 DC gearmotor as the motor. Its published continuous operating point is 20 rpm at 100 in-lb of torque, which exceeds the preliminary torque-selection target and closely matches the required maximum screw speed.
 
 The motor specifications are:
@@ -23,11 +27,17 @@ The motor specifications are:
 - Output shaft: 1/2-inch keyed shaft
 - Rotation: Clockwise and counterclockwise
 
+<img width="974" height="1121" alt="image" src="https://github.com/user-attachments/assets/2d6c0b98-84d6-483c-91e4-712aa6461e1f" />
+
 I reviewed the motor specifications and torque-speed chart, then downloaded its CAD model and inserted it into the assembly. I used the gearbox output speed rather than the higher internal motor speed when comparing it with the leadscrew requirements.
 
 I also distinguished starting torque from continuous torque because the higher starting value cannot be treated as a continuous operating rating.
 
+<img width="974" height="1261" alt="image" src="https://github.com/user-attachments/assets/2412a112-1288-4b07-b3de-cef6614d03f0" />
+
 The motor provides a suitable nominal operating point for the preliminary design. Performance across the full required speed range still needs confirmation, particularly at low speed. The two motors must remain synchronized to prevent crosshead tilting, and separate bearing supports are intended to carry the leadscrew thrust.
+
+<img width="974" height="864" alt="image" src="https://github.com/user-attachments/assets/b0044b2f-e81d-4121-9454-4d3f27dae39e" />
 
 ---
 
