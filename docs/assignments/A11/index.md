@@ -781,6 +781,7 @@ In total, my work on the frame FEA studies, engineering drawing package, and fin
 * [Optimized Top Frame](https://drive.google.com/file/d/1c6PxnpBH17OJ-lpkmoF2Y7zh_OIa1wGx/view?usp=drive_link) { download }
 * [Optimized Vertical Frame](https://drive.google.com/file/d/1zwd2Ag2FV-7YrrE8ZJTDA1IuSXlxHgPB/view?usp=drive_link) { download }
 * [Drawing Package 2157](https://drive.google.com/file/d/11TxU_BmErTR151aHmNk3O8grXcG5Fgx1/view?usp=drive_link) { download }
+  
   ---
 
 ## Resources
