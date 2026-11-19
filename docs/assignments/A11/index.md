@@ -748,3 +748,41 @@ In total, my work on the frame FEA studies, engineering drawing package, and fin
 | - | Engineering Drawing Package (ASME Y14.5 third-angle projection detail drawings, assembly isometric & BOM) | Candy | 2 |
 
 **Total Combined Project Time: 29.5 Hours**
+
+## CAD Files & Bill of Materials Downloads
+
+* [1329K102_Precision Acme Flange.SLDPRT](1329K102_Precision%20Acme%20Flange.SLDPRT){ download }
+* [4855N17_DC Gearmotor.SLDPRT](4855N17_DC%20Gearmotor.SLDPRT){ download }
+* [5537T038_T-Slotted Framing Bottom Frame.SLDPRT](5537T038_T-Slotted%20Framing%20Bottom%20Frame.SLDPRT){ download }
+* [5537T038_T-Slotted Framing.SLDPRT](5537T038_T-Slotted%20Framing.SLDPRT){ download }
+* [5537T46_T-Slotted Framing.SLDPRT](5537T46_T-Slotted%20Framing.SLDPRT){ download }
+* [5537T586_T-Slotted Framing.SLDPRT](5537T586_T-Slotted%20Framing.SLDPRT){ download }
+* [5537T665_T-Slotted Framing(1).SLDPRT](5537T665_T-Slotted%20Framing(1).SLDPRT){ download }
+* [5537T665_T-Slotted Framing.SLDPRT](5537T665_T-Slotted%20Framing.SLDPRT){ download }
+* [95072A209_Precision Acme Externally Threaded Nut.SLDPRT](95072A209_Precision%20Acme%20Externally%20Threaded%20Nut.SLDPRT){ download }
+* [99030A005_1018 Carbon Steel Precision Acme Lead Screw(2).SLDPRT](99030A005_1018%20Carbon%20Steel%20Precision%20Acme%20Lead%20Screw(2).SLDPRT){ download }
+* [A11 Assemble Final Assembly.SLDASM](A11%20Assemble%20Final%20Assembly.SLDASM){ download }
+* [BOM cost for Assignment #11.xlsx](BOM%20cost%20for%20Assignment%20%2311.xlsx){ download }
+* [Coupling.SLDPRT](Coupling.SLDPRT){ download }
+* [Crosshead.SLDPRT](Crosshead.SLDPRT){ download }
+* [Floating Bearing Mount.SLDPRT](Floating%20Bearing%20Mount.SLDPRT){ download }
+* [Motor Mount Plate.SLDPRT](Motor%20Mount%20Plate.SLDPRT){ download }
+
+  ---
+
+## Resources
+
+### Open Source Tensile Testers
+1. [Design, Manufacture, and Testing of an Open Source Tensile Testing Machine for Hands on Learning](https://www.google.com/url?q=https://repositum.tuwien.at/bitstream/20.500.12708/200949/1/Demmel%2520Stella%2520-%25202024%2520-%2520Design%2520manufacturing%2520and%2520testing%2520of%2520an%2520open-source...pdf&sa=D&source=editors&ust=1795053478262061&usg=AOvVaw1JqWhBIf7GtXMMAKCFx4lX)
+2. [Low Cost Universal Testing Machine](https://www.google.com/url?q=https://hackaday.io/project/192166-low-cost-universal-tensile-testing-machine&sa=D&source=editors&ust=1795053478262161&usg=AOvVaw0l4grJGxTiQl_J7ZoQn7UN)
+3. [Free Loader](https://www.google.com/url?q=https://www.creativemachineslab.com/freeloader.html&sa=D&source=editors&ust=1795053478262235&usg=AOvVaw1kqqqd_-upsxZ26OUj4Y4t)
+
+### Frame & Other Components
+4. [Metric Profiles for T-Slot Framing](https://www.google.com/url?q=https://www.grainger.com/category/material-handling/structural-framing-systems/t-slot-framing-systems/profiles-for-t-slot-framing/metric-profiles-for-t-slot-framing?attrs%3DRelative%2BProfile%2BWeight%257CHeavy~~Series%257C40%2BSeries%26filters%3Dattrs&sa=D&source=editors&ust=1795053478262439&usg=AOvVaw2wpWTqmsErInxuIXOFdplK)
+5. [Connectors for T-Slot Framing](https://www.google.com/url?q=https://www.grainger.com/category/material-handling/structural-framing-systems/t-slot-framing-systems/connectors-for-t-slot-framing?categoryIndex%3D3&sa=D&source=editors&ust=1795053478262565&usg=AOvVaw1tuMhwu7scbuSn7wNsGChd)
+6. [Load Cell](https://www.google.com/url?q=https://assets.dwyeromega.com/spec/DS-LC103B.pdf&sa=D&source=editors&ust=1795053478262641&usg=AOvVaw1cRHRqQ1LfErGN4BHe4BuJ)
+7. [Leadscrew and Nut/Flange](https://www.google.com/url?q=https://www.mcmaster.com/products/acme-lead-screws/precision-lead-screws-and-nuts-1~/precision-acme-lead-screws-and-nuts-6/nut-type~externally-threaded/nut-type~flange/material~bronze-1/&sa=D&source=editors&ust=1795053478262773&usg=AOvVaw1kV47_oEjfioRiMjJis_Bq)
+8. [Lead Screw](https://www.google.com/url?q=https://www.roton.com/products/acme-lead-screws-nuts/engineering-data/?utm_source%3Dchatgpt.com&sa=D&source=editors&ust=1795053478262864&usg=AOvVaw3n5HrATS-cUOmncFwXis1D)
+
+### Engineering Theory
+9. [Column Buckling](https://www.google.com/url?q=https://mechanicalc.com/reference/column-buckling&sa=D&source=editors&ust=1795053478263004&usg=AOvVaw1eo1vOQReIZxHn1bgV6FCJ)
