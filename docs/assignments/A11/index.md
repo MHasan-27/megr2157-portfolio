@@ -749,6 +749,17 @@ In total, my work on the frame FEA studies, engineering drawing package, and fin
 
 **Total Combined Project Time: 29.5 Hours**
 
+## For 2157 Students 
+
+<img width="3919" height="3024" alt="IMG_3186" src="https://github.com/user-attachments/assets/a76062d7-4d03-47db-9711-282cfca667f2" />
+<img width="3808" height="2986" alt="IMG_3185" src="https://github.com/user-attachments/assets/f8d78a17-d516-4d93-9f73-d64279c0d846" />
+<img width="3646" height="2844" alt="IMG_3184" src="https://github.com/user-attachments/assets/3f32bc4a-3f6f-4b3b-8157-961ce29ab9eb" />
+<img width="3683" height="2922" alt="IMG_3183" src="https://github.com/user-attachments/assets/d33d283d-ad8a-4db4-8898-e29c75691032" />
+<img width="3903" height="3024" alt="IMG_3181" src="https://github.com/user-attachments/assets/d48493b5-f559-4a28-bd9c-7299c2e156ef" />
+<img width="3903" height="3024" alt="IMG_3173" src="https://github.com/user-attachments/assets/7a0e886a-73b7-4969-9ed8-70de05887db8" />
+<img width="3619" height="2750" alt="IMG_3172" src="https://github.com/user-attachments/assets/a9283353-0382-4a0b-b3da-5f91e0d27797" />
+
+
 ## CAD Files & Bill of Materials Downloads
 
 * [1329K102_Precision Acme Flange.SLDPRT](1329K102_Precision%20Acme%20Flange.SLDPRT){ download }
